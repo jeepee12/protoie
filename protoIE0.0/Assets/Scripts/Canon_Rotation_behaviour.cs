@@ -25,7 +25,7 @@ public class Canon_Rotation_behaviour : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButton("Fire") && Time.time > cooldown)
+        if (Input.GetButton("Fire1") && Time.time > cooldown)
         {
             cooldown = Time.time + fireRate;
             Instantiate (canonBall, canonHole.position, canonHole.rotation);
@@ -36,6 +36,7 @@ public class Canon_Rotation_behaviour : MonoBehaviour {
 
     }
 
+    // for testing purpose.
 	void FixedUpdate ()
     {
         rotX = Input.GetAxis("Vertical");

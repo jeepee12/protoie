@@ -11,7 +11,7 @@ public class CanonBall_behaviour : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        canonBall.velocity = (transform.forward + transform.up) * speed;
+        canonBall.velocity = (transform.forward) * speed;
     }
         
      
@@ -19,7 +19,7 @@ public class CanonBall_behaviour : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("wall"))
         {
-            canonBall.gameObject.SetActive(false);
+            // canonBall.gameObject.SetActive(false); -- the idea is to remove the canonBall after it hit something.
         }
     }
 }
