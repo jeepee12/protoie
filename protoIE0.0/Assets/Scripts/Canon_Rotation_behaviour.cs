@@ -36,7 +36,6 @@ public class Canon_Rotation_behaviour : MonoBehaviour {
 
     }
 
-    // for testing purpose.
 	void FixedUpdate ()
     {
         rotX = Input.GetAxis("Vertical");

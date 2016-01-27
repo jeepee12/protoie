@@ -192,7 +192,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 251b29a5b4eab8c4597b0bf429dd8164, type: 2}
+  - {fileID: 2100000, guid: 4dcb717bddbfd8a4a862e768adf70c3a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -255,7 +255,7 @@ MonoBehaviour:
   canonBall: {fileID: 170846, guid: 5403b697b8c751a48aff005cf87e473c, type: 2}
   canonHole: {fileID: 793145489}
   FireCanon: {fileID: 144486, guid: 7e029081e9892be4bb435a2256c04953, type: 2}
-  fireRate: 0.5
+  fireRate: 1
 --- !u!81 &463560429
 AudioListener:
   m_ObjectHideFlags: 0
@@ -285,8 +285,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 793145488}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -0.04, y: 0.718, z: 0.13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.04, y: 0.71799994, z: 0.12999976}
+  m_LocalScale: {x: 1, y: 1.125, z: 1.125}
   m_Children: []
   m_Father: {fileID: 463560427}
   m_RootOrder: 0

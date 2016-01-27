@@ -19,7 +19,7 @@ public class CanonBall_behaviour : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("wall"))
         {
-            // canonBall.gameObject.SetActive(false); -- the idea is to remove the canonBall after it hit something.
+            canonBall.gameObject.SetActive(false);
         }
     }
 }
