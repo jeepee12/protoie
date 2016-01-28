@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Canon_Rotation_behaviour : MonoBehaviour {
+public class Canon_behaviour : MonoBehaviour {
 
     // public var.
     public Rigidbody canon;
@@ -28,21 +28,22 @@ public class Canon_Rotation_behaviour : MonoBehaviour {
         if (Input.GetButton("Fire1") && Time.time > cooldown)
         {
             cooldown = Time.time + fireRate;
-            Instantiate (canonBall, canonHole.position, canonHole.rotation);
+            Instantiate(canonBall, canonHole.position, canonHole.rotation); //as GameObject;
             Instantiate (FireCanon, canonHole.position, canonHole.rotation);
-            
             
         } 
 
     }
 
+
+    // for testing purposes.
 	void FixedUpdate ()
     {
         rotX = Input.GetAxis("Vertical");
         rotY = Input.GetAxis("Horizontal");
 
         canon.transform.Rotate(new Vector3(rotX, 0, 0) * 1);
-        canon.transform.Translate(new Vector3(rotY, 0, 0));
+        canon.transform.RotateAround(new Vector3 (0,0,-20),Vector3.up , rotY);
         
 
 	}

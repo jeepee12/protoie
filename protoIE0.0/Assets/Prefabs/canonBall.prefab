@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2397828}
   - 114: {fileID: 11488714}
   - 54: {fileID: 5434258}
-  - 82: {fileID: 8227786}
+  - 114: {fileID: 11468526}
   m_Layer: 0
   m_Name: canonBall
   m_TagString: Untagged
@@ -74,88 +74,26 @@ Rigidbody:
   m_GameObject: {fileID: 170846}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.1
-  m_AngularDrag: 0
+  m_Drag: 0
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!82 &8227786
-AudioSource:
+--- !u!114 &11468526
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170846}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24328564, guid: e175b7022f2d0504991d672c7f85f7a7,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 58d0f3718e8643a47b60b6e9432a721c, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 256
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e23b42480e92642bd18be5a81f74e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destructable: {fileID: 170846}
+  FireExplosion: {fileID: 166114, guid: 80766759512ef8946834c3d40e448c69, type: 2}
 --- !u!114 &11488714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,7 +114,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170846}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -227,7 +165,7 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: m_AngularDrag
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Mass
@@ -235,12 +173,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Drag
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9162960c83af5d84cbd9199eb2492803, type: 2}
+    - target: {fileID: 0}
+      propertyPath: Destructable
+      value: 
+      objectReference: {fileID: 170846}
+    - target: {fileID: 0}
+      propertyPath: FireExplosion
+      value: 
+      objectReference: {fileID: 166114, guid: 80766759512ef8946834c3d40e448c69, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170846}

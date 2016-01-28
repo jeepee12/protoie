@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CanonBall_behaviour : MonoBehaviour {
+public class CanonBall_behaviour : MonoBehaviour
+{
 
     public Rigidbody canonBall;
     public float speed; // only for testing speed to hard code.
@@ -12,14 +13,5 @@ public class CanonBall_behaviour : MonoBehaviour {
     void Start()
     {
         canonBall.velocity = (transform.forward) * speed;
-    }
-        
-     
-    void OnTriggerEnter (Collider other)
-    {
-        if (other.gameObject.CompareTag("wall"))
-        {
-            canonBall.gameObject.SetActive(false);
-        }
     }
 }
