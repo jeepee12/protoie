@@ -75,7 +75,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.5
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Destructable: {fileID: 170846}
-  FireExplosion: {fileID: 166114, guid: 80766759512ef8946834c3d40e448c69, type: 2}
+  FireExplosion: {fileID: 180222, guid: f8b8d6f8b8648204980e91a8f1d81d18, type: 2}
 --- !u!114 &11488714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canonBall: {fileID: 5434258}
-  speed: 200
+  speed: 150
 --- !u!135 &13540460
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -132,7 +132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: canonBall
@@ -140,7 +140,7 @@ Prefab:
       objectReference: {fileID: 5434258}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_RotationOrder
@@ -153,7 +153,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 58d0f3718e8643a47b60b6e9432a721c, type: 3}
+      objectReference: {fileID: 8300000, guid: e7cd9f4fd95c79140b060b0ca9c5d01e, type: 3}
     - target: {fileID: 0}
       propertyPath: Priority
       value: 256
@@ -161,11 +161,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24328564, guid: e175b7022f2d0504991d672c7f85f7a7,
+      objectReference: {fileID: 24328564, guid: d3fbe39b8eb5ebb4c9eed274a7416de9,
         type: 2}
     - target: {fileID: 0}
       propertyPath: m_AngularDrag
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Mass
@@ -186,9 +186,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: FireExplosion
       value: 
-      objectReference: {fileID: 166114, guid: 80766759512ef8946834c3d40e448c69, type: 2}
+      objectReference: {fileID: 180222, guid: f8b8d6f8b8648204980e91a8f1d81d18, type: 2}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 31086c836e24ba84ba473c1bc6b1e4ac,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BypassEffects
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

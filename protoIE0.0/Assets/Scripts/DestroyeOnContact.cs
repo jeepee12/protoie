@@ -12,9 +12,7 @@ public class DestroyeOnContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         Instantiate(FireExplosion, transform.position, transform.rotation);
-        Destroy(gameObject);    
-        
+        Destroy(gameObject);
     }
 }

@@ -1,49 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &144486
+--- !u!1 &180222
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 482734}
-  - 198: {fileID: 19850832}
-  - 199: {fileID: 19912762}
-  - 114: {fileID: 11473900}
-  - 82: {fileID: 8276704}
+  - 4: {fileID: 477364}
+  - 198: {fileID: 19817622}
+  - 199: {fileID: 19993948}
+  - 114: {fileID: 11485668}
+  - 82: {fileID: 8256640}
   m_Layer: 0
-  m_Name: canonFire
+  m_Name: HitFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &482734
+--- !u!4 &477364
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144486}
+  m_GameObject: {fileID: 180222}
   m_LocalRotation: {x: -0.7619169, y: 0, z: 0, w: 0.64767486}
-  m_LocalPosition: {x: 0.134, y: 0.4954637, z: 0.06340408}
+  m_LocalPosition: {x: 2.7, y: -0.5, z: 9.2}
   m_LocalScale: {x: 1, y: 0.72775096, z: 0.7722488}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!82 &8276704
+--- !u!82 &8256640
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144486}
+  m_GameObject: {fileID: 180222}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24328564, guid: d3fbe39b8eb5ebb4c9eed274a7416de9,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: e7cd9f4fd95c79140b060b0ca9c5d01e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.03
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -106,23 +106,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &11473900
+--- !u!114 &11485668
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144486}
+  m_GameObject: {fileID: 180222}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0909b409934cd4f43ab62a1d5814afcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!198 &19850832
+--- !u!198 &19817622
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144486}
+  m_GameObject: {fileID: 180222}
   serializedVersion: 2
   lengthInSec: 1
   startDelay:
@@ -1616,12 +1616,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19912762
+--- !u!199 &19993948
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144486}
+  m_GameObject: {fileID: 180222}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -1665,10 +1665,6 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d68ec79334c717b46b61aafe1d9406fe, type: 2}
-    - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
@@ -1686,22 +1682,10 @@ Prefab:
       objectReference: {fileID: 24328564, guid: d3fbe39b8eb5ebb4c9eed274a7416de9,
         type: 2}
     - target: {fileID: 0}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: flashes
-      value: 
-      objectReference: {fileID: 144486}
-    - target: {fileID: 0}
       propertyPath: m_Volume
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 1.1
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 144486}
+  m_RootGameObject: {fileID: 180222}
   m_IsPrefabParent: 1

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - canonBall
+  - flammable
   layers:
   - Default
   - TransparentFX
