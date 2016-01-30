@@ -12,7 +12,14 @@ public class DestroyeOnContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+        }
+
         Instantiate(FireExplosion, transform.position, transform.rotation);
         Destroy(gameObject);
+
+       
     }
 }

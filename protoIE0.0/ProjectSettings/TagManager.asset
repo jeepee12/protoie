@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - canonBall
   - flammable
+  - Enemy
+  - New Tag
   layers:
   - Default
   - TransparentFX

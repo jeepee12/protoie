@@ -12,6 +12,7 @@ GameObject:
   - 199: {fileID: 19993948}
   - 114: {fileID: 11485668}
   - 82: {fileID: 8256640}
+  - 114: {fileID: 11406946}
   m_Layer: 0
   m_Name: HitFlash
   m_TagString: Untagged
@@ -106,6 +107,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &11406946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4700bfcd3d17a4b44a4dc0a12d1ae83c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireExplosion: {fileID: 180222}
 --- !u!114 &11485668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1685,6 +1698,10 @@ Prefab:
       propertyPath: m_Volume
       value: 0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: FireExplosion
+      value: 
+      objectReference: {fileID: 180222}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 180222}
