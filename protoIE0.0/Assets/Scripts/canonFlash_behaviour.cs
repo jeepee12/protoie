@@ -8,6 +8,6 @@ public class canonFlash_behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Destroy(canonFlash, 2.5f);
+        Destroy(canonFlash, 5);
     }
 }

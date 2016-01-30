@@ -219,7 +219,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -353,7 +353,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
+          value: 0.5869565
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1718,6 +1718,14 @@ Prefab:
       propertyPath: canonFlash
       value: 
       objectReference: {fileID: 144486}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startSize.maxCurve.m_Curve.Array.data[0].value
+      value: 0.5869565
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 144486}

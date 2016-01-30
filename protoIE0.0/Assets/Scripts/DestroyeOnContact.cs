@@ -9,12 +9,31 @@ public class DestroyeOnContact : MonoBehaviour
 {
     public GameObject Destructable;
     public GameObject FireExplosion;
+    public GameObject Fire;
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider hit)
     {
-        if (other.tag == "Enemy")
+        if (hit.tag == "Enemy")
         {
-            Destroy(other.gameObject);
+            Destroy(hit.gameObject);
+        }
+
+        else if (hit.tag == "flammable")
+        {
+            if (Destructable.tag == "FireBall")
+                Instantiate(Fire, transform.position, transform.rotation);
+
+            else
+            {
+                Instantiate(FireExplosion, transform.position, transform.rotation);
+                
+            }
+
+        }
+
+        else if (hit.tag == "canonBall")
+        {
+            return;
         }
 
         Instantiate(FireExplosion, transform.position, transform.rotation);

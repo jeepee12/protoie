@@ -14,4 +14,9 @@ public class CanonBall_behaviour : MonoBehaviour
     {
         canonBall.velocity = (transform.forward) * speed;
     }
+
+    void FixedUpdate()
+    {
+        Destroy(canonBall, 5);
+    }
 }

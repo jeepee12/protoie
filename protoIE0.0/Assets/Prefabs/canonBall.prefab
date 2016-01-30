@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11468526}
   m_Layer: 0
   m_Name: canonBall
-  m_TagString: Untagged
+  m_TagString: canonBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canonBall: {fileID: 5434258}
-  speed: 150
+  speed: 50
 --- !u!135 &13540460
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -140,7 +140,7 @@ Prefab:
       objectReference: {fileID: 5434258}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 150
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_RotationOrder
@@ -203,6 +203,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: BypassEffects
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: canonBall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
