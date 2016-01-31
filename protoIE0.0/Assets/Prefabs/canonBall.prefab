@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destructable: {fileID: 170846}
   FireExplosion: {fileID: 180222, guid: f8b8d6f8b8648204980e91a8f1d81d18, type: 2}
+  Fire: {fileID: 0}
 --- !u!114 &11488714
 MonoBehaviour:
   m_ObjectHideFlags: 1

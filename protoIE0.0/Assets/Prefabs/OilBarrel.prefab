@@ -31,7 +31,7 @@ GameObject:
   - 54: {fileID: 5454398}
   - 114: {fileID: 11408292}
   m_Layer: 0
-  m_Name: FireBall
+  m_Name: OilBarrel
   m_TagString: New Tag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
