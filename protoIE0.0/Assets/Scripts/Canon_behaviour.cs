@@ -5,8 +5,8 @@ public class Canon_behaviour : MonoBehaviour {
 
     // public var.
     public Rigidbody canon;
-    public Rigidbody canonBall;
-    public Rigidbody FireBall;
+    public GameObject canonBall;
+    public GameObject FireBall;
     public Transform canonHole;
     public GameObject FireCanon;
     public float fireRate;
@@ -30,13 +30,14 @@ public class Canon_behaviour : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetButtonDown("weaponselect") /*&& selecArms != "one"*/)
+        if (Input.GetButtonDown("weaponselect") )
         {
             if (selecArmspos == 0)
             {
                 selecArms = "one";
                 cooldown = Time.time + 0.5f;
                 selecArmspos = 1;
+                
             }
             else if (selecArmspos == 1)
             {
@@ -78,12 +79,12 @@ public class Canon_behaviour : MonoBehaviour {
         canon.transform.RotateAround(new Vector3(0,1.5f,-21f),Vector3.up , rotY);
 
         //maximum angle that the cannon can turn with.
-        
-        //if (canon.transform.rotation.y == -180 || canon.transform.rotation.y == 180)
-        //{
-        //    canon.transform.RotateAround(new Vector3(0, 0, -20), Vector3.zero, rotY);
-        //}
-        
 
-	}
+        if (canon.transform.rotation.y == 0 || canon.transform.rotation.y == 180)
+        {
+            canon.transform.RotateAround(new Vector3(0, 1.5f, -21f), Vector3.zero, 0);
+        }
+
+
+    }
 }

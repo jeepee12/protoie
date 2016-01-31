@@ -26,7 +26,7 @@ public class DestroyeOnContact : MonoBehaviour
             else
             {
                 Instantiate(FireExplosion, transform.position, transform.rotation);
-                
+                Destroy(hit.gameObject);
             }
 
         }
