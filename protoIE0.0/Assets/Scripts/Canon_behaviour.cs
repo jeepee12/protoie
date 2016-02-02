@@ -24,6 +24,7 @@ public class Canon_behaviour : MonoBehaviour {
     {
         GetComponent<Rigidbody>();
         selecArms = "one";
+        selecArmspos = 0;
 	}
 
 
