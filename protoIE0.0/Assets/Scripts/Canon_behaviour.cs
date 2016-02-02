@@ -72,18 +72,18 @@ public class Canon_behaviour : MonoBehaviour {
     // for testing purposes.
 	void FixedUpdate ()
     {
-        rotX = Input.GetAxis("Vertical");
-        rotY = Input.GetAxis("Horizontal");
+    //    rotX = Input.GetAxis("Vertical");
+    //    rotY = Input.GetAxis("Horizontal");
 
-        canon.transform.Rotate(new Vector3(rotX, 0, 0) * 1);
-        canon.transform.RotateAround(new Vector3(0,1.5f,-21f),Vector3.up , rotY);
+    //    canon.transform.Rotate(new Vector3(rotX, 0, 0) * 1);
+    //    canon.transform.RotateAround(new Vector3(0,1.5f,-21f),Vector3.up , rotY);
 
-        //maximum angle that the cannon can turn with.
+    //    //maximum angle that the cannon can turn with.
 
-        if (canon.transform.rotation.y == 0 || canon.transform.rotation.y == 180)
-        {
-            canon.transform.RotateAround(new Vector3(0, 1.5f, -21f), Vector3.zero, 0);
-        }
+    //    if (canon.transform.rotation.y == 0 || canon.transform.rotation.y == 180)
+    //    {
+    //        canon.transform.RotateAround(new Vector3(0, 1.5f, -21f), Vector3.zero, 0);
+    //    }
 
 
     }
