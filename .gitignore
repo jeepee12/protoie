@@ -119,6 +119,7 @@ protoIE0.0/Library/
 protoIE0.0/[Tt]emp/
 protoIE0.0/[Oo]bj/
 protoIE0.0/[Bb]uild/
+protoIE0.0/ProjectSettings/ProjectVersion.txt
 *.unityproj
 *.pidb.meta
 sysinfo.txt
