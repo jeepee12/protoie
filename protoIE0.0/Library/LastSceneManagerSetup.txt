@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Tests/Nagivation.unity
+- path: Assets/Scenes/Tests/Nagivation-VisualCannon.unity
   isLoaded: 1
   isActive: 1

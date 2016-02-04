@@ -38,8 +38,6 @@ public class SelectedWeapon : MonoBehaviour {
 
             currentWeapon.displayCooldown(currentCooldown / Cooldown);
 
-            Debug.Log("test");
-
             if (currentCooldown > Cooldown)
             {
                 ready = true;
