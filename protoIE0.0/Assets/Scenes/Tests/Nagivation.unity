@@ -295,6 +295,8 @@ MonoBehaviour:
   speed: 1
   speedSlowing: 1
   speedMax: 1
+  speedMinToRotate: 0.25
+  slowDuringTurning: 1
 --- !u!1 &1001319253
 GameObject:
   m_ObjectHideFlags: 0
