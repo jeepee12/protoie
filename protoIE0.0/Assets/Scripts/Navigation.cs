@@ -4,7 +4,7 @@ using System.Collections;
 public class Navigation : MonoBehaviour {
 
     private Vector3 m_ProgressivePosition;
-    private float velocite;
+    public float velocite;
     private float deadZone = 0.1f;
 
     public GameObject testAngle;
@@ -12,7 +12,7 @@ public class Navigation : MonoBehaviour {
     [Tooltip("Vitesse a laquel le bateau tourne")]
     public float turnSpeed = 250.0f;
     [Tooltip("Angle a laquel le bateau commence a avancer")]
-    public float angleAvance = 45.0f;
+    public float angleAvance = 15.0f;
     [Tooltip("Vitesse a laquel le bateau avance")]
     public float speed = 0.25f;
     [Tooltip("Vitesse de ralentisement")]
