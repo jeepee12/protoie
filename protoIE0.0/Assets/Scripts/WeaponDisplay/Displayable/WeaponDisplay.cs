@@ -3,29 +3,33 @@ using System.Collections;
 
 public class WeaponDisplay : MonoBehaviour
 {
-    public GameObject cooldownDisplay;
+    private MeshRenderer CooldownRenderer;
 
+    // Cooldowns
+    public Color CouleurCooldown = new Color(1, 0, 0, 0);
+    public GameObject CooldownObject;
+
+    // Matériel pour le visuel
     public Material cannonCharging;
     public Material cannonReady;
 
+    // Display
     public MeshRenderer displayPlane;
-    public MeshRenderer cooldownPlane;
 
+    // Area
     public MeshRenderer area;
-
-    private Vector3 scaleDepart;
-
+    
     public virtual void move() { }
 
     public void Init()
     {
-        scaleDepart = cooldownDisplay.transform.localScale;
+        CooldownRenderer = CooldownObject.GetComponent<MeshRenderer>();
     }
 
     public void stopDisplay()
     {
         displayPlane.enabled = false;
-        cooldownPlane.enabled = false;
+        CooldownRenderer.enabled = false;
 
         if (area != null)
             area.enabled = false;
@@ -34,7 +38,7 @@ public class WeaponDisplay : MonoBehaviour
     public void startDisplay()
     {
         displayPlane.enabled = true;
-        cooldownPlane.enabled = true;
+        CooldownRenderer.enabled = true;
 
         if (area != null)
             area.enabled = true;
@@ -42,10 +46,19 @@ public class WeaponDisplay : MonoBehaviour
 
     public void displayCooldown(float pourc)
     {
-        if (pourc > scaleDepart.z)
-            pourc = scaleDepart.z;
+        Mesh CooldownMesh = CooldownObject.GetComponent<MeshFilter>().mesh;
+        Vector3[] vertices = CooldownMesh.vertices;
+        Color[] colors = new Color[vertices.Length];
+        
+        float nbr = CooldownMesh.vertices.Length * pourc;
+        
+        for (int i = 0; i < Mathf.Min(nbr, CooldownMesh.vertices.Length); i++)
+        {
+            colors[i] = CouleurCooldown;
+        }
 
-        cooldownDisplay.transform.localScale = new Vector3(scaleDepart.x, scaleDepart.y, pourc);
+        CooldownMesh.colors = colors;
+
     }
 
     public void readyToFire()
@@ -57,4 +70,5 @@ public class WeaponDisplay : MonoBehaviour
     {
         displayPlane.material = cannonCharging;
     }
+
 }

@@ -30,7 +30,7 @@ public class SelectedWeapon : MonoBehaviour {
             switchWeaponLeft();
 
         if (Input.GetButtonDown("SwitchWeaponRight"))
-            switchWeaponLeft();
+            switchWeaponRight();
 
         if (!ready)
         {

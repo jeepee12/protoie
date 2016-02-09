@@ -3,12 +3,9 @@ using System.Collections;
 
 public class CannonDisplay : WeaponDisplay
 {
-    void Start()
+    public override void move()
     {
+        base.move();
     }
 
-    override public void move()
-    {
-
-    }
 }
