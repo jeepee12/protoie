@@ -18,8 +18,10 @@ public class Navigation : MonoBehaviour
     public float speed = 0.25f;
     [Tooltip("Vitesse de ralentisement")]
     public float speedSlowing = 1.0f;
-    [Tooltip("Vitesse maximum")]
-    public float speedMax = 2.5f;
+    [Tooltip("Vitesse maximum vers l'avant")]
+    public float speedMaxFoward = 2.5f;
+    [Tooltip("Vitesse maximum vers l'arriere")]
+    public float speedMaxBackward = 1.5f;
     [Tooltip("Vitesse minimum pour tourner")]
     public float speedMinToRotate = 0.25f;
 
@@ -89,6 +91,8 @@ public class Navigation : MonoBehaviour
         }
         else//on fait pas d'input donc on ralentit
         {
+            //Vu qu'on additionne ou soustrait tout le temps je suis conscient qu'on va jamais totalement arrêter
+            //Mais un bateau serrait jamais totalement immobile. 
             if (velocite > 0)//si on est à 0 on ne va pas changer la vitesse
             {
                 velocite -= speedSlowing * Time.deltaTime;
@@ -99,13 +103,13 @@ public class Navigation : MonoBehaviour
             }
         }
 
-        if (velocite > speedMax)//on limite la vitesse
+        if (velocite > speedMaxFoward)//on limite la vitesse
         {
-            velocite = speedMax;
+            velocite = speedMaxFoward;
         }
-        else if (velocite < -speedMax)
+        else if (velocite < -speedMaxBackward)
         {
-            velocite = -speedMax;
+            velocite = -speedMaxBackward;
         }
 
 
