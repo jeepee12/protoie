@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 893199357}
+  CameraPreset: 1
 --- !u!1 &233622019
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,13 +303,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocite: 0
+  deadZone: 0.5
   testAngle: {fileID: 1186069754}
   directionBateau: {fileID: 1001319254}
   turnSpeed: 250
   angleAvance: 15
-  speed: 1
+  speed: 0.25
   speedSlowing: 1
-  speedMax: 1
+  speedMax: 2.5
   speedMinToRotate: 0.25
   slowDuringTurning: 1
 --- !u!1 &1001319253

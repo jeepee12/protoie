@@ -6,7 +6,7 @@ public class Navigation : MonoBehaviour
 
     private Vector3 m_ProgressivePosition;
     public float velocite;
-    private float deadZone = 0.1f;
+    public float deadZone = 0.5f;
 
     public GameObject testAngle;
     public Transform directionBateau;
@@ -39,7 +39,7 @@ public class Navigation : MonoBehaviour
         bool backward = Input.GetButton("GoingBackward");
         float backwardFactor = 1;//va être mis à -1 si on appuie sur la touche de reculons
         Vector3 myVector;
-        //Debug.Log("H:" + valueH + "V:" + valueV);
+        Debug.Log("H:" + valueH + "V:" + valueV);
         myVector = new Vector3(1, 0, 0) * valueH;
         myVector += new Vector3(0, 0, 1) * valueV;
 
