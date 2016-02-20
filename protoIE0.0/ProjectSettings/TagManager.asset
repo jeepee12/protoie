@@ -9,6 +9,7 @@ TagManager:
   - flammable
   - Enemy
   - FireBall
+  - Water
   layers:
   - Default
   - TransparentFX
