@@ -2,49 +2,63 @@
 using System.Collections;
 
 public class FireCannonDisplay : WeaponDisplay {
-    /*
-    public Color maCouleur = new Color(1, 0, 0, 1);
-    public Color maCouleurTransparente = new Color(1, 0, 0, 0.5f);
 
-    private float pourc;
-    private float nbr;
+    public GameObject VisualPlane;
+    public GameObject Direction;
+    public GameObject Direction2;
+    public GameObject Bateau;
 
-    public float cooldown;
+    public float RotateSpeed;
 
-    public float currCooldown;
-    */
-    // Use this for initialization
-    void Start ()
+    private float deadZone = 0.5f;
+
+    public override void move()
     {
+        float valueH = Input.GetAxis("RightJoystickH");
+        float valueV = Input.GetAxis("RightJoystickV");
 
+        if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
+        {
+            Vector3 VectorDirection;
+
+            VectorDirection = new Vector3(1, 0, 0) * valueH;
+            VectorDirection += new Vector3(0, 0, 1) * valueV;
+
+            VectorDirection.Normalize();
+
+            VectorDirection *= 20;
+            VectorDirection += transform.position;
+
+
+            Direction.transform.position = VisualPlane.transform.position;
+            Direction.transform.LookAt( VectorDirection);
+
+            float step = RotateSpeed * Time.deltaTime;
+
+            Quaternion Quat = Quaternion.RotateTowards(VisualPlane.transform.rotation, Direction.transform.rotation, step);
+            
+            Direction2.transform.position = VectorDirection;
+
+            Quaternion temp = VisualPlane.transform.rotation;
+
+            VisualPlane.transform.rotation = Quat;
+
+            Transform myNewT = VisualPlane.transform;
+
+            myNewT.rotation = Quat;
+
+            float AngleY = myNewT.localRotation.eulerAngles.y;
+
+            if (AngleY <  90 || AngleY > 270)
+                VisualPlane.transform.rotation = Quat;
+            else
+                VisualPlane.transform.rotation = temp;
+        }
     }
 
-	
-	// Update is called once per frame
-	void Update ()
+    public override Vector3 ShootVector()
     {
-        /*Mesh mesh = GetComponent<MeshFilter>().mesh;
-        Vector3[] vertices = mesh.vertices;
-        Color[] colors = new Color[vertices.Length];
-
-        currCooldown += Time.deltaTime;
-
-        pourc = currCooldown / cooldown;
-        nbr = mesh.vertices.Length * pourc;
-
-
-        for (int i = 0; i < Mathf.Min(nbr, mesh.vertices.Length); i++)
-        {
-            colors[i] = maCouleur;
-        }
-
-        mesh.colors = colors;
-
-        if (currCooldown >= cooldown)
-        { 
-            currCooldown = 0;
-
-        }*/
+        return VisualPlane.transform.forward;
     }
 
 }

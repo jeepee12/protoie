@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeaponDisplay : MonoBehaviour
+public abstract class WeaponDisplay : MonoBehaviour
 {
     private MeshRenderer CooldownRenderer;
 
@@ -18,8 +18,9 @@ public class WeaponDisplay : MonoBehaviour
 
     // Area
     public MeshRenderer area;
-    
-    public virtual void move() { }
+
+    public abstract Vector3 ShootVector();
+    public abstract void move();
 
     public void Init()
     {
