@@ -31,6 +31,8 @@ public class SelectedWeapon : MonoBehaviour {
 
         if (Input.GetButtonDown("SwitchWeaponRight"))
             switchWeaponRight();
+        
+        currentWeapon.move();
 
         if (!ready)
         {
