@@ -5,7 +5,6 @@ public class FireCannonDisplay : WeaponDisplay {
 
     public GameObject VisualPlane;
     public GameObject Direction;
-    public GameObject Direction2;
     public GameObject Bateau;
 
     public float RotateSpeed;
@@ -36,8 +35,6 @@ public class FireCannonDisplay : WeaponDisplay {
             float step = RotateSpeed * Time.deltaTime;
 
             Quaternion Quat = Quaternion.RotateTowards(VisualPlane.transform.rotation, Direction.transform.rotation, step);
-            
-            Direction2.transform.position = VectorDirection;
 
             Quaternion temp = VisualPlane.transform.rotation;
 

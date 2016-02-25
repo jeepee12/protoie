@@ -227,6 +227,34 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 9b70252052344d340a39c0962787a3d2, type: 3}
   m_PrefabInternal: {fileID: 1848826271}
+--- !u!1 &431594353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 431594354}
+  m_Layer: 0
+  m_Name: VisualPlane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &431594354
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 431594353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 3.4, z: 1}
+  m_Children:
+  - {fileID: 857473424}
+  m_Father: {fileID: 1011523867}
+  m_RootOrder: 2
 --- !u!1001 &629808158
 Prefab:
   m_ObjectHideFlags: 0
@@ -278,6 +306,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: eaeeebc19b8d3044ea7873b861463904, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c79914324c672d140ab112851bc637a4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaeeebc19b8d3044ea7873b861463904, type: 3}
   m_IsPrefabParent: 0
@@ -588,7 +620,7 @@ Transform:
   m_Children:
   - {fileID: 1732719263}
   - {fileID: 1443616425}
-  - {fileID: 857473424}
+  - {fileID: 431594354}
   m_Father: {fileID: 893199358}
   m_RootOrder: 3
 --- !u!114 &1011523868
@@ -608,6 +640,10 @@ MonoBehaviour:
   cannonReady: {fileID: 2100000, guid: 8102ad3d5c6fd54419e541a5992c6599, type: 2}
   displayPlane: {fileID: 857473425}
   area: {fileID: 0}
+  VisualPlane: {fileID: 431594353}
+  Direction: {fileID: 1757972022}
+  Bateau: {fileID: 893199357}
+  RotateSpeed: 50
 --- !u!1 &1067691568
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +863,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1011523867}
+    m_TransformParent: {fileID: 431594354}
     m_Modifications:
     - target: {fileID: 400000, guid: bec2a40678d9c874baa76bc6b8774fd0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -835,7 +871,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bec2a40678d9c874baa76bc6b8774fd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.058823526
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bec2a40678d9c874baa76bc6b8774fd0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -859,7 +895,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bec2a40678d9c874baa76bc6b8774fd0, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: bec2a40678d9c874baa76bc6b8774fd0, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -867,7 +903,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 6c2208ab2cda25646ab6a7390cded491, type: 2}
     - target: {fileID: 400000, guid: bec2a40678d9c874baa76bc6b8774fd0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bec2a40678d9c874baa76bc6b8774fd0, type: 3}
       propertyPath: m_LocalScale.y
@@ -875,7 +911,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bec2a40678d9c874baa76bc6b8774fd0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.29411763
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: bec2a40678d9c874baa76bc6b8774fd0, type: 3}
       propertyPath: m_ReceiveShadows
@@ -1091,7 +1127,7 @@ MonoBehaviour:
   area: {fileID: 0}
   Direction: {fileID: 1757972022}
   Bateau: {fileID: 1609793670}
-  MoveSpeed: 2
+  MoveSpeed: 50
   minDistance: 20
   maxDistance: 50
 --- !u!1 &1609793670 stripped
@@ -1127,6 +1163,10 @@ MonoBehaviour:
   cannonReady: {fileID: 0}
   displayPlane: {fileID: 0}
   area: {fileID: 0}
+  VisualPlane: {fileID: 0}
+  Direction: {fileID: 0}
+  Bateau: {fileID: 0}
+  RotateSpeed: 0
 --- !u!1 &1757972022
 GameObject:
   m_ObjectHideFlags: 0
