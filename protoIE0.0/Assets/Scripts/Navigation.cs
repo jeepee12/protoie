@@ -49,13 +49,15 @@ public class Navigation : MonoBehaviour
 
         myVector *= 20;
 
+        if (backward)
+        {
+            backwardFactor = -1;
+            myVector *= -1;
+        }
+
         directionBateau.transform.position = transform.position;
         directionBateau.transform.position += myVector;
 
-        if(backward)
-        {
-            backwardFactor = -1;
-        }
 
         //on est en train de faire un input sur le controller
         if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
