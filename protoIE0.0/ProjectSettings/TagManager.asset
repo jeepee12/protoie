@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - FireBall
   - Water
+  - Flock_sound
   layers:
   - Default
   - TransparentFX
