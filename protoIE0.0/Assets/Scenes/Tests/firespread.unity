@@ -191,7 +191,7 @@ Transform:
   m_Children:
   - {fileID: 1359927086}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &258255812
 Prefab:
   m_ObjectHideFlags: 0
@@ -2162,7 +2162,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 435624, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 4.59
       objectReference: {fileID: 0}
     - target: {fileID: 435624, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2204,6 +2204,18 @@ Prefab:
       propertyPath: m_OiledDuration
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 435624, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 435624, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 435624, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
   m_IsPrefabParent: 0
@@ -2216,15 +2228,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.3
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.62
+      value: 4.119
       objectReference: {fileID: 0}
     - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.94
+      value: -4.14
       objectReference: {fileID: 0}
     - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2309,4 +2321,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
