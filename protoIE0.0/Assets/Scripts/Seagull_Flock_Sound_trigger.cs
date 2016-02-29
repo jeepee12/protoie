@@ -11,6 +11,7 @@ public class Seagull_Flock_Sound_trigger : MonoBehaviour {
 	void Start ()
     {
         Flocksound = GetComponent<AudioSource>();
+        Flocksound.Stop();
     }
 	
 	// Update is called once per frame
@@ -18,15 +19,12 @@ public class Seagull_Flock_Sound_trigger : MonoBehaviour {
     {
         if (others.CompareTag("Player"))
             Flocksound.Play();
-        else
-            Flocksound.Pause();
+        
     }
 
     void OnTriggerExit(Collider others)
     {
         if (others.CompareTag("Player"))
             Flocksound.Stop();
-        else
-            Flocksound.Play();
     }
 }
