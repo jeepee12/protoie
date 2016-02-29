@@ -539,7 +539,7 @@ MonoBehaviour:
   deadZone: 0.5
   testAngle: {fileID: 1186069754}
   directionBateau: {fileID: 1001319254}
-  turnSpeed: 125
+  turnSpeed: 250
   angleAvance: 45
   speed: 1
   speedSlowing: 1

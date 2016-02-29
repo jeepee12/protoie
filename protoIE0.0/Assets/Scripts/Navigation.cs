@@ -5,7 +5,6 @@ public class Navigation : MonoBehaviour
 {
 
     private Vector3 m_ProgressivePosition;
-    private Vector3 lootAtObject;
     public float velocite;
     public float deadZone = 0.5f;
 
@@ -50,16 +49,13 @@ public class Navigation : MonoBehaviour
 
         myVector *= 20;
 
-        if (backward)
-        {
-            backwardFactor = -1;
-            myVector *= -1;
-        }
-
         directionBateau.transform.position = transform.position;
         directionBateau.transform.position += myVector;
 
-
+        if(backward)
+        {
+            backwardFactor = -1;
+        }
 
         //on est en train de faire un input sur le controller
         if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
@@ -67,7 +63,6 @@ public class Navigation : MonoBehaviour
             m_ProgressivePosition = Vector3.Lerp(m_ProgressivePosition, directionBateau.transform.position, turnSpeed * Time.deltaTime);
 
             testAngle.transform.LookAt(m_ProgressivePosition);
-
             float monAngleAvantRotation = Quaternion.Angle(transform.rotation, testAngle.transform.rotation);
 
             if (Mathf.Abs(velocite) > speedMinToRotate)//si on ne peut pas trouner sur soi-même, on on vérifie qu'on va assez vite
@@ -102,7 +97,7 @@ public class Navigation : MonoBehaviour
             {
                 velocite -= speedSlowing * Time.deltaTime;
             }
-            else if (velocite < 0)//on ralentit dans l'autre sens
+            else if(velocite < 0)//on ralentit dans l'autre sens
             {
                 velocite += speedSlowing * Time.deltaTime;
             }
