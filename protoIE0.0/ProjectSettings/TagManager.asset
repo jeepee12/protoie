@@ -11,6 +11,7 @@ TagManager:
   - FireBall
   - Water
   - Flock_sound
+  - MapGenerator
   layers:
   - Default
   - TransparentFX
