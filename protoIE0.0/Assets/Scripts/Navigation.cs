@@ -93,15 +93,22 @@ public class Navigation : MonoBehaviour
         }
         else//on fait pas d'input donc on ralentit
         {
-            //Vu qu'on additionne ou soustrait tout le temps je suis conscient qu'on va jamais totalement arrêter
-            //Mais un bateau serrait jamais totalement immobile. 
-            if (velocite > 0)//si on est à 0 on ne va pas changer la vitesse
+            if (backward)//dès que le personne appuie sur le boutton pour reculer, le bateau recule même si elle ne touche pas au joystick
             {
-                velocite -= speedSlowing * Time.deltaTime;
+                velocite += speed * Time.deltaTime * backwardFactor;
             }
-            else if(velocite < 0)//on ralentit dans l'autre sens
+            else
             {
-                velocite += speedSlowing * Time.deltaTime;
+                //Vu qu'on additionne ou soustrait tout le temps je suis conscient qu'on va jamais totalement arrêter
+                //Mais un bateau serrait jamais totalement immobile. 
+                if (velocite > 0)//si on est à 0 on ne va pas changer la vitesse
+                {
+                    velocite -= speedSlowing * Time.deltaTime;
+                }
+                else if (velocite < 0)//on ralentit dans l'autre sens
+                {
+                    velocite += speedSlowing * Time.deltaTime;
+                }
             }
         }
 
