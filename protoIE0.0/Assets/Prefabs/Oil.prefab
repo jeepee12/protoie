@@ -12,7 +12,7 @@ GameObject:
   - 65: {fileID: 6544858}
   - 114: {fileID: 11445992}
   - 114: {fileID: 11402690}
-  - 114: {fileID: 11422426}
+  - 114: {fileID: 11471602}
   - 54: {fileID: 5481414}
   m_Layer: 0
   m_Name: Oil
@@ -72,21 +72,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Time: 15
---- !u!114 &11422426
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 164786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f64a0e42fb210f468c4092b956cefeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Flamable: 1
-  m_Oiled: 0
-  m_OiledDuration: 0
-  hpTest: 20
 --- !u!114 &11445992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +84,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpreadMax: 20
+--- !u!114 &11471602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78e8c7d3c599224dacc510c21763141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Flamable: 1
+  m_Oiled: 0
+  m_OiledDuration: 0
+  hpTest: 1000
 --- !u!212 &21232216
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -150,7 +150,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: hpTest
-      value: 20
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_fireEffect
+      value: 
+      objectReference: {fileID: 181592, guid: c7e357a0db688224bbcd1ca19637dbda, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Flamable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
