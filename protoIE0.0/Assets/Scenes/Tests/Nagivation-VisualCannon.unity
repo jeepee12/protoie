@@ -96,7 +96,6 @@ GameObject:
   - 20: {fileID: 229154072}
   - 92: {fileID: 229154071}
   - 124: {fileID: 229154070}
-  - 81: {fileID: 229154069}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -104,13 +103,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &229154069
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 229154068}
-  m_Enabled: 1
 --- !u!124 &229154070
 Behaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +278,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!1001 &2135917288
+--- !u!1001 &2086984429
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -326,13 +318,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8225230, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8225230, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24352066, guid: d3fbe39b8eb5ebb4c9eed274a7416de9,
+        type: 2}
     - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: directionBateau
       value: 
