@@ -752,9 +752,12 @@ GameObject:
   - 4: {fileID: 448522}
   - 114: {fileID: 11442770}
   - 114: {fileID: 11498790}
+  - 54: {fileID: 5481030}
+  - 65: {fileID: 6506646}
+  - 81: {fileID: 8151042}
   m_Layer: 0
   m_Name: Bateau
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3842,7 +3845,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 5}
+  m_LocalPosition: {x: 4, y: 0.1, z: -75.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 440190}
@@ -9694,6 +9697,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192952}
   m_Mesh: {fileID: 4300078, guid: 6815613590af3cf4b901ed288c9d140f, type: 3}
+--- !u!54 &5481030
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125212}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!64 &6436142
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -9713,10 +9731,10 @@ MeshCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103258}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &6481588
 MeshCollider:
@@ -9725,11 +9743,30 @@ MeshCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170626}
   m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6506646
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125212}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 7.5, y: 15.5, z: 15}
+  m_Center: {x: -2, y: 7.6927423, z: -5}
+--- !u!81 &8151042
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125212}
+  m_Enabled: 1
 --- !u!95 &9536142
 Animator:
   serializedVersion: 3
@@ -9856,7 +9893,7 @@ MonoBehaviour:
   velocite: 0
   deadZone: 0.5
   testAngle: {fileID: 149966}
-  directionBateau: {fileID: 499128, guid: 0cf96e85e0cb86740b443f95fa0ea803, type: 2}
+  directionBateau: {fileID: 0}
   turnSpeed: 250
   angleAvance: 45
   speed: 1
