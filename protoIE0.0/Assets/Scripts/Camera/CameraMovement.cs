@@ -8,11 +8,11 @@ public class CameraMovement : MonoBehaviour
 
     public int CameraPreset = 1;
 
-    private Vector3 CameraPreset1Position = new Vector3(0.0f, 150.0f, -150.0f);
-    private Vector3 CameraPreset1Rotation = new Vector3(45.0f, 0.0f, 0.0f);
+    public Vector3 CameraPreset1Position = new Vector3(0.0f, 100.0f, -150.0f);
+    public Vector3 CameraPreset1Rotation = new Vector3(55.0f, 0.0f, 0.0f);
 
-    private Vector3 CameraPreset2Position = new Vector3(0.0f, 150.0f, 0.0f);
-    private Vector3 CameraPreset2Rotation = new Vector3(90.0f, 0.0f, 0.0f);
+    public Vector3 CameraPreset2Position = new Vector3(0.0f, 150.0f, 0.0f);
+    public Vector3 CameraPreset2Rotation = new Vector3(90.0f, 0.0f, 0.0f);
 
     private Vector3 offset;
 
