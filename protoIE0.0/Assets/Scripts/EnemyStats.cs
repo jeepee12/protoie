@@ -12,7 +12,6 @@ public class EnemyStats : MonoBehaviour {
 
     void OnDestroy()
     {
-        Debug.Log("Enemy Killed");
         mapGScript.EnemyDead();
     }
 }
