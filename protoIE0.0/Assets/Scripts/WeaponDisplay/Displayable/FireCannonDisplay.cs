@@ -9,6 +9,8 @@ public class FireCannonDisplay : WeaponDisplay {
 
     public float RotateSpeed;
 
+    public GameObject[] HideList;
+
     private float deadZone = 0.5f;
 
     public override void move()
@@ -56,6 +58,22 @@ public class FireCannonDisplay : WeaponDisplay {
     public override Vector3 ShootVector()
     {
         return VisualPlane.transform.forward;
+    }
+
+    public override void Hide()
+    {
+        foreach (GameObject toHide in HideList)
+        {
+            toHide.GetComponent<Renderer>().enabled = false;
+        }
+    }
+
+    public override void Show()
+    {
+        foreach (GameObject toShow in HideList)
+        {
+            toShow.GetComponent<Renderer>().enabled = true;
+        }
     }
 
 }

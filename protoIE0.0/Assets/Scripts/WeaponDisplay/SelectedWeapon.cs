@@ -21,6 +21,8 @@ public class SelectedWeapon : MonoBehaviour {
 
         for (int i = 0; i < weaponList.Length; i++)
             weaponList[i].Init();
+
+        currentWeapon.Show();
     }
 	
 	// Update is called once per frame
@@ -44,7 +46,6 @@ public class SelectedWeapon : MonoBehaviour {
             {
                 ready = true;
                 currentWeapon.displayCooldown(0);
-                currentWeapon.readyToFire();
             }
         }
 
@@ -61,14 +62,14 @@ public class SelectedWeapon : MonoBehaviour {
                 break;
             }
 
-        currentWeapon.stopDisplay();
+        currentWeapon.Hide();
 
         if (posCurrWeapon == 0)
             currentWeapon = weaponList[weaponList.Length - 1];
         else
             currentWeapon = weaponList[posCurrWeapon - 1];
 
-        currentWeapon.startDisplay();
+        currentWeapon.Show();
 
     }
 
@@ -83,14 +84,14 @@ public class SelectedWeapon : MonoBehaviour {
                 break;
             }
 
-        currentWeapon.stopDisplay();
+        currentWeapon.Hide();
 
         if (posCurrWeapon == weaponList.Length - 1)
             currentWeapon = weaponList[0];
         else
             currentWeapon = weaponList[posCurrWeapon + 1];
 
-        currentWeapon.startDisplay();
+        currentWeapon.Show();
 
     }
 }
