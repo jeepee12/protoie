@@ -27,6 +27,7 @@ public class DestroyeOnContact : MonoBehaviour
         else if (hit.tag == "Water")
         {
             // need to add water splash effect.
+            Destroy(gameObject);
             return;
         }
 

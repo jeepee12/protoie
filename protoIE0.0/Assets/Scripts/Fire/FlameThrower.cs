@@ -12,7 +12,6 @@ public class FlameThrower : MonoBehaviour
     {
         if (objectColliding.CompareTag("Enemy"))
         {
-            
             //Repeat each X amount of time.
             if (Time.time > m_Cooldown)
             {
