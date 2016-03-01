@@ -242,7 +242,7 @@ MonoBehaviour:
   CameraPreset: 1
   CameraPreset1Position: {x: 0, y: 100, z: -150}
   CameraPreset1Rotation: {x: 55, y: 0, z: 0}
-  CameraPreset2Position: {x: 0, y: 150, z: 0}
+  CameraPreset2Position: {x: 0, y: 150, z: -90}
   CameraPreset2Rotation: {x: 90, y: 0, z: 0}
 --- !u!114 &11495306
 MonoBehaviour:
@@ -263,7 +263,8 @@ MonoBehaviour:
   Direction: {fileID: 0}
   Bateau: {fileID: 0}
   MoveSpeed: 50
-  minDistance: 0.5
+  minShootDistance: 0.5
+  maxShootDistance: 10
   maxDistance: 75
 --- !u!124 &12444404
 Behaviour:
@@ -278,7 +279,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: CameraPreset2Position.z
+      value: -90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 150188}
