@@ -19,11 +19,9 @@ public class OilCannonDisplay : WeaponDisplay
     {
         float valueH = Input.GetAxis("RightJoystickH");
         float valueV = Input.GetAxis("RightJoystickV");
-
-        Debug.Log("allo2.");
+        
         if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
         {
-            Debug.Log("allo3.");
             Vector3 myVector;
 
             myVector = new Vector3(1, 0, 0) * valueH;
@@ -54,7 +52,6 @@ public class OilCannonDisplay : WeaponDisplay
     public override void Init()
     {
         base.Init();
-        Debug.Log("allo.");
         transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.position = Bateau.transform.position;
     }
