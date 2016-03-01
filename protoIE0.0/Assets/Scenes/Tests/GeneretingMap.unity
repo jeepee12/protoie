@@ -425,11 +425,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434546, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 177.6
+      value: 177.4
       objectReference: {fileID: 0}
     - target: {fileID: 434546, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -66.603134
+      value: -70.2
       objectReference: {fileID: 0}
     - target: {fileID: 434546, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -522,6 +522,22 @@ Prefab:
     - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+      propertyPath: CameraPreset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+      propertyPath: CameraPreset1Position.z
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+      propertyPath: CameraPreset2Rotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+      propertyPath: CameraPreset2Position.z
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
@@ -1200,7 +1216,7 @@ Prefab:
     - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: Direction
       value: 
-      objectReference: {fileID: 136492, guid: 1a61ffaaca2841a40b55e777a666a580, type: 2}
+      objectReference: {fileID: 870944978}
     - target: {fileID: 11475948, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: Direction
       value: 

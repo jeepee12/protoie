@@ -17,6 +17,12 @@ public class OilCannonDisplay : WeaponDisplay
 
     public override void move()
     {
+        if (transform.position.y < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.position = Bateau.transform.position;
+        }
+
         float valueH = Input.GetAxis("RightJoystickH");
         float valueV = Input.GetAxis("RightJoystickV");
         
