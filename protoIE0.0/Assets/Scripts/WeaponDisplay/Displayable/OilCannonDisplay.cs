@@ -7,8 +7,10 @@ public class OilCannonDisplay : WeaponDisplay
     public GameObject Bateau;
     public float MoveSpeed;
 
-    public float minDistance = 0.5f;
-    public float maxDistance = 10f;
+    public float minShootDistance = 0.5f;
+    public float maxShootDistance = 10f;
+
+    public float maxDistance = 100.0f;
 
     private float deadZone = 0.5f;
     private Vector3 CamPosition;
@@ -18,8 +20,10 @@ public class OilCannonDisplay : WeaponDisplay
         float valueH = Input.GetAxis("RightJoystickH");
         float valueV = Input.GetAxis("RightJoystickV");
 
+        Debug.Log("allo2.");
         if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
         {
+            Debug.Log("allo3.");
             Vector3 myVector;
 
             myVector = new Vector3(1, 0, 0) * valueH;
@@ -34,21 +38,32 @@ public class OilCannonDisplay : WeaponDisplay
 
             Vector3 newPos = Vector3.MoveTowards(transform.position, Direction.transform.position, MoveSpeed * Time.deltaTime);
 
-            newPos.y = 0.2f;
-            transform.position = newPos;
+            float Distance = Vector3.Distance(Bateau.transform.position, newPos);
 
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            newPos.y = 0.2f;
+
+            if (Distance < maxDistance)
+                transform.position = newPos;
+            
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         CalcDistance();
     }
 
+    public override void Init()
+    {
+        base.Init();
+        Debug.Log("allo.");
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.position = Bateau.transform.position;
+    }
+
     public void CalcDistance()
     {
         float Distance = Vector3.Distance(Bateau.transform.position, transform.position);
 
-        if (Distance < maxDistance && Distance > minDistance)
+        if (Distance < maxShootDistance && Distance > minShootDistance)
             readyToFire();
         else
             onCooldown();
