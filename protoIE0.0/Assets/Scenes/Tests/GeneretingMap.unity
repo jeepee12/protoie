@@ -451,17 +451,13 @@ Prefab:
       value: 
       objectReference: {fileID: 1128022131}
     - target: {fileID: 11453486, guid: 0ec8836e053704341a251c317e1fe668, type: 2}
-      propertyPath: Bateau
-      value: 
-      objectReference: {fileID: 1128022131}
-    - target: {fileID: 11453486, guid: 0ec8836e053704341a251c317e1fe668, type: 2}
       propertyPath: Direction
       value: 
       objectReference: {fileID: 870944978}
-    - target: {fileID: 417506, guid: 0ec8836e053704341a251c317e1fe668, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 147
-      objectReference: {fileID: 0}
+    - target: {fileID: 11453486, guid: 0ec8836e053704341a251c317e1fe668, type: 2}
+      propertyPath: Bateau
+      value: 
+      objectReference: {fileID: 1128022131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ec8836e053704341a251c317e1fe668, type: 2}
   m_IsPrefabParent: 0
@@ -525,7 +521,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1001 &1346681587
 Prefab:
   m_ObjectHideFlags: 0

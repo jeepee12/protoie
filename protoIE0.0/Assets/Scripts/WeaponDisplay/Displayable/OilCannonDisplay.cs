@@ -34,7 +34,11 @@ public class OilCannonDisplay : WeaponDisplay
 
             Vector3 newPos = Vector3.MoveTowards(transform.position, Direction.transform.position, MoveSpeed * Time.deltaTime);
 
+            newPos.y = 0.2f;
             transform.position = newPos;
+
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         CalcDistance();
