@@ -308,6 +308,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 788968914}
   m_Script: {fileID: 11500000, guid: 90b32c4e42e189c408b3079a4f3f89dc, type: 3}
+--- !u!1 &634577961 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+  m_PrefabInternal: {fileID: 1126801918}
 --- !u!1 &721337541
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,10 +742,72 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1103913543}
+--- !u!1001 &1126801918
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_Name
+      value: Water
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1128022131 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 125212, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
   m_PrefabInternal: {fileID: 1346681587}
+--- !u!114 &1128022132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128022131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279351229acf97345af960b1eaa1119e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ocean: {fileID: 634577961}
+  density: 500
+  slicesPerAxis: 2
+  isConcave: 0
+  voxelsLimit: 16
 --- !u!114 &1128022139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,7 +1683,7 @@ GameObject:
   - 64: {fileID: 1715831561}
   - 23: {fileID: 1715831560}
   m_Layer: 0
-  m_Name: Water
+  m_Name: Seafloor
   m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1675,7 +1741,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1715831559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -16.9, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
