@@ -50,8 +50,10 @@ public abstract class WeaponDisplay : MonoBehaviour
         if (pourc != 0)
             weapReady = false;
         else
-
+        {
             weapReady = true;
+            readyToFire();
+        }
     }
 
     public void readyToFire()
