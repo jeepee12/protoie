@@ -97,6 +97,7 @@ GameObject:
   - 65: {fileID: 77145214}
   - 23: {fileID: 77145213}
   - 114: {fileID: 77145217}
+  - 191: {fileID: 77145218}
   m_Layer: 0
   m_Name: BoundingLimitLeft
   m_TagString: Untagged
@@ -173,6 +174,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapGenerator: {fileID: 1171824004}
+--- !u!191 &77145218
+OffMeshLink:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 77145212}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_AreaIndex: 3
+  m_Start: {fileID: 1733282367}
+  m_End: {fileID: 77145216}
+  m_CostOverride: -1
+  m_BiDirectional: 1
+  m_Activated: 1
+  m_AutoUpdatePositions: 0
 --- !u!1001 &552423922
 Prefab:
   m_ObjectHideFlags: 0
@@ -231,6 +247,7 @@ GameObject:
   - 65: {fileID: 721337545}
   - 23: {fileID: 721337544}
   - 114: {fileID: 721337543}
+  - 191: {fileID: 721337547}
   m_Layer: 0
   m_Name: BoundingLimitTop
   m_TagString: Untagged
@@ -307,6 +324,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 721337541}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!191 &721337547
+OffMeshLink:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721337541}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_AreaIndex: 3
+  m_Start: {fileID: 721337542}
+  m_End: {fileID: 1642853457}
+  m_CostOverride: -1
+  m_BiDirectional: 1
+  m_Activated: 1
+  m_AutoUpdatePositions: 0
 --- !u!4 &847305417 stripped
 Transform:
   m_PrefabParentObject: {fileID: 499128, guid: 0cf96e85e0cb86740b443f95fa0ea803, type: 2}
@@ -380,7 +412,7 @@ MonoBehaviour:
     - {fileID: 110054, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
     - {fileID: 110054, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
     - {fileID: 110054, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
-    weather: {fileID: 0}
+    weather: {fileID: 109064, guid: dd4ab3b4e4fb97c4db6b59bc352b521d, type: 2}
     items: []
   - land: {fileID: 187058, guid: 0b3048a05f2e90343b03536e30caa34b, type: 2}
     enemies: []
@@ -589,12 +621,13 @@ GameObject:
   - 65: {fileID: 1642853460}
   - 23: {fileID: 1642853459}
   - 114: {fileID: 1642853458}
+  - 191: {fileID: 1642853462}
   m_Layer: 0
   m_Name: BoundingLimitBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1642853457
 Transform:
@@ -665,6 +698,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1642853456}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!191 &1642853462
+OffMeshLink:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642853456}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_AreaIndex: 3
+  m_Start: {fileID: 1642853457}
+  m_End: {fileID: 721337542}
+  m_CostOverride: -1
+  m_BiDirectional: 1
+  m_Activated: 1
+  m_AutoUpdatePositions: 0
 --- !u!1 &1715831559
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +800,7 @@ GameObject:
   - 65: {fileID: 1733282370}
   - 23: {fileID: 1733282369}
   - 114: {fileID: 1733282368}
+  - 191: {fileID: 1733282372}
   m_Layer: 0
   m_Name: BoundingLimitRight
   m_TagString: Untagged
@@ -828,6 +877,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1733282366}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!191 &1733282372
+OffMeshLink:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1733282366}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_AreaIndex: 3
+  m_Start: {fileID: 1733282367}
+  m_End: {fileID: 77145216}
+  m_CostOverride: -1
+  m_BiDirectional: 1
+  m_Activated: 1
+  m_AutoUpdatePositions: 0
 --- !u!1 &1888584443
 GameObject:
   m_ObjectHideFlags: 0

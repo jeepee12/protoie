@@ -58,7 +58,7 @@ public class MapGenerator : MonoBehaviour
             if(items.Length > 0)
             {
                 int zPosition = 0;
-                for (int i = 0; i < enemies.Length; ++i) //GameObject enemy in enemies)
+                for (int i = 0; i < enemies.Length; ++i)
                 {
                     Instantiate(items[i],
                         new Vector3((items[i].transform.localScale.x) * (i % (enemies.Length / 2)),
@@ -76,6 +76,12 @@ public class MapGenerator : MonoBehaviour
             if(weather)
             {
                 weatherClone = (GameObject)Instantiate(weather, Vector3.zero, Quaternion.identity);
+                if(weatherClone.name.Contains("Rain"))
+                {
+                    weatherClone.transform.parent = Camera.main.transform;
+                    weatherClone.transform.localEulerAngles = new Vector3(35, 0, 0);
+                    weatherClone.transform.localPosition = new Vector3(0, 50, 0);
+                }
             }
         }
 

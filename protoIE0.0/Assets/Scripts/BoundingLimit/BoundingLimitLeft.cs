@@ -15,6 +15,14 @@ public class BoundingLimitLeft : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         mapGScript.Collision();
-        other.transform.position = new Vector3(xPosition, other.transform.position.y, other.transform.position.z);
+        if (other.tag.Contains("Enemy"))
+        {
+            NavMeshAgent nma = other.gameObject.GetComponent<NavMeshAgent>();
+            nma.Warp(new Vector3(xPosition, other.transform.position.y, other.transform.position.z));
+        }
+        else
+        {
+            other.transform.position = new Vector3(xPosition, other.transform.position.y, other.transform.position.z);
+        }
     }
 }
