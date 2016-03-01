@@ -29,6 +29,7 @@ public class Navigation : MonoBehaviour
     public bool slowDuringTurning = true;
 
     private Rigidbody rb;
+    public int velociteFactor = 1000;
 
     // Use this for initialization
     void Start()
@@ -56,11 +57,17 @@ public class Navigation : MonoBehaviour
         {
             backwardFactor = -1;
             myVector *= -1;
+
+            Debug.Log("On recule" + velocite);
+        }
+
+        if(rb.velocity.magnitude < 0.1)
+        {
+            velocite = 0;
         }
 
         directionBateau.transform.position = transform.position;
         directionBateau.transform.position += myVector;
-
 
         //on est en train de faire un input sur le controller
         if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
@@ -126,7 +133,8 @@ public class Navigation : MonoBehaviour
 
 
         //transform.position += transform.forward * velocite;
-        rb.AddForce(transform.forward * velocite);
+        //rb.AddForce(transform.forward * velocite * velociteFactor);
+        rb.velocity = transform.forward * velociteFactor * velocite;
 
     }
 }

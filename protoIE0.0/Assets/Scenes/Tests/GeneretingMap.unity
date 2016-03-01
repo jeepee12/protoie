@@ -1235,23 +1235,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: speed
-      value: 25000
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: speedMaxFoward
-      value: 50000
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: speedSlowing
-      value: 35000
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: speedMaxBackward
-      value: 40000
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: speedMinToRotate
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: m_Mass
@@ -1268,6 +1268,18 @@ Prefab:
     - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: angleAvance
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: turnSpeed
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: slowDuringTurning
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: velociteFactor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
