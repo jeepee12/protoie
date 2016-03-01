@@ -15,18 +15,24 @@ public class DestroyeOnContact : MonoBehaviour
     {
         if (hit.tag == "Enemy")
         {
-            // add HP remover here instead of Destroyer.
             Destroy(hit.gameObject);
         }
 
-        else if (hit.tag == "canonBall" || hit.tag == "Player" || hit.tag == "Untagged")
+        else if (hit.tag == "flammable")
         {
-            return;
+            if (Destructable.tag == "FireBall")
+                Instantiate(Fire, transform.position, transform.rotation);
+
+            else
+            {
+                Instantiate(FireExplosion, transform.position, transform.rotation);
+                Destroy(hit.gameObject);
+            }
+
         }
 
-        else if (hit.tag == "Water")
+        else if (hit.tag == "canonBall")
         {
-            // need to add water splash effect.
             return;
         }
 
