@@ -28,9 +28,12 @@ public class Navigation : MonoBehaviour
     [Tooltip("Ranlentit pendant qu'il tourne")]
     public bool slowDuringTurning = true;
 
+    private Rigidbody rb;
+
     // Use this for initialization
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -122,6 +125,8 @@ public class Navigation : MonoBehaviour
         }
 
 
-        transform.position += transform.forward * velocite;
+        //transform.position += transform.forward * velocite;
+        rb.AddForce(transform.forward * velocite);
+
     }
 }
