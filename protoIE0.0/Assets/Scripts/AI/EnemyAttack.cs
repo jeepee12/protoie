@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-public class AITemplate {
+public class EnemyAttack : MonoBehaviour
+{
+
     public float lookRange = 1000f;
     public float chaseRange = 300f;
     public float attackRange = 10f;
@@ -16,3 +18,4 @@ public class AITemplate {
 
     public virtual void Attack() { } // Attack something
 }
+

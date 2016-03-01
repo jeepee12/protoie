@@ -105,7 +105,7 @@ public class MapGenerator : MonoBehaviour
 
     public GameObject player;
     public MapComponent[] MapList;
-    public int enemiesAlive;
+    private int enemiesAlive;
 
     private bool NextMapReady = false;
     private bool allEnemiesDead = true;

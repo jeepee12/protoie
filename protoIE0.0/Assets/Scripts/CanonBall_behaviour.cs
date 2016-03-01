@@ -13,7 +13,7 @@ public class CanonBall_behaviour : MonoBehaviour
     void Start()
     {
         canonBall.velocity = (transform.forward) * speed;
-        canonBall.AddForce(new Vector3(0,9.8f,0));
+       //canonBall.AddForce(new Vector3(0,9.8f,0));
     }
 
     void FixedUpdate()
