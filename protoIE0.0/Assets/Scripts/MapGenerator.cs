@@ -80,7 +80,7 @@ public class MapGenerator : MonoBehaviour
                 {
                     weatherClone.transform.parent = Camera.main.transform;
                     weatherClone.transform.localEulerAngles = new Vector3(35, 0, 0);
-                    weatherClone.transform.localPosition = new Vector3(0, 50, 50);
+                    weatherClone.transform.localPosition = new Vector3(0, 72, 50);
                 }
             }
         }
