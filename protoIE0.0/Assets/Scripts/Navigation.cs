@@ -133,8 +133,8 @@ public class Navigation : MonoBehaviour
 
 
         //transform.position += transform.forward * velocite;
-        //rb.AddForce(transform.forward * velocite * velociteFactor);
-        rb.velocity = transform.forward * velociteFactor * velocite;
+        rb.AddForce(transform.forward * velocite * velociteFactor);
+        //rb.velocity = transform.forward * velociteFactor * velocite;
 
     }
 }
