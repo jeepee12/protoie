@@ -7,17 +7,25 @@ public class OilCannonDisplay : WeaponDisplay
     public GameObject Bateau;
     public float MoveSpeed;
 
-    public float minDistance = 0.5f;
-    public float maxDistance = 10f;
+    public float minShootDistance = 0.5f;
+    public float maxShootDistance = 10f;
+
+    public float maxDistance = 100.0f;
 
     private float deadZone = 0.5f;
     private Vector3 CamPosition;
 
     public override void move()
     {
+        if (transform.position.y < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.position = Bateau.transform.position;
+        }
+
         float valueH = Input.GetAxis("RightJoystickH");
         float valueV = Input.GetAxis("RightJoystickV");
-
+        
         if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
         {
             Vector3 myVector;
@@ -34,21 +42,31 @@ public class OilCannonDisplay : WeaponDisplay
 
             Vector3 newPos = Vector3.MoveTowards(transform.position, Direction.transform.position, MoveSpeed * Time.deltaTime);
 
-            newPos.y = 0.2f;
-            transform.position = newPos;
+            float Distance = Vector3.Distance(Bateau.transform.position, newPos);
 
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            newPos.y = 0.2f;
+
+            if (Distance < maxDistance)
+                transform.position = newPos;
+            
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         CalcDistance();
     }
 
+    public override void Init()
+    {
+        base.Init();
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.position = Bateau.transform.position;
+    }
+
     public void CalcDistance()
     {
         float Distance = Vector3.Distance(Bateau.transform.position, transform.position);
 
-        if (Distance < maxDistance && Distance > minDistance)
+        if (Distance < maxShootDistance && Distance > minShootDistance)
             readyToFire();
         else
             onCooldown();

@@ -3,8 +3,6 @@ using System.Collections;
 
 public class AICoward : AITemplate
 {
-    public float fearFactor = 50f;
-
     public AICoward(Transform enemyTransform, Transform playerTransform, NavMeshAgent navAgent)
     {
         this.enemyTransform = enemyTransform;
