@@ -1,29 +1,54 @@
 ﻿using UnityEngine;
 
+
+// TODO : Defensive, melee (suit le joueur, quand faible fuit)
+// TODO : Defensive, range (reste à porter maximum de ses attaques, quand faible, fuit, si player rapproche enemy s'enfuit)
+
 public enum EnemySelection
 {
-    Default, Follower, Coward
+    Default, Offensive, Defensive
 }
 
 public class EnemyAI : MonoBehaviour
 {
-
+    private AITemplate enemyAI;
     public EnemySelection enemySelection;
-    public AITemplate enemyAI;
+
+    public bool melee = true;
+    public float attackRange = 10f;
+    public float chaseRange = 300f;
+    public float damping = 0.8f;
+    public float fearFactor = 50f;
+    public float lookRange = 1000f;
 
     private void Start()
     {
-        switch (enemySelection)
-        {
-            case EnemySelection.Default: 
-                enemyAI = new AIFollower(transform, GameObject.FindGameObjectWithTag("Player").transform, GetComponent<NavMeshAgent>());
-                break;
-            case EnemySelection.Follower:
-                enemyAI = new AIFollower(transform, GameObject.FindGameObjectWithTag("Player").transform, GetComponent<NavMeshAgent>());
-                break;
-            case EnemySelection.Coward:
-                enemyAI = new AICoward(transform, GameObject.FindGameObjectWithTag("Player").transform, GetComponent<NavMeshAgent>());
-                break;
+
+        if (enemySelection == EnemySelection.Offensive)
+        { // Offensive behavior
+            enemyAI = new Offensive(transform, GameObject.FindGameObjectWithTag("Player").transform, GetComponent<NavMeshAgent>());
+
+            enemyAI.melee = melee;
+            enemyAI.attackRange = attackRange;
+            enemyAI.chaseRange = chaseRange;
+            enemyAI.damping = damping;
+            enemyAI.fearFactor = fearFactor;
+            enemyAI.lookRange = lookRange;
+        }
+        else if (enemySelection == EnemySelection.Defensive)
+        { // Defensive behavior
+
+        }
+        else
+        { // Default AI, Offensive Melee
+            enemyAI = new Offensive(transform, GameObject.FindGameObjectWithTag("Player").transform, GetComponent<NavMeshAgent>());
+
+            enemyAI.melee = melee;
+            enemyAI.attackRange = attackRange;
+            enemyAI.chaseRange = chaseRange;
+            enemyAI.damping = damping;
+            enemyAI.fearFactor = fearFactor;
+            enemyAI.lookRange = lookRange;
         }
 
         enemyAI.enemyTransform = transform;
@@ -36,28 +61,9 @@ public class EnemyAI : MonoBehaviour
     {
         enemyAI.playerDistance = Vector3.Distance(enemyAI.playerTransform.position, transform.position);
 
-        if (enemyAI.playerDistance > enemyAI.lookRange)
-        { // The player is too far away from the enemy
-            //Debug.Log("The player is too far away from the enemy");
+        enemyAI.LookAt();
 
-        } else
-        { // The player can be seen by the enemy
-            //Debug.Log("The player can be seen by the enemy");
-            enemyAI.LookAt();
-        }
-        
-        if (enemyAI.playerDistance <= enemyAI.attackRange)
-        { // The player is within attack range
-            //Debug.Log("The player is within attack range");
-            enemyAI.navAgent.Stop();
-            enemyAI.Attack();
-        }
-        else if (enemyAI.playerDistance <= enemyAI.chaseRange)
-        { // The player is within chasing range
-            //Debug.Log("The player is within chasing range");
-            enemyAI.navAgent.Resume();
-            enemyAI.Move();
-        }
+        enemyAI.ChaseAndAttack();
     }
 
 }
