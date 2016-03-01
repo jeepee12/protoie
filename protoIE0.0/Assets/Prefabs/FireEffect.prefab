@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 409822}
   - 108: {fileID: 10855952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 82: {fileID: 8268190}
   - 114: {fileID: 11428960}
   - 114: {fileID: 11478662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 4: {fileID: 449028}
   - 198: {fileID: 19889808}
   - 199: {fileID: 19997766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1803,6 +1803,10 @@ Prefab:
       propertyPath: m_fireEffect
       value: 
       objectReference: {fileID: 181592}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181592}

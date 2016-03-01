@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2357866}
   - 135: {fileID: 13522734}
   - 114: {fileID: 11488664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ GameObject:
   - 4: {fileID: 408092}
   - 198: {fileID: 19864814}
   - 199: {fileID: 19921474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 479428}
   - 108: {fileID: 10840986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1744,6 +1744,10 @@ Prefab:
       propertyPath: m_fireEffect
       value: 
       objectReference: {fileID: 181592, guid: c7e357a0db688224bbcd1ca19637dbda, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110332}

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 416028}
   - 198: {fileID: 19836048}
   - 199: {fileID: 19989068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 408848}
   - 198: {fileID: 19818150}
   - 199: {fileID: 19993990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RainCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3205,6 +3205,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: CollisionModule.enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

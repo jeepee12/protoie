@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11473900}
   - 82: {fileID: 8276704}
   - 114: {fileID: 11435280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: canonFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1741,6 +1741,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: CollisionModule.type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

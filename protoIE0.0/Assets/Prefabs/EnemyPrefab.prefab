@@ -133,6 +133,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySelection: 1
+  melee: 1
+  attackRange: 10
+  chaseRange: 300
+  damping: 0.8
+  fearFactor: 50
+  lookRange: 1000
 --- !u!195 &19588048
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -183,6 +189,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: enemySelection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

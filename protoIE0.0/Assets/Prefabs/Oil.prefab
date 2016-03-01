@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11402690}
   - 114: {fileID: 11471602}
   - 54: {fileID: 5481414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Oil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,6 +159,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Flamable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -453,8 +453,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434546, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1128022131}
     - target: {fileID: 11495306, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: Direction
       value: 
@@ -463,86 +467,6 @@ Prefab:
       propertyPath: Bateau
       value: 
       objectReference: {fileID: 1128022131}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1128022131}
-    - target: {fileID: 150188, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_Name
-      value: Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 11495306, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: maxDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11495306, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: maxShootDistance
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 11495306, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: minShootDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 6.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 177.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2346634, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c79914324c672d140ab112851bc637a4, type: 2}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: CameraPreset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: CameraPreset1Position.z
-      value: -150
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: CameraPreset2Rotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: CameraPreset2Position.z
-      value: -90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
   m_IsPrefabParent: 0
@@ -576,7 +500,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &918408548
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +708,70 @@ Prefab:
     - target: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
       propertyPath: m_Name
       value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445044, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_ReflectLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445044, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_RefractLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11492010, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_ReflectLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11492010, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_RefractLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496666, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_ReflectLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496666, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_RefractLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458084, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_ReflectLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458084, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_RefractLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468464, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_ReflectLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468464, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_RefractLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489014, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_ReflectLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489014, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_RefractLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491428, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_ReflectLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491428, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_RefractLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478460, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_ReflectLayers.m_Bits
+      value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478460, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_RefractLayers.m_Bits
+      value: 4294967039
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
@@ -1699,7 +1687,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6522ce181fdaef94480ec66912c9c2b5, type: 2}
+  - {fileID: 2100000, guid: deeb6a138a29e824f906f9090ddee287, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

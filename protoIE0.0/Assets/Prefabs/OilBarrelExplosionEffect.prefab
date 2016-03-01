@@ -11,7 +11,7 @@ GameObject:
   - 198: {fileID: 19897918}
   - 199: {fileID: 19918354}
   - 114: {fileID: 11449380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OilBarrelExplosionEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1597,6 +1597,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Time
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
