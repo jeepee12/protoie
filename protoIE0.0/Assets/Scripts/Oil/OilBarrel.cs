@@ -7,14 +7,16 @@ public class OilBarrel : MonoBehaviour
 
     private void OnCollisionEnter(Collision objectColliding)
     {
-        Debug.Log(objectColliding.gameObject.name);
-        Vector3 OilSpawnPosition;
+        if(objectColliding.gameObject.tag.Contains("Enemy") || objectColliding.gameObject.tag.Contains("Water") || objectColliding.gameObject.tag.Contains("Wall"))
+        {
+            Vector3 OilSpawnPosition;
 
-        OilSpawnPosition = gameObject.transform.position;
-        OilSpawnPosition.y = 0.001f;
+            OilSpawnPosition = gameObject.transform.position;
+            OilSpawnPosition.y = 0.05f;
 
-        Instantiate(m_ExplosionEffect, gameObject.transform.position, gameObject.transform.rotation);
-        Instantiate(m_OilEffect, OilSpawnPosition, m_OilEffect.transform.rotation);
-        Destroy(gameObject);
+            Instantiate(m_ExplosionEffect, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(m_OilEffect, OilSpawnPosition, m_OilEffect.transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }

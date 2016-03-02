@@ -312,6 +312,18 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
   m_PrefabInternal: {fileID: 1126801918}
+--- !u!65 &634577963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634577961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 0, z: 7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &721337541
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +481,7 @@ Prefab:
       objectReference: {fileID: 1128022131}
     - target: {fileID: 11495306, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: PS4Controller
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
@@ -535,7 +547,7 @@ Transform:
   - {fileID: 721337542}
   - {fileID: 1642853457}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &949476889 stripped
 Transform:
   m_PrefabParentObject: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
@@ -712,74 +724,6 @@ Prefab:
     - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_Name
-      value: Water
-      objectReference: {fileID: 0}
-    - target: {fileID: 11445044, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_ReflectLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11445044, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_RefractLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11492010, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_ReflectLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11492010, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_RefractLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496666, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_ReflectLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496666, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_RefractLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458084, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_ReflectLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458084, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_RefractLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11468464, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_ReflectLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11468464, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_RefractLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489014, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_ReflectLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489014, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_RefractLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11491428, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_ReflectLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11491428, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_RefractLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11478460, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_ReflectLayers.m_Bits
-      value: 4294967039
-      objectReference: {fileID: 0}
-    - target: {fileID: 11478460, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-      propertyPath: m_RefractLayers.m_Bits
-      value: 4294967039
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
@@ -1248,6 +1192,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11436588, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: Ocean
+      value: 
+      objectReference: {fileID: 634577961}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: directionBateau
+      value: 
+      objectReference: {fileID: 847305417}
+    - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: Direction
+      value: 
+      objectReference: {fileID: 870944978}
     - target: {fileID: 11498790, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: weapons.Array.data[3].cannonHole.Array.data[0]
       value: 
@@ -1256,18 +1212,6 @@ Prefab:
       propertyPath: weaponList.Array.data[3]
       value: 
       objectReference: {fileID: 622458445}
-    - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: Direction
-      value: 
-      objectReference: {fileID: 870944978}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: directionBateau
-      value: 
-      objectReference: {fileID: 847305417}
-    - target: {fileID: 11436588, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: Ocean
-      value: 
-      objectReference: {fileID: 634577961}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
   m_IsPrefabParent: 0
@@ -1646,7 +1590,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1715831559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -16.9, z: 0}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}

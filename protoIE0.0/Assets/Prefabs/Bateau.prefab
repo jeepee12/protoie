@@ -10901,7 +10901,7 @@ MonoBehaviour:
     cannonHole:
     - {fileID: 0}
     cannonFireEffect: {fileID: 0}
-    fireRate: 0
+    fireRate: 10
   weaponList:
   - {fileID: 11402062}
   - {fileID: 11424678}

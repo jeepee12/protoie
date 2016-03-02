@@ -71,8 +71,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183324}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2.2106678}
+  m_LocalPosition: {x: 0, y: 0, z: 0.48}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 409822}
   m_Father: {fileID: 476522}
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.8, y: -7.678745e-17, z: -1.05}
+  m_LocalPosition: {x: -4.048277, y: 6.1862755, z: -98.42583}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449028}
@@ -176,7 +176,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2.5
-  m_Range: 3
+  m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88b9a754ad7d714ba343170f5e66f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fireEffect: {fileID: 181592}
+  m_FireOrigin: {fileID: 11464178, guid: 0b87c1413e4a9764195f95dc86ada215, type: 2}
 --- !u!114 &11478662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,7 +236,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &19889808
 ParticleSystem:
@@ -597,7 +597,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 100
+    maxNumParticles: 200
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -624,7 +624,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 15
+      scalar: 75
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1092,7 +1092,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
   ForceModule:
-    enabled: 0
+    enabled: 1
     x:
       scalar: 0
       maxCurve:
@@ -1129,7 +1129,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     y:
-      scalar: 0
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1198,7 +1198,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    inWorldSpace: 0
+    inWorldSpace: 1
     randomizePerFrame: 0
   ExternalForcesModule:
     enabled: 0
@@ -1807,6 +1807,11 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FireOrigin
+      value: 
+      objectReference: {fileID: 11464178, guid: 0b87c1413e4a9764195f95dc86ada215,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181592}

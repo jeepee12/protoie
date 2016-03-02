@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88b9a754ad7d714ba343170f5e66f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fireEffect: {fileID: 181592, guid: c7e357a0db688224bbcd1ca19637dbda, type: 2}
+  m_FireOrigin: {fileID: 11464178, guid: 0b87c1413e4a9764195f95dc86ada215, type: 2}
 --- !u!114 &11489010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1673,6 +1673,11 @@ Prefab:
       propertyPath: m_Time
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FireOrigin
+      value: 
+      objectReference: {fileID: 11464178, guid: 0b87c1413e4a9764195f95dc86ada215,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 192880}
