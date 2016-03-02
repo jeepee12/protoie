@@ -312,6 +312,18 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
   m_PrefabInternal: {fileID: 1126801918}
+--- !u!65 &634577963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634577961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.743042, y: 0.24159205, z: 7.815737}
+  m_Center: {x: 0, y: -0.12, z: 0}
 --- !u!1 &721337541
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +792,10 @@ Prefab:
     - target: {fileID: 11478460, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
       propertyPath: m_RefractLayers.m_Bits
       value: 4294967039
+      objectReference: {fileID: 0}
+    - target: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_TagString
+      value: Water
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}

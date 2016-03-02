@@ -12,6 +12,7 @@ TagManager:
   - Water
   - Flock_sound
   - MapGenerator
+  - Isle
   layers:
   - Default
   - TransparentFX
