@@ -60,6 +60,28 @@ public class SelectedWeapon : MonoBehaviour
         if (Input.GetButtonDown("SwitchWeaponRight"))
             switchWeaponRight();
 
+         //Left
+         if (Input.GetAxis("WeaponSelectDpadH") < 0)
+         {
+            ShowCurrentWeapon(1);
+         }
+         //Right
+         if (Input.GetAxis("WeaponSelectDpadH") > 0)
+         {
+            ShowCurrentWeapon(0);
+         }
+         //Up
+         if (Input.GetAxis("WeaponSelectDpadV") > 0)
+         {
+            ShowCurrentWeapon(2);
+         }
+         //Down
+         if (Input.GetAxis("WeaponSelectDpadV") < 0)
+         {
+            ShowCurrentWeapon(3);
+         }
+
+
         currentWeapon.move();
 
         if (!ready)
@@ -79,7 +101,6 @@ public class SelectedWeapon : MonoBehaviour
 
     void switchWeaponLeft()
     {
-        currentWeapon.Hide();
 
         if (posCurrWeapon == 0)
         {
@@ -90,15 +111,11 @@ public class SelectedWeapon : MonoBehaviour
             posCurrWeapon = posCurrWeapon - 1;
         }
 
-        currentWeapon = weaponList[posCurrWeapon];
-
-        currentWeapon.Show();
-
+        ShowCurrentWeapon(posCurrWeapon);
     }
 
     void switchWeaponRight()
     {
-        currentWeapon.Hide();
 
         if (posCurrWeapon == weaponList.Length - 1)
         {
@@ -109,9 +126,7 @@ public class SelectedWeapon : MonoBehaviour
             posCurrWeapon = posCurrWeapon + 1;
         }
 
-        currentWeapon = weaponList[posCurrWeapon];
-
-        currentWeapon.Show();
+        ShowCurrentWeapon(posCurrWeapon);
     }
 
     void Attack()
@@ -146,5 +161,13 @@ public class SelectedWeapon : MonoBehaviour
         }
 
         ++cannonTurn;
+    }
+
+    private void ShowCurrentWeapon(int currentWeaponInt)
+    {
+        posCurrWeapon = currentWeaponInt;
+        currentWeapon.Hide();
+        currentWeapon = weaponList[posCurrWeapon];
+        currentWeapon.Show();
     }
 }
