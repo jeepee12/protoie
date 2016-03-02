@@ -11,7 +11,8 @@ public class Sound_manager_fire : MonoBehaviour
     public AudioClip[] clips = new AudioClip[2];
     private AudioSource fireSound;
     private double nextEventTime;
-    private bool running = false;
+    private bool running = false;    
+    private int mainID;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Sound_manager_fire : MonoBehaviour
         nextEventTime = AudioSettings.dspTime + 2.0F;      //Debug.Log(nextEventTime);
         fireSound.Play();
         running = true;
+        mainID = clips[1].GetInstanceID();
     }
 
     void Update()
@@ -28,11 +30,12 @@ public class Sound_manager_fire : MonoBehaviour
 
         double time = AudioSettings.dspTime;
         if (time + 1.0F > nextEventTime)
-        {          
+        {
             //Debug.Log("Scheduled source to start at time " + nextEventTime);
             nextEventTime += 60.0F / bpm * numBeatsPerSegment;
             fireSound.clip = clips[1];
+            fireSound.loop = true;
             fireSound.Play();
         }
-    }
+    }   
 }

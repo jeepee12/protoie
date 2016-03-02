@@ -10,6 +10,7 @@ public class DestroyeOnContact : MonoBehaviour
     public GameObject Destructable;
     public GameObject FireExplosion;
     public GameObject Fire;
+    public GameObject Splash;
 
     void OnTriggerEnter(Collider hit)
     {
@@ -26,7 +27,7 @@ public class DestroyeOnContact : MonoBehaviour
 
         else if (hit.tag == "Water")
         {
-            // need to add water splash effect.
+            Instantiate(Splash, transform.position, transform.rotation);
             Destroy(gameObject);
             return;
         }
