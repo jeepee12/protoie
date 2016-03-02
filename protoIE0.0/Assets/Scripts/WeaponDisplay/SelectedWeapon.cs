@@ -12,8 +12,10 @@ public class SelectedWeapon : MonoBehaviour
         public Transform[] cannonHole;
         public GameObject cannonFireEffect;
         public float fireRate;
+        public float Cooldown = 0;
         [System.NonSerialized]
-        public float cooldown = 0;
+        public float curCooldown = 0;
+        public bool ready = true;
     }
 
     public Weapons[] weapons;
@@ -21,20 +23,15 @@ public class SelectedWeapon : MonoBehaviour
     private WeaponDisplay currentWeapon;
 
     public WeaponDisplay[] weaponList;
-
-    public float Cooldown;
-
-    private bool ready;
-    private float currentCooldown;
+    
     private int posCurrWeapon;
     private int cannonTurn;
 
     // Use this for initialization
     void Start()
     {
-        ready = false;
-        currentCooldown = 0;
         posCurrWeapon = 0;
+
         currentWeapon = weaponList[posCurrWeapon];
 
 
@@ -48,15 +45,18 @@ public class SelectedWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetButton("Fire1") || Input.GetAxis("Fire1") > 0) && Time.time > weapons[posCurrWeapon].cooldown)
+        if ((Input.GetButton("Fire1") || Input.GetAxis("Fire1") > 0) && weapons[posCurrWeapon].ready)
         {
             InvokeRepeating("Attack", 0, Random.Range(0.1F,0.5F));
-            weapons[posCurrWeapon].cooldown = Time.time + weapons[posCurrWeapon].fireRate;
+            weapons[posCurrWeapon].curCooldown = 0;
+            weapons[posCurrWeapon].ready = false;
         }
 
+        //Left 1 Bumper
         if (Input.GetButtonDown("SwitchWeaponLeft"))
             switchWeaponLeft();
 
+        //Right 1 Bumper
         if (Input.GetButtonDown("SwitchWeaponRight"))
             switchWeaponRight();
 
@@ -84,15 +84,19 @@ public class SelectedWeapon : MonoBehaviour
 
         currentWeapon.move();
 
-        if (!ready)
+        for (int i = 0; i < weapons.Length; i++)
         {
-            currentCooldown += Time.deltaTime;
+            if (weapons[i].curCooldown < weapons[i].Cooldown)
+                weapons[i].curCooldown += Time.deltaTime;
+        }
 
-            currentWeapon.displayCooldown(currentCooldown / Cooldown);
+        if (!weapons[posCurrWeapon].ready)
+        {
+            currentWeapon.displayCooldown(weapons[posCurrWeapon].curCooldown / weapons[posCurrWeapon].Cooldown);
 
-            if (currentCooldown > Cooldown)
+            if (weapons[posCurrWeapon].curCooldown > weapons[posCurrWeapon].Cooldown)
             {
-                ready = true;
+                weapons[posCurrWeapon].ready = true;
                 currentWeapon.displayCooldown(0);
             }
         }

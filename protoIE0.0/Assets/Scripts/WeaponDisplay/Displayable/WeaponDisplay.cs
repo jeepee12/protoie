@@ -48,7 +48,10 @@ public abstract class WeaponDisplay : MonoBehaviour
             CooldownMesh.colors = colors;
 
         if (pourc != 0)
+        { 
             weapReady = false;
+            onCooldown();
+        }
         else
         {
             weapReady = true;
