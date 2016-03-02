@@ -7,7 +7,7 @@ public class OilBarrel : MonoBehaviour
 
     private void OnCollisionEnter(Collision objectColliding)
     {
-        Debug.Log(objectColliding.gameObject.name);
+        //Debug.Log(objectColliding.gameObject.name);
         Vector3 OilSpawnPosition;
 
         OilSpawnPosition = gameObject.transform.position;

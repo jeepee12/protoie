@@ -191,7 +191,7 @@ Transform:
   m_Children:
   - {fileID: 1359927086}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!1001 &258255812
 Prefab:
   m_ObjectHideFlags: 0
@@ -233,6 +233,52 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2ae4a9afe1905242bd5d636fce97fa5, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &603989491
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 11.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -13.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 109586, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_Name
+      value: OilBarrel (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &880384822
 GameObject:
@@ -382,6 +428,52 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!1001 &961901866
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.119
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 109586, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_Name
+      value: OilBarrel (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1094667040
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +575,99 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
+--- !u!1001 &1253134792
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -6.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 109586, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_Name
+      value: OilBarrel (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1296597021
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 109586, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_Name
+      value: OilBarrel (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1359927085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,7 +2332,7 @@ Transform:
   m_Children:
   - {fileID: 1094667041}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1001 &1422889382
 Prefab:
   m_ObjectHideFlags: 0
@@ -2219,7 +2403,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 628cf83a03c0206459abd9a479eac5af, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1925589046
+--- !u!1001 &1871748113
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2232,11 +2416,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.119
+      value: 9.67
       objectReference: {fileID: 0}
     - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -4.14
+      value: -11.29
       objectReference: {fileID: 0}
     - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2256,7 +2440,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469782, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 109586, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+      propertyPath: m_Name
+      value: OilBarrel (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
@@ -2321,4 +2509,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3

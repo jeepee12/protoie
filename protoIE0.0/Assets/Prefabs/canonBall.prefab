@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canonBall: {fileID: 5434258}
-  speed: 50
+  speed: 150
 --- !u!135 &13540460
 SphereCollider:
   m_ObjectHideFlags: 1
