@@ -3,6 +3,7 @@ using System.Collections;
 
 public class OilCannonDisplay : WeaponDisplay
 {
+    public bool PS4Controller = false;
     public GameObject Direction;
     public GameObject Bateau;
     public float MoveSpeed;
@@ -23,9 +24,20 @@ public class OilCannonDisplay : WeaponDisplay
             transform.position = Bateau.transform.position;
         }
 
-        float valueH = Input.GetAxis("RightJoystickH");
-        float valueV = Input.GetAxis("RightJoystickV");
-        
+        float valueH;
+        float valueV;
+        if (PS4Controller)
+        {
+            valueH = Input.GetAxis("RightJoystickHPS4");
+            valueV = Input.GetAxis("RightJoystickVPS4");
+        }
+        else
+        {
+            valueH = Input.GetAxis("RightJoystickH");
+            valueV = Input.GetAxis("RightJoystickV");
+        }
+
+
         if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
         {
             Vector3 myVector;

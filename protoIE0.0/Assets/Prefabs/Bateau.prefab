@@ -852,6 +852,8 @@ GameObject:
   - 65: {fileID: 6506646}
   - 81: {fileID: 8151042}
   - 82: {fileID: 8225230}
+  - 114: {fileID: 11436588}
+  - 114: {fileID: 11473796}
   m_Layer: 0
   m_Name: Bateau
   m_TagString: Player
@@ -10533,9 +10535,9 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125212}
   serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: Infinity
-  m_AngularDrag: Infinity
+  m_Mass: 700
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -10738,6 +10740,7 @@ MonoBehaviour:
   cannonCharging: {fileID: 0}
   cannonReady: {fileID: 0}
   displayPlane: {fileID: 0}
+  PS4Controller: 0
   VisualPlane: {fileID: 0}
   Direction: {fileID: 0}
   Bateau: {fileID: 0}
@@ -10776,10 +10779,11 @@ MonoBehaviour:
   cannonCharging: {fileID: 2100000, guid: 6c2208ab2cda25646ab6a7390cded491, type: 2}
   cannonReady: {fileID: 2100000, guid: 8102ad3d5c6fd54419e541a5992c6599, type: 2}
   displayPlane: {fileID: 2390848}
+  PS4Controller: 1
   VisualPlane: {fileID: 149848}
-  Direction: {fileID: 136492, guid: 1a61ffaaca2841a40b55e777a666a580, type: 2}
+  Direction: {fileID: 0}
   Bateau: {fileID: 125212}
-  RotateSpeed: 50
+  RotateSpeed: 180
   HideList:
   - {fileID: 190352}
   - {fileID: 101182}
@@ -10801,6 +10805,22 @@ MonoBehaviour:
   cannonReady: {fileID: 2100000, guid: 29fc928c0e411c948b510fe5e351d994, type: 2}
   displayPlane: {fileID: 2342224}
   angleMax: 0
+--- !u!114 &11436588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279351229acf97345af960b1eaa1119e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ocean: {fileID: 0}
+  density: 500
+  slicesPerAxis: 2
+  isConcave: 0
+  voxelsLimit: 16
 --- !u!114 &11442770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10816,14 +10836,28 @@ MonoBehaviour:
   deadZone: 0.5
   testAngle: {fileID: 149966}
   directionBateau: {fileID: 0}
-  turnSpeed: 250
+  turnSpeed: 125
   angleAvance: 45
-  speed: 1
-  speedSlowing: 1
-  speedMaxFoward: 1.5
-  speedMaxBackward: 0.75
-  speedMinToRotate: 0.25
+  speed: 25
+  speedSlowing: 35
+  speedMaxFoward: 50
+  speedMaxBackward: 40
+  speedMinToRotate: 25
   slowDuringTurning: 1
+  velociteFactor: 1000
+--- !u!114 &11473796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecd02bead0e5f54ca4aa61e3a7081fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartHP: 12
+  HP: 0
 --- !u!114 &11498790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10856,14 +10890,16 @@ MonoBehaviour:
     - {fileID: 433112}
     cannonFireEffect: {fileID: 144486, guid: 7e029081e9892be4bb435a2256c04953, type: 2}
     fireRate: 1
-  - name: 
-    projectile: {fileID: 0}
-    cannonHole: []
+  - name: FlameThrower
+    projectile: {fileID: 192880, guid: 2eecc6e127f2a8c41894c33077c0ad25, type: 2}
+    cannonHole:
+    - {fileID: 486078}
     cannonFireEffect: {fileID: 0}
-    fireRate: 0
-  - name: 
-    projectile: {fileID: 0}
-    cannonHole: []
+    fireRate: 15
+  - name: OilBarrel
+    projectile: {fileID: 109586, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
+    cannonHole:
+    - {fileID: 0}
     cannonFireEffect: {fileID: 0}
     fireRate: 0
   weaponList:

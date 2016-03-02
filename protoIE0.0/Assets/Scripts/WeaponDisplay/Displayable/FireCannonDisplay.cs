@@ -3,6 +3,7 @@ using System.Collections;
 
 public class FireCannonDisplay : WeaponDisplay {
 
+    public bool PS4Controller = false;
     public GameObject VisualPlane;
     public GameObject Direction;
     public GameObject Bateau;
@@ -15,8 +16,18 @@ public class FireCannonDisplay : WeaponDisplay {
 
     public override void move()
     {
-        float valueH = Input.GetAxis("RightJoystickH");
-        float valueV = Input.GetAxis("RightJoystickV");
+        float valueH;
+        float valueV;
+        if (PS4Controller)
+        {
+            valueH = Input.GetAxis("RightJoystickHPS4");
+            valueV = Input.GetAxis("RightJoystickVPS4");
+        }
+        else
+        {
+            valueH = Input.GetAxis("RightJoystickH");
+            valueV = Input.GetAxis("RightJoystickV");
+        }
 
         if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
         {

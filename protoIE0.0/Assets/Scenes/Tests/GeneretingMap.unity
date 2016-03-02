@@ -467,6 +467,10 @@ Prefab:
       propertyPath: Bateau
       value: 
       objectReference: {fileID: 1128022131}
+    - target: {fileID: 11495306, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+      propertyPath: PS4Controller
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
   m_IsPrefabParent: 0
@@ -532,6 +536,10 @@ Transform:
   - {fileID: 1642853457}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!4 &949476889 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+  m_PrefabInternal: {fileID: 788968914}
 --- !u!1 &1071230550
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,35 +788,12 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 125212, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
   m_PrefabInternal: {fileID: 1346681587}
---- !u!114 &1128022132
+--- !u!114 &1128022139 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1128022131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279351229acf97345af960b1eaa1119e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ocean: {fileID: 634577961}
-  density: 500
-  slicesPerAxis: 2
-  isConcave: 0
-  voxelsLimit: 16
---- !u!114 &1128022139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1128022131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11473796, guid: 09394f8c5e7d56b4c913aae302c2cceb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1346681587}
   m_Script: {fileID: 11500000, guid: 6ecd02bead0e5f54ca4aa61e3a7081fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartHP: 12
-  HP: 0
 --- !u!1 &1134967214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,94 +1248,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: directionBateau
+    - target: {fileID: 11498790, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: weapons.Array.data[3].cannonHole.Array.data[0]
       value: 
-      objectReference: {fileID: 847305417}
-    - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: Direction
-      value: 
-      objectReference: {fileID: 870944978}
-    - target: {fileID: 11475948, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: Direction
-      value: 
-      objectReference: {fileID: 136492, guid: 1a61ffaaca2841a40b55e777a666a580, type: 2}
-    - target: {fileID: 6481588, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6458748, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6458748, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6458748, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 949476889}
     - target: {fileID: 11498790, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: weaponList.Array.data[3]
       value: 
       objectReference: {fileID: 622458445}
-    - target: {fileID: 452112, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: RotateSpeed
-      value: 180
-      objectReference: {fileID: 0}
+      propertyPath: Direction
+      value: 
+      objectReference: {fileID: 870944978}
     - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: speed
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: speedMaxFoward
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: speedSlowing
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: speedMaxBackward
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: speedMinToRotate
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_Mass
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_Drag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: angleAvance
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: turnSpeed
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: slowDuringTurning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: velociteFactor
-      value: 1000
-      objectReference: {fileID: 0}
+      propertyPath: directionBateau
+      value: 
+      objectReference: {fileID: 847305417}
+    - target: {fileID: 11436588, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: Ocean
+      value: 
+      objectReference: {fileID: 634577961}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
   m_IsPrefabParent: 0

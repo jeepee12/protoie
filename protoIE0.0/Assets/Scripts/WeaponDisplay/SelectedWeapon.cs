@@ -35,7 +35,6 @@ public class SelectedWeapon : MonoBehaviour {
         posCurrWeapon = 0;
         currentWeapon = weaponList[posCurrWeapon];
 
-
         for (int i = 0; i < weaponList.Length; i++)
 			weaponList[i].Init();
 
@@ -49,7 +48,16 @@ public class SelectedWeapon : MonoBehaviour {
         {
             for (int i = 0; i < weapons[posCurrWeapon].cannonHole.Length; ++i)
             {
-                GameObject projectile = (GameObject)Instantiate(weapons[posCurrWeapon].projectile, weapons[posCurrWeapon].cannonHole[i].position, weapons[posCurrWeapon].cannonHole[i].rotation); //as GameObject;
+                //Offset for test the oil will be thrown
+                Vector3 offset = new Vector3(0, 0, 0);
+                if (weapons[posCurrWeapon].name.Contains("Oil"))
+                {
+                    offset.y = 10;
+                }
+                GameObject projectile = 
+               (GameObject)Instantiate(weapons[posCurrWeapon].projectile, 
+                                       weapons[posCurrWeapon].cannonHole[i].position + offset, 
+                                       weapons[posCurrWeapon].cannonHole[i].rotation); //as GameObject;
 
                 if (projectile.name.Contains("Fire"))
                 {
@@ -65,13 +73,36 @@ public class SelectedWeapon : MonoBehaviour {
             weapons[posCurrWeapon].cooldown = Time.time + weapons[posCurrWeapon].fireRate;
         }
 
-        if (Input.GetButtonDown("SwitchWeaponLeft"))
-			switchWeaponLeft();
+        //Left
+        if (Input.GetAxis("WeaponSelectDpadH") < 0)
+        {
+            ShowCurrentWeapon(1);
+        }
+        //Right
+		if (Input.GetAxis("WeaponSelectDpadH") > 0)
+        {
+            ShowCurrentWeapon(0);
+        }
+        //Up
+        if (Input.GetAxis("WeaponSelectDpadV") > 0)
+        {
+            ShowCurrentWeapon(2);
+        }
+        //Down
+        if (Input.GetAxis("WeaponSelectDpadV") < 0)
+        {
+            ShowCurrentWeapon(3);
+        }
 
-		if (Input.GetButtonDown("SwitchWeaponRight"))
-			switchWeaponRight();
-		
-		currentWeapon.move();
+        if (Input.GetButtonDown("SwitchWeaponLeft"))
+            switchWeaponLeft();
+
+        if (Input.GetButtonDown("SwitchWeaponRight"))
+            switchWeaponRight();
+
+
+
+        currentWeapon.move();
 
 		if (!ready)
 		{
@@ -90,8 +121,6 @@ public class SelectedWeapon : MonoBehaviour {
 
 	void switchWeaponLeft()
 	{
-		currentWeapon.Hide();
-
 		if (posCurrWeapon == 0)
         {
             posCurrWeapon = weaponList.Length - 1;
@@ -101,16 +130,11 @@ public class SelectedWeapon : MonoBehaviour {
             posCurrWeapon = posCurrWeapon - 1;
         }
 
-        currentWeapon = weaponList[posCurrWeapon];
-
-		currentWeapon.Show();
-
-	}
+        ShowCurrentWeapon(posCurrWeapon);
+    }
 
 	void switchWeaponRight()
     { 
-		currentWeapon.Hide();
-
         if (posCurrWeapon == weaponList.Length - 1)
         {
             posCurrWeapon = 0;
@@ -120,8 +144,14 @@ public class SelectedWeapon : MonoBehaviour {
             posCurrWeapon = posCurrWeapon + 1;
         }
 
-        currentWeapon = weaponList[posCurrWeapon];
-
-		currentWeapon.Show();
+        ShowCurrentWeapon(posCurrWeapon);
 	}
+
+    private void ShowCurrentWeapon(int currentWeaponInt)
+    {
+        posCurrWeapon = currentWeaponInt;
+        currentWeapon.Hide();
+        currentWeapon = weaponList[posCurrWeapon];
+        currentWeapon.Show();
+    }
 }
