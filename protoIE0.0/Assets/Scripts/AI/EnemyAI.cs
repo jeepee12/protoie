@@ -1,68 +1,83 @@
 ﻿using UnityEngine;
 
-
-// TODO : Defensive, melee (suit le joueur, quand faible fuit)
-// TODO : Defensive, range (reste à porter maximum de ses attaques, quand faible, fuit, si player rapproche enemy s'enfuit)
-
 public enum EnemySelection
 {
-    Default, Offensive, Defensive
+    Default, OffensiveTank, DefensiveTank//, Offensive, Defensive
 }
 
 public class EnemyAI : MonoBehaviour
 {
-    private AITemplate enemyAI;
+    private AITemplate enemyAI = null;
     public EnemySelection enemySelection;
-
+    /// <summary>
+    /// If the enemy is melee or range type
+    /// </summary>
     public bool melee = true;
+    /// <summary>
+    /// The attack range in unity unit
+    /// </summary>
     public float attackRange = 10f;
+    /// <summary>
+    /// The chasing range in unity unit
+    /// </summary>
     public float chaseRange = 300f;
-    public float damping = 0.8f;
+    /// <summary>
+    /// The percentage of damping to rotate
+    /// </summary>
+    public float damping = 0.9f;
+    /// <summary>
+    /// The multiplier to the fleeing speed
+    /// </summary>
     public float fearFactor = 50f;
+    /// <summary>
+    /// The looking range in unity unit
+    /// </summary>
     public float lookRange = 1000f;
+    /// <summary>
+    /// The percentage for low health
+    /// </summary>
+    public float lowHealth = 10f;
+    /// <summary>
+    /// The percentage for the fleeing if enemy is too near in the attack range
+    /// </summary>
+    public float thresholdRangeToFlee = 0.7f;
 
     private void Start()
     {
 
-        if (enemySelection == EnemySelection.Offensive)
-        { // Offensive behavior
-            enemyAI = new Offensive(transform, GameObject.FindGameObjectWithTag("Player").transform, GetComponent<NavMeshAgent>());
+        Transform enemyTransformHead = this.gameObject.transform.GetChild(0);
+        Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        NavMeshAgent navAgent = GetComponentInChildren<NavMeshAgent>();
+        EnemyStats enemyStats = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyStats>();
 
-            enemyAI.melee = melee;
-            enemyAI.attackRange = attackRange;
-            enemyAI.chaseRange = chaseRange;
-            enemyAI.damping = damping;
-            enemyAI.fearFactor = fearFactor;
-            enemyAI.lookRange = lookRange;
+        if (enemySelection == EnemySelection.OffensiveTank)
+        { // Offensive Tank behavior
+            enemyAI = new OffensiveTank(enemyTransformHead, playerTransform, navAgent, enemyStats);
         }
-        else if (enemySelection == EnemySelection.Defensive)
-        { // Defensive behavior
-
+        else if (enemySelection == EnemySelection.DefensiveTank)
+        { // Defensive Tank behavior
+            enemyAI = new DefensiveTank(enemyTransformHead, playerTransform, navAgent, enemyStats);
         }
         else
-        { // Default AI, Offensive Melee
-            enemyAI = new Offensive(transform, GameObject.FindGameObjectWithTag("Player").transform, GetComponent<NavMeshAgent>());
-
-            enemyAI.melee = melee;
-            enemyAI.attackRange = attackRange;
-            enemyAI.chaseRange = chaseRange;
-            enemyAI.damping = damping;
-            enemyAI.fearFactor = fearFactor;
-            enemyAI.lookRange = lookRange;
+        { // Default AI, Offensive Tank
+            enemyAI = new OffensiveTank(enemyTransformHead, playerTransform, navAgent, enemyStats);
         }
 
-        enemyAI.enemyTransform = transform;
-        enemyAI.playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        enemyAI.navAgent = GetComponent<NavMeshAgent>();
+        enemyAI.melee = melee;
+        enemyAI.attackRange = attackRange;
+        enemyAI.chaseRange = chaseRange;
+        enemyAI.damping = damping;
+        enemyAI.fearFactor = fearFactor;
+        enemyAI.lookRange = lookRange;
+        enemyAI.lowHealth = lowHealth;
+        enemyAI.thresholdRangeToFlee = thresholdRangeToFlee;
+
     }
 
 
     private void FixedUpdate()
     {
-        enemyAI.playerDistance = Vector3.Distance(enemyAI.playerTransform.position, transform.position);
-
         enemyAI.LookAt();
-
         enemyAI.ChaseAndAttack();
     }
 

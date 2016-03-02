@@ -24,7 +24,7 @@ public class Sound_manager_fire : MonoBehaviour
         running = true;
         mainID = clips[1].GetInstanceID();
 
-        if (!fire)
+        if (!fire.activeInHierarchy)
             c1 = 0;
 
         c1 = 1234;

@@ -20,21 +20,16 @@ public class DestroyeOnContact : MonoBehaviour
             Destroy(hit.gameObject);
         }
 
-        else if (hit.tag == "canonBall" || hit.tag == "Player" || hit.tag == "Untagged" || hit.tag == "Flock_sound")
+        if (hit.tag == "Isle")
         {
-            return;
+            Instantiate(FireExplosion, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
-        else if (hit.tag == "Water")
+        if (hit.tag == "Water")
         {
             Instantiate(Splash, transform.position, transform.rotation);
             Destroy(gameObject);
-            return;
         }
-
-        Instantiate(FireExplosion, transform.position, transform.rotation);
-        Destroy(gameObject);
-
-       
     }
 }
