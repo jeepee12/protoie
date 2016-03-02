@@ -5,16 +5,16 @@ public class AIFollower : AITemplate {
 
     public AIFollower(Transform enemyTransform, Transform playerTransform, NavMeshAgent navAgent)
     {
-        this.enemyTransform = enemyTransform;
+        this.enemyTransformHead = enemyTransform;
         this.playerTransform = playerTransform;
         this.navAgent = navAgent;
     }
 
     public override void LookAt()
     { // Look at something
-        Quaternion turnRotation = Quaternion.LookRotation(this.playerTransform.position - this.enemyTransform.transform.position);
+        Quaternion turnRotation = Quaternion.LookRotation(this.playerTransform.position - this.enemyTransformHead.transform.position);
 
-        this.enemyTransform.transform.rotation = Quaternion.Slerp(this.enemyTransform.transform.rotation, turnRotation, Time.deltaTime * this.damping);
+        this.enemyTransformHead.transform.rotation = Quaternion.Slerp(this.enemyTransformHead.transform.rotation, turnRotation, Time.deltaTime * this.damping);
     }
 
     public override void Move()

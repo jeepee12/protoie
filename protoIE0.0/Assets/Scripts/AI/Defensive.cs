@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Offensive: AITemplate
+public class Defensive : AITemplate
 {
-    // Offensive, melee (suit toujours le joueur)
-    // Offensive, range (suit toujours le joueur, mais garde une distance)
+    // Defensive, melee (suit le joueur, quand faible fuit)
+    // Defensive, range (reste à porter maximum de ses attaques, quand faible, fuit, si player rapproche enemy s'enfuit)
 
-    public Offensive(Transform enemyTransform, Transform playerTransform, NavMeshAgent navAgent, EnemyStats enemyStats)
+    public Defensive(Transform enemyTransform, Transform playerTransform, NavMeshAgent navAgent, EnemyStats enemyStats)
     {
         this.enemyTransformHead = enemyTransform;
         this.playerTransform = playerTransform;
         this.navAgent = navAgent;
         this.enemyStats = enemyStats;
     }
-    
+
     public override void LookAt()
     { // Look at something
 
@@ -21,11 +21,28 @@ public class Offensive: AITemplate
 
         if (IsOutOfView())
         { // The player is too far away from the enemy
+            
         }
         else
         {// The player can be seen by the enemy
-            Quaternion turnRotation = Quaternion.LookRotation(playerTransform.position - enemyTransformHead.transform.position);
-            enemyTransformHead.transform.rotation = Quaternion.Slerp(enemyTransformHead.transform.rotation, turnRotation, Time.deltaTime * damping);
+
+            if (IsEnemyHealthy() && melee)
+            { // Enemy is healthy enough to fight and is melee
+                Quaternion turnRotation = Quaternion.LookRotation(playerTransform.position - enemyTransformHead.transform.position);
+                enemyTransformHead.transform.rotation = Quaternion.Slerp(enemyTransformHead.transform.rotation, turnRotation, Time.deltaTime * damping);
+            } else if (!IsEnemyHealthy() && melee)
+            { // Enemy is hurt enough to flee and is melee
+                
+            }
+            else if (IsEnemyHealthy() && !melee)
+            { // The enemy is healthy enough to fight, is ranged
+
+            } else
+            {
+
+            }
+
+            
         }
     }
 
@@ -36,11 +53,12 @@ public class Offensive: AITemplate
 
     public override void Attack()
     { // Attack something
-        
+
         if (melee)
         { // The enemy is a melee type
             // Do something melee
-        } else
+        }
+        else
         { // The enemy is a range type
             // Do something at range, like generating bullet and throwing it
         }

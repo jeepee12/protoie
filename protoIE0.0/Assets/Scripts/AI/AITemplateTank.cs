@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-public class AITemplate
+public class AITemplateTank
 {
 
     /// <summary>
     /// If the enemy is melee or range type
     /// </summary>
-    public bool melee;
+    public bool melee = true;
     /// <summary>
     /// The attack range in unity unit
     /// </summary>
@@ -38,7 +38,7 @@ public class AITemplate
     /// <summary>
     /// The distance between the player and the enemy
     /// </summary>
-    protected float playerDistance;
+    protected float playerDistance = 0f;
 
     protected Transform playerTransform;
     protected Transform enemyTransformHead;

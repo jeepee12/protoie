@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Offensive: AITemplate
+public class OffensiveTank : AITemplate
 {
     // Offensive, melee (suit toujours le joueur)
     // Offensive, range (suit toujours le joueur, mais garde une distance)
 
-    public Offensive(Transform enemyTransform, Transform playerTransform, NavMeshAgent navAgent, EnemyStats enemyStats)
+    public OffensiveTank(Transform enemyTransformHead, Transform playerTransform, NavMeshAgent navAgent, EnemyStats enemyStats)
     {
-        this.enemyTransformHead = enemyTransform;
+        this.enemyTransformHead = enemyTransformHead;
         this.playerTransform = playerTransform;
         this.navAgent = navAgent;
         this.enemyStats = enemyStats;
+
+        this.navAgent.Stop();
     }
     
     public override void LookAt()
@@ -21,6 +23,7 @@ public class Offensive: AITemplate
 
         if (IsOutOfView())
         { // The player is too far away from the enemy
+
         }
         else
         {// The player can be seen by the enemy
