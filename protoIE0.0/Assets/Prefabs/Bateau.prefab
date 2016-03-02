@@ -10563,9 +10563,9 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125212}
   serializedVersion: 2
-  m_Mass: 700
-  m_Drag: 1
-  m_AngularDrag: 1
+  m_Mass: 70
+  m_Drag: 20
+  m_AngularDrag: 40
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -10866,13 +10866,13 @@ MonoBehaviour:
   directionBateau: {fileID: 0}
   turnSpeed: 125
   angleAvance: 45
-  speed: 25
+  speed: 5
   speedSlowing: 35
-  speedMaxFoward: 50
-  speedMaxBackward: 40
-  speedMinToRotate: 25
+  speedMaxFoward: 10
+  speedMaxBackward: 10
+  speedMinToRotate: 0
   slowDuringTurning: 1
-  velociteFactor: 1000
+  velociteFactor: 100
 --- !u!114 &11473796
 MonoBehaviour:
   m_ObjectHideFlags: 1

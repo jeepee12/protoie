@@ -20,7 +20,7 @@ public class DestroyeOnContact : MonoBehaviour
             Destroy(hit.gameObject);
         }
 
-        else if (hit.tag == "canonBall" || hit.tag == "Player" || hit.tag == "Untagged")
+        else if (hit.tag == "canonBall" || hit.tag == "Player" || hit.tag == "Untagged" || hit.tag == "Flock_sound")
         {
             return;
         }
