@@ -50,7 +50,7 @@ public class SelectedWeapon : MonoBehaviour
     {
         if ((Input.GetButton("Fire1") || Input.GetAxis("Fire1") > 0) && Time.time > weapons[posCurrWeapon].cooldown)
         {
-            InvokeRepeating("Attack", 0, 0.1F);
+            InvokeRepeating("Attack", 0, Random.Range(0.1F,0.5F));
             weapons[posCurrWeapon].cooldown = Time.time + weapons[posCurrWeapon].fireRate;
         }
 
