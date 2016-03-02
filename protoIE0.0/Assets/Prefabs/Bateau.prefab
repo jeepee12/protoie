@@ -1598,6 +1598,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &149846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 489244}
+  m_Layer: 0
+  m_Name: OilSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &149848
 GameObject:
   m_ObjectHideFlags: 1
@@ -4275,6 +4290,7 @@ Transform:
   - {fileID: 459486}
   - {fileID: 467764}
   - {fileID: 408208}
+  - {fileID: 489244}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &449538
@@ -5298,6 +5314,18 @@ Transform:
   - {fileID: 490500}
   m_Father: {fileID: 495038}
   m_RootOrder: 4
+--- !u!4 &489244
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149846}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: 5.9, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 448522}
+  m_RootOrder: 6
 --- !u!4 &489468
 Transform:
   m_ObjectHideFlags: 1
@@ -10779,7 +10807,7 @@ MonoBehaviour:
   cannonCharging: {fileID: 2100000, guid: 6c2208ab2cda25646ab6a7390cded491, type: 2}
   cannonReady: {fileID: 2100000, guid: 8102ad3d5c6fd54419e541a5992c6599, type: 2}
   displayPlane: {fileID: 2390848}
-  PS4Controller: 1
+  PS4Controller: 0
   VisualPlane: {fileID: 149848}
   Direction: {fileID: 0}
   Bateau: {fileID: 125212}
@@ -10894,14 +10922,15 @@ MonoBehaviour:
     projectile: {fileID: 192880, guid: 2eecc6e127f2a8c41894c33077c0ad25, type: 2}
     cannonHole:
     - {fileID: 486078}
-    cannonFireEffect: {fileID: 0}
+    cannonFireEffect: {fileID: 188974}
     fireRate: 15
   - name: OilBarrel
     projectile: {fileID: 109586, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
     cannonHole:
+    - {fileID: 489244}
     - {fileID: 0}
     cannonFireEffect: {fileID: 0}
-    fireRate: 10
+    fireRate: 1
   weaponList:
   - {fileID: 11402062}
   - {fileID: 11424678}

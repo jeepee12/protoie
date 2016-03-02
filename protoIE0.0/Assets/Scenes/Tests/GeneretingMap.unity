@@ -1192,58 +1192,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11436588, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: Ocean
-      value: 
-      objectReference: {fileID: 634577961}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: directionBateau
-      value: 
-      objectReference: {fileID: 847305417}
-    - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: Direction
-      value: 
-      objectReference: {fileID: 870944978}
     - target: {fileID: 11498790, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: weapons.Array.data[3].cannonHole.Array.data[0]
+      propertyPath: weapons.Array.data[3].cannonHole.Array.data[1]
       value: 
       objectReference: {fileID: 949476889}
     - target: {fileID: 11498790, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: weaponList.Array.data[3]
       value: 
       objectReference: {fileID: 622458445}
-    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_Drag
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_AngularDrag
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: velociteFactor
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_Mass
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: speedMaxFoward
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: speedMaxBackward
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: speedMinToRotate
-      value: 15
-      objectReference: {fileID: 0}
+      propertyPath: directionBateau
+      value: 
+      objectReference: {fileID: 847305417}
+    - target: {fileID: 11436588, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: Ocean
+      value: 
+      objectReference: {fileID: 634577961}
+    - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: Direction
+      value: 
+      objectReference: {fileID: 870944978}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
   m_IsPrefabParent: 0

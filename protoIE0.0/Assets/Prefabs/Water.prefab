@@ -27,6 +27,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 463970}
+  - 65: {fileID: 6502444}
   m_Layer: 0
   m_Name: Water
   m_TagString: Water
@@ -343,6 +344,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171570}
   m_Mesh: {fileID: 4300006, guid: ba6a41dc489914734857bb5924eb70ad, type: 3}
+--- !u!65 &6502444
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 0, z: 7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11445044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,10 +373,10 @@ MonoBehaviour:
   m_ClipPlaneOffset: 0.07
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
   m_RefractLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
 --- !u!114 &11458084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -381,10 +394,10 @@ MonoBehaviour:
   m_ClipPlaneOffset: 0.07
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
   m_RefractLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
 --- !u!114 &11468464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -402,10 +415,10 @@ MonoBehaviour:
   m_ClipPlaneOffset: 0.07
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
   m_RefractLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
 --- !u!114 &11478460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,10 +436,10 @@ MonoBehaviour:
   m_ClipPlaneOffset: 0.07
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
   m_RefractLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
 --- !u!114 &11489014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -444,10 +457,10 @@ MonoBehaviour:
   m_ClipPlaneOffset: 0.07
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
   m_RefractLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
 --- !u!114 &11491428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -465,10 +478,10 @@ MonoBehaviour:
   m_ClipPlaneOffset: 0.07
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
   m_RefractLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
 --- !u!114 &11492010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -486,10 +499,10 @@ MonoBehaviour:
   m_ClipPlaneOffset: 0.07
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
   m_RefractLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
 --- !u!114 &11496666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -507,10 +520,10 @@ MonoBehaviour:
   m_ClipPlaneOffset: 0.07
   m_ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
   m_RefractLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967007
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

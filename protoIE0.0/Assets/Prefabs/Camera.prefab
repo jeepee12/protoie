@@ -260,6 +260,7 @@ MonoBehaviour:
   cannonCharging: {fileID: 2100000, guid: c79914324c672d140ab112851bc637a4, type: 2}
   cannonReady: {fileID: 2100000, guid: d6851bffb341e8b4ab1a85a14366d0ec, type: 2}
   displayPlane: {fileID: 2346634}
+  PS4Controller: 0
   Direction: {fileID: 0}
   Bateau: {fileID: 0}
   MoveSpeed: 50

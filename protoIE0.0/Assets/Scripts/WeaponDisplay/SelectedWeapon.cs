@@ -27,8 +27,8 @@ public class SelectedWeapon : MonoBehaviour
     private bool ready;
     private float currentCooldown;
     private int posCurrWeapon;
-    private int counterInvoke;
     private int cannonTurn;
+
     // Use this for initialization
     void Start()
     {
@@ -116,38 +116,35 @@ public class SelectedWeapon : MonoBehaviour
 
     void Attack()
     {
-        if (counterInvoke >= weapons[posCurrWeapon].cannonHole.Length)
+        if (cannonTurn >= weapons[posCurrWeapon].cannonHole.Length)
         {
-            counterInvoke = 0;
             cannonTurn = 0;
             CancelInvoke();
             return;
         }
 
-        //Offset for test the oil will be thrown
-        Vector3 offset = new Vector3(0, 0, 0);
+        GameObject projectile =
+        (GameObject)Instantiate(weapons[posCurrWeapon].projectile,
+                                weapons[posCurrWeapon].cannonHole[cannonTurn].position,
+                                weapons[posCurrWeapon].cannonHole[cannonTurn].rotation);
 
-        
-            if (weapons[posCurrWeapon].name.Contains("Oil"))
-            {
-                offset.y = 10;
-            }
-            GameObject projectile =
-            (GameObject)Instantiate(weapons[posCurrWeapon].projectile,
-                                    weapons[posCurrWeapon].cannonHole[cannonTurn].position + offset,
-                                    weapons[posCurrWeapon].cannonHole[cannonTurn].rotation); //as GameObject;
+        if (projectile.name.Contains("Oil"))
+        {
+            ++cannonTurn;
+            //Where to end
+            projectile.GetComponent<OilBarrel>().GiveTarget(weapons[posCurrWeapon].cannonHole[cannonTurn].transform);
+        }
 
-            if (projectile.name.Contains("Fire"))
-            {
-                projectile.transform.parent = gameObject.transform;
-            }
+        if (projectile.name.Contains("Fire"))
+        {
+            projectile.transform.parent = weapons[posCurrWeapon].cannonHole[cannonTurn].transform;
+        }
 
-            if (weapons[posCurrWeapon].cannonFireEffect)
-            {
-                Instantiate(weapons[posCurrWeapon].cannonFireEffect, weapons[posCurrWeapon].cannonHole[cannonTurn].position, weapons[posCurrWeapon].cannonHole[cannonTurn].rotation);
-            }
-     
-        ++counterInvoke;
+        if (weapons[posCurrWeapon].cannonFireEffect)
+        {
+            Instantiate(weapons[posCurrWeapon].cannonFireEffect, weapons[posCurrWeapon].cannonHole[cannonTurn].position, weapons[posCurrWeapon].cannonHole[cannonTurn].rotation);
+        }
+
         ++cannonTurn;
     }
 }
