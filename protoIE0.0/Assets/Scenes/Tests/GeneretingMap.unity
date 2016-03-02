@@ -465,7 +465,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434546, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: player
@@ -1212,6 +1212,38 @@ Prefab:
       propertyPath: weaponList.Array.data[3]
       value: 
       objectReference: {fileID: 622458445}
+    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_Drag
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_AngularDrag
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: velociteFactor
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_Mass
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: speedMaxFoward
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: speedMaxBackward
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481030, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: speedMinToRotate
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
   m_IsPrefabParent: 0
