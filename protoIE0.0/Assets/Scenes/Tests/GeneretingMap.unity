@@ -312,18 +312,6 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
   m_PrefabInternal: {fileID: 1126801918}
---- !u!65 &634577963
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 634577961}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7, y: 0, z: 7}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &721337541
 GameObject:
   m_ObjectHideFlags: 0
