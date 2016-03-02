@@ -76,7 +76,7 @@ GameObject:
   - 4: {fileID: 452112}
   - 33: {fileID: 3393750}
   - 23: {fileID: 2376530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DisplayOutline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - 33: {fileID: 3375722}
   - 64: {fileID: 6458748}
   - 23: {fileID: 2342224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visuel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - 4: {fileID: 431784}
   - 33: {fileID: 3321734}
   - 23: {fileID: 2321052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - 4: {fileID: 441352}
   - 33: {fileID: 3314972}
   - 23: {fileID: 2334522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - 4: {fileID: 462364}
   - 33: {fileID: 3301850}
   - 23: {fileID: 2394816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 485140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 459486}
   - 114: {fileID: 11414510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireCannonZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   - 4: {fileID: 449578}
   - 33: {fileID: 3346484}
   - 23: {fileID: 2339720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 495038}
   - 114: {fileID: 11402062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CannonDroiteVisuel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +718,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 408526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1178,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1195,7 +1195,7 @@ GameObject:
   - 4: {fileID: 488688}
   - 33: {fileID: 3332132}
   - 23: {fileID: 2335208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1229,7 +1229,7 @@ GameObject:
   - 4: {fileID: 485504}
   - 33: {fileID: 3321210}
   - 23: {fileID: 2386074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1380,7 +1380,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 455936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1444,7 +1444,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 424328}
   - 114: {fileID: 11424678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CannonGaucheVisuel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1474,7 +1474,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1621,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VisualPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,7 +1738,7 @@ GameObject:
   - 4: {fileID: 440334}
   - 33: {fileID: 3396132}
   - 23: {fileID: 2318752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2281,7 +2281,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2333,7 +2333,7 @@ GameObject:
   - 33: {fileID: 3342554}
   - 64: {fileID: 6481588}
   - 23: {fileID: 2369538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visuel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2416,7 +2416,7 @@ GameObject:
   - 4: {fileID: 436338}
   - 33: {fileID: 3383090}
   - 23: {fileID: 2385546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2549,7 +2549,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 433112}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2599,7 +2599,7 @@ GameObject:
   - 33: {fileID: 3315070}
   - 64: {fileID: 6436142}
   - 23: {fileID: 2323116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CooldownDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2803,7 +2803,7 @@ GameObject:
   - 4: {fileID: 464016}
   - 33: {fileID: 3392754}
   - 23: {fileID: 2383146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2852,7 +2852,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 411136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2869,7 +2869,7 @@ GameObject:
   - 4: {fileID: 486106}
   - 33: {fileID: 3315256}
   - 23: {fileID: 2390848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireCannon-Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2918,7 +2918,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2937,7 +2937,7 @@ GameObject:
   - 23: {fileID: 2353800}
   - 95: {fileID: 9597094}
   - 114: {fileID: 11401498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CooldownDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3035,7 +3035,7 @@ GameObject:
   - 4: {fileID: 426940}
   - 33: {fileID: 3344140}
   - 23: {fileID: 2391336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3069,7 +3069,7 @@ GameObject:
   - 4: {fileID: 453014}
   - 33: {fileID: 3335398}
   - 23: {fileID: 2375384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10569,7 +10569,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!64 &6436142
 MeshCollider:
@@ -10638,7 +10638,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 58433320d17592d4cab3b26b73e92211, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10866,13 +10866,13 @@ MonoBehaviour:
   directionBateau: {fileID: 0}
   turnSpeed: 125
   angleAvance: 45
-  speed: 5
+  speed: 10
   speedSlowing: 35
-  speedMaxFoward: 10
-  speedMaxBackward: 10
-  speedMinToRotate: 0
+  speedMaxFoward: 30
+  speedMaxBackward: 25
+  speedMinToRotate: 10
   slowDuringTurning: 1
-  velociteFactor: 100
+  velociteFactor: 5000
 --- !u!114 &11473796
 MonoBehaviour:
   m_ObjectHideFlags: 1

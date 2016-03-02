@@ -18,7 +18,7 @@ public class OilBarrel : MonoBehaviour
         m_MyRigidBody = gameObject.GetComponent<Rigidbody>();
     }
 
-    private void OnCollisionEnter(Collision objectColliding)
+    private void OnTriggerEnter(Collider objectColliding)
     {
         if(objectColliding.gameObject.tag.Contains("Enemy") || objectColliding.gameObject.tag.Contains("Water") || objectColliding.gameObject.tag.Contains("Wall"))
         {
