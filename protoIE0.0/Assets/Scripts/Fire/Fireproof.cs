@@ -2,23 +2,27 @@
 
 public class Fireproof : MonoBehaviour
 {
-	public bool m_Flamable;
-	public bool m_Oiled;
-	public float m_OiledDuration;
-	private bool m_OnFire;
-	private float m_OiledTimerEnd;
+	public bool m_Flamable = true;
+	public bool m_Oiled = false;
+	public float m_OiledDurationSeconds = 10;
+    public float m_FireTicksSeconds = 0.5f;
+    public float m_FireDurationSeconds = 15;
 
-	//Hp would be in the stats script of the game object
-	public int hpTest = 10;
+    public float m_FireDamage = 5;
+
+    EnemyStats m_EnemyStatsScript;
+
+    private float m_OiledTimerEnd;
+    private float m_FireDuration;
+    private bool m_OnFire;
+
+    void Start()
+    {
+        m_EnemyStatsScript = gameObject.GetComponent<EnemyStats>();
+    }
 
 	void Update ()
 	{   
-		if (hpTest <= 0)
-		{
-			//Kill the object
-			Destroy(gameObject);
-		}
-
 		if(m_Oiled)
 		{
 			if (Time.time > m_OiledTimerEnd)
@@ -26,7 +30,6 @@ public class Fireproof : MonoBehaviour
 				m_Oiled = false;
 			}
 		}
- 
 	}
 
 	public bool isFlamable()
@@ -36,22 +39,38 @@ public class Fireproof : MonoBehaviour
 
 	public void setIsOnFire(bool newOnFire)
 	{
-		m_OnFire = newOnFire;
 
-		if(m_OnFire)
+		m_OnFire = newOnFire;
+		if(m_OnFire && m_EnemyStatsScript)
 		{
-			InvokeRepeating("dealDamage", 0, 0.5f);
+            float ZeroDividerProtection = m_EnemyStatsScript.GetFireResistance();
+            if (ZeroDividerProtection == 0)
+            {
+                ZeroDividerProtection = 1;
+            }
+            m_FireDuration = (m_FireDurationSeconds / ZeroDividerProtection) + Time.time;
+
+            InvokeRepeating("dealDamage", 0, m_FireTicksSeconds);
 		}
 	}
 
 	public void dealDamage()
 	{
-		int damage = 1;
+        if (Time.time >= m_FireDuration)
+        {
+            //Destroy the fire object
+            GameObject fireEffect = transform.GetChild(0).transform.GetChild(0).gameObject;
+            Destroy(fireEffect);
+            m_OnFire = false;
+            CancelInvoke();
+            return;
+        }
+
 		if(m_Oiled)
 		{
-			damage *= 2;
+            m_FireDamage *= 2;
 		}
-		hpTest -= damage;
+        m_EnemyStatsScript.TakeDamage(m_FireDamage);
 	}
 
 	public bool isOnFire()
@@ -66,6 +85,6 @@ public class Fireproof : MonoBehaviour
 
 	public void StartOilTimer()
 	{
-		m_OiledTimerEnd = Time.time + m_OiledDuration;
+		m_OiledTimerEnd = Time.time + m_OiledDurationSeconds;
 	}
 }

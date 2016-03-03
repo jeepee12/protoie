@@ -107,8 +107,20 @@ public class OilSpread : MonoBehaviour
 
 	void OnTriggerEnter(Collider objectColliding)
 	{
-		Fireproof objectFireproofScript = objectColliding.gameObject.GetComponent<Fireproof>();
-		if(objectFireproofScript)
+        Fireproof objectFireproofScript;
+        GameObject GOColliding;
+        if (objectColliding.tag.Contains("Enemy"))
+        {
+            objectFireproofScript = objectColliding.gameObject.transform.parent.GetComponent<Fireproof>();
+            GOColliding = objectColliding.gameObject.transform.parent.gameObject.transform.GetChild(0).gameObject;
+        }
+        else
+        {
+            objectFireproofScript = objectColliding.gameObject.GetComponent<Fireproof>();
+            GOColliding = gameObject;
+        }
+
+        if (objectFireproofScript)
 		{
 			if (!objectFireproofScript.isOiled())
 			{
@@ -120,8 +132,19 @@ public class OilSpread : MonoBehaviour
 
 	void OnTriggerStay(Collider objectColliding)
 	{
-		Fireproof objectFireproofScript = objectColliding.gameObject.GetComponent<Fireproof>();
-		if (objectFireproofScript)
+        Fireproof objectFireproofScript;
+        GameObject GOColliding;
+        if (objectColliding.tag.Contains("Enemy"))
+        {
+            objectFireproofScript = objectColliding.gameObject.transform.parent.GetComponent<Fireproof>();
+            GOColliding = objectColliding.gameObject.transform.parent.gameObject.transform.GetChild(0).gameObject;
+        }
+        else
+        {
+            objectFireproofScript = objectColliding.gameObject.GetComponent<Fireproof>();
+            GOColliding = gameObject;
+        }
+        if (objectFireproofScript)
 		{
 			objectFireproofScript.StartOilTimer();
 		}

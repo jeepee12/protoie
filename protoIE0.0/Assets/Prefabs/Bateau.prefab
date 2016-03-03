@@ -10569,7 +10569,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!64 &6436142
 MeshCollider:
@@ -10907,7 +10907,10 @@ MonoBehaviour:
     - {fileID: 484638}
     - {fileID: 407820}
     cannonFireEffect: {fileID: 144486, guid: 7e029081e9892be4bb435a2256c04953, type: 2}
+    damage: 50
     fireRate: 1
+    Cooldown: 0
+    ready: 1
   - name: CannonBallLeft
     projectile: {fileID: 170846, guid: 5403b697b8c751a48aff005cf87e473c, type: 2}
     cannonHole:
@@ -10917,26 +10920,34 @@ MonoBehaviour:
     - {fileID: 408526}
     - {fileID: 433112}
     cannonFireEffect: {fileID: 144486, guid: 7e029081e9892be4bb435a2256c04953, type: 2}
+    damage: 50
     fireRate: 1
+    Cooldown: 0
+    ready: 1
   - name: FlameThrower
     projectile: {fileID: 192880, guid: 2eecc6e127f2a8c41894c33077c0ad25, type: 2}
     cannonHole:
     - {fileID: 486078}
     cannonFireEffect: {fileID: 188974}
+    damage: 5
     fireRate: 15
+    Cooldown: 0
+    ready: 1
   - name: OilBarrel
     projectile: {fileID: 109586, guid: da10663f44dfac246ae4ddf6a015ec7d, type: 2}
     cannonHole:
     - {fileID: 489244}
     - {fileID: 0}
     cannonFireEffect: {fileID: 0}
+    damage: 0
     fireRate: 1
+    Cooldown: 0
+    ready: 1
   weaponList:
   - {fileID: 11402062}
   - {fileID: 11424678}
   - {fileID: 11414510}
   - {fileID: 0}
-  Cooldown: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

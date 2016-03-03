@@ -5,6 +5,7 @@ public class EnemyStats : MonoBehaviour {
 
     public float currentHealth = 100f;
     public float maximumHealth = 100f;
+    public float m_FireResistance = 0;
 
     private MapGenerator mapGScript;
 
@@ -29,6 +30,18 @@ public class EnemyStats : MonoBehaviour {
         if (currentHealth <= 0f)
         {
             // Enemy is dead
+            Die();
         }
+    }
+
+    public float GetFireResistance()
+    {
+        return m_FireResistance;
+    }
+
+    private void Die()
+    {
+        //Animation
+        Destroy(gameObject);
     }
 }

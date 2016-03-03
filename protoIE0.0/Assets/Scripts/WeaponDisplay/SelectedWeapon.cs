@@ -11,6 +11,7 @@ public class SelectedWeapon : MonoBehaviour
         public GameObject projectile;
         public Transform[] cannonHole;
         public GameObject cannonFireEffect;
+        public int damage = 0;
         public float fireRate;
         public float Cooldown = 0;
         [System.NonSerialized]
@@ -146,6 +147,12 @@ public class SelectedWeapon : MonoBehaviour
         (GameObject)Instantiate(weapons[posCurrWeapon].projectile,
                                 weapons[posCurrWeapon].cannonHole[cannonTurn].position,
                                 weapons[posCurrWeapon].cannonHole[cannonTurn].rotation);
+        DestroyeOnContact doc = projectile.gameObject.GetComponent<DestroyeOnContact>();
+
+        if(doc)
+        {
+            doc.Damage(weapons[posCurrWeapon].damage);
+        }
 
         if (projectile.name.Contains("Oil"))
         {
@@ -156,6 +163,7 @@ public class SelectedWeapon : MonoBehaviour
 
         if (projectile.name.Contains("Fire"))
         {
+            projectile.gameObject.GetComponent<FlameThrower>().Damage(weapons[posCurrWeapon].damage);
             projectile.transform.parent = weapons[posCurrWeapon].cannonHole[cannonTurn].transform;
         }
 

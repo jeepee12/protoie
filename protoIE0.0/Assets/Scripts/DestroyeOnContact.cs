@@ -12,12 +12,17 @@ public class DestroyeOnContact : MonoBehaviour
     public GameObject Fire;
     public GameObject Splash;
 
+    EnemyStats m_EnemyStatsScript;
+
+    private int m_Damage;
+
     void OnTriggerEnter(Collider hit)
     {
         if (hit.tag == "Enemy")
         {
             // add HP remover here instead of Destroyer.
-            Destroy(hit.gameObject);
+            m_EnemyStatsScript = hit.gameObject.transform.parent.GetComponent<EnemyStats>();
+            m_EnemyStatsScript.TakeDamage(m_Damage);
         }
 
         if (hit.tag == "Isle")
@@ -31,5 +36,10 @@ public class DestroyeOnContact : MonoBehaviour
             Instantiate(Splash, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+    }
+
+    public void Damage(int newDamage)
+    {
+        m_Damage = newDamage;
     }
 }

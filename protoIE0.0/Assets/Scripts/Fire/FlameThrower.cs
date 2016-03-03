@@ -7,6 +7,9 @@ public class FlameThrower : MonoBehaviour
     public float m_AttackRate;
 
     private float m_Cooldown;
+    private int m_Damage;
+
+    EnemyStats m_EnemyStatsScript;
 
     private void OnTriggerStay(Collider objectColliding)
     {
@@ -17,7 +20,14 @@ public class FlameThrower : MonoBehaviour
             {
                 m_Cooldown = Time.time + m_AttackRate;
                 //Take the enemy health and reduce it by X
+                m_EnemyStatsScript = objectColliding.gameObject.transform.parent.GetComponent<EnemyStats>();
+                m_EnemyStatsScript.TakeDamage(m_Damage);
             }
         }
+    }
+
+    public void Damage(int newDamage)
+    {
+        m_Damage = newDamage;
     }
 }
