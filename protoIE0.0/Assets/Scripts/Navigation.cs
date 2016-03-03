@@ -5,7 +5,7 @@ public class Navigation : MonoBehaviour
 {
 
     private Vector3 m_ProgressivePosition;
-    public float velocite;
+    public float boatSpeed;
     public float deadZone = 0.5f;
 
     public GameObject testAngle;
@@ -30,6 +30,10 @@ public class Navigation : MonoBehaviour
 
     private Rigidbody rb;
     public int velociteFactor = 1000;
+
+    //variable for the affecting the boatspeed by the current velocity of the boat
+    private float lastVelocity = 0;
+    private float velocityProportion = 0;
 
     // Use this for initialization
     void Start()
@@ -58,13 +62,27 @@ public class Navigation : MonoBehaviour
             backwardFactor = -1;
             myVector *= -1;
 
-            Debug.Log("On recule" + velocite);
+            Debug.Log("On recule" + boatSpeed);
         }
 
-        if(rb.velocity.magnitude < 0.1)
+        if (rb.velocity.magnitude < 0.1)//si le bateau c'est fait arrêter par une source externe, ça vitesse doit retomber à zéro
         {
-            velocite = 0;
+            boatSpeed = 0;
         }
+
+        /*
+
+        //test
+        else if (lastVelocity != 0)
+        {
+            velocityProportion = rb.velocity.magnitude / lastVelocity;
+            if (velocityProportion < 0.8f || velocityProportion > 1.2f)
+                boatSpeed = (velocityProportion) * boatSpeed;
+            //si la velocité a changer par un facteur externe, l'acceleration du bateau va etre changer proportionnelement
+        }
+
+        */
+
 
         directionBateau.transform.position = transform.position;
         directionBateau.transform.position += myVector;
@@ -77,26 +95,26 @@ public class Navigation : MonoBehaviour
             testAngle.transform.LookAt(m_ProgressivePosition);
             float monAngleAvantRotation = Quaternion.Angle(transform.rotation, testAngle.transform.rotation);
 
-            if (Mathf.Abs(velocite) > speedMinToRotate)//si on ne peut pas trouner sur soi-même, on on vérifie qu'on va assez vite
+            if (Mathf.Abs(boatSpeed) > speedMinToRotate)//si on ne peut pas trouner sur soi-même, on on vérifie qu'on va assez vite
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, testAngle.transform.rotation, turnSpeed * Time.deltaTime);
             }
             else if (monAngleAvantRotation > angleAvance) //le joueur ne va pas assez vite pour tourner et il veut touner donc on l'accélère. 
             {
-                velocite += speed * Time.deltaTime * backwardFactor;
+                boatSpeed += speed * Time.deltaTime * backwardFactor;
             }
 
             float monAngleApresRotation = Quaternion.Angle(transform.rotation, testAngle.transform.rotation);
 
             if (monAngleApresRotation < angleAvance)//si on pointe vers le devant du bateau 
-                velocite += speed * Time.deltaTime * backwardFactor;
+                boatSpeed += speed * Time.deltaTime * backwardFactor;
             else if (slowDuringTurning)//si on est dans le cas
             {
-                velocite -= (0.75f * speedSlowing) * Time.deltaTime * backwardFactor;
-                if (Mathf.Abs(velocite) < speedMinToRotate)
+                boatSpeed -= (0.75f * speedSlowing) * Time.deltaTime * backwardFactor;
+                if (Mathf.Abs(boatSpeed) < speedMinToRotate)
                 //si on ne peut pas tourner sur sois-meme et qu'on est rendu plus lent que la vitesse minimal on va annuler le ralentissement
                 {
-                    velocite += (0.75f * speedSlowing) * Time.deltaTime * backwardFactor;
+                    boatSpeed += (0.75f * speedSlowing) * Time.deltaTime * backwardFactor;
                 }
             }
 
@@ -105,36 +123,57 @@ public class Navigation : MonoBehaviour
         {
             if (backward)//dès que le personne appuie sur le boutton pour reculer, le bateau recule même si elle ne touche pas au joystick
             {
-                velocite += speed * Time.deltaTime * backwardFactor;
+                boatSpeed += speed * Time.deltaTime * backwardFactor;
             }
             else
             {
                 //Vu qu'on additionne ou soustrait tout le temps je suis conscient qu'on va jamais totalement arrêter
                 //Mais un bateau serrait jamais totalement immobile. 
-                if (velocite > 0)//si on est à 0 on ne va pas changer la vitesse
+                if (boatSpeed > 0)//si on est à 0 on ne va pas changer la vitesse
                 {
-                    velocite -= speedSlowing * Time.deltaTime;
+                    boatSpeed -= speedSlowing * Time.deltaTime;
                 }
-                else if (velocite < 0)//on ralentit dans l'autre sens
+                else if (boatSpeed < 0)//on ralentit dans l'autre sens
                 {
-                    velocite += speedSlowing * Time.deltaTime;
+                    boatSpeed += speedSlowing * Time.deltaTime;
                 }
             }
         }
 
-        if (velocite > speedMaxFoward)//on limite la vitesse
+        if (boatSpeed > speedMaxFoward)//on limite la vitesse
         {
-            velocite = speedMaxFoward;
+            boatSpeed = speedMaxFoward;
         }
-        else if (velocite < -speedMaxBackward)
+        else if (boatSpeed < -speedMaxBackward)
         {
-            velocite = -speedMaxBackward;
+            boatSpeed = -speedMaxBackward;
         }
 
 
-        //transform.position += transform.forward * velocite;
-        rb.AddForce(transform.forward * velocite * velociteFactor);
-        //rb.velocity = transform.forward * velociteFactor * velocite;
+        //transform.position += transform.forward * boatAccelaration;
+        rb.AddForce(transform.forward * boatSpeed * velociteFactor);
+        //rb.velocity = transform.forward * velociteFactor * boatAccelaration;
 
+
+        //lastVelocity = rb.velocity.magnitude;
     }
+
+
+    //à tester plus ne profondeur, permet de faire ne sorte que la variable boatspeed est toujours proportionnel à la vrai vitesse du bateau
+    //le pour moment, ça rend la navigation un peu moins fluide, donc on va pas le mettre en place tout suite
+    /*
+    void FixedUpdate()
+    {
+        if (lastVelocity != 0)
+        {
+            velocityProportion = rb.velocity.magnitude / lastVelocity;
+            if (velocityProportion < 0.8f || velocityProportion > 1.2f)
+            boatSpeed = (velocityProportion) * boatSpeed;
+            //si la velocité a changer par un facteur externe, l'acceleration du bateau va etre changer proportionnelement
+        }
+
+        lastVelocity = rb.velocity.magnitude;
+    }
+    */
+    
 }
