@@ -23,7 +23,7 @@ public class Sound_manager_fire : MonoBehaviour
         running = true;
         mainID = clips[1].GetInstanceID();
 
-        c1 = 1234;
+        c1 = 0;
     }
 
     void Update()
