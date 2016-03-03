@@ -9,7 +9,6 @@ public class Sound_manager_fire : MonoBehaviour
     public float bpm = 140.0F;
     public int numBeatsPerSegment = 16;
     public AudioClip[] clips = new AudioClip[2];
-    public GameObject fire;
     private AudioSource fireSound;
     private double nextEventTime;
     private bool running = false;    
@@ -24,10 +23,7 @@ public class Sound_manager_fire : MonoBehaviour
         running = true;
         mainID = clips[1].GetInstanceID();
 
-        if (!fire.activeInHierarchy)
-            c1 = 0;
-
-        c1 = 1234;
+        c1 = 0;
     }
 
     void Update()
