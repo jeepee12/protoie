@@ -62,26 +62,26 @@ public class Navigation : MonoBehaviour
             backwardFactor = -1;
             myVector *= -1;
 
-            Debug.Log("On recule" + boatSpeed);
+            //Debug.Log("On recule" + boatSpeed);
         }
 
         if (rb.velocity.magnitude < 0.1)//si le bateau c'est fait arrêter par une source externe, ça vitesse doit retomber à zéro
         {
             boatSpeed = 0;
         }
-
-        /*
-
         //test
-        else if (lastVelocity != 0)
+        /*else if (lastVelocity != 0)
         {
             velocityProportion = rb.velocity.magnitude / lastVelocity;
-            if (velocityProportion < 0.8f || velocityProportion > 1.2f)
+            //if (velocityProportion < 0.8f || velocityProportion > 1.2f)
+            if (velocityProportion < 0.8f)
+            {
                 boatSpeed = (velocityProportion) * boatSpeed;
+            }
             //si la velocité a changer par un facteur externe, l'acceleration du bateau va etre changer proportionnelement
-        }
+        }*/
 
-        */
+
 
 
         directionBateau.transform.position = transform.position;
@@ -153,7 +153,10 @@ public class Navigation : MonoBehaviour
         //transform.position += transform.forward * boatAccelaration;
         rb.AddForce(transform.forward * boatSpeed * velociteFactor);
         //rb.velocity = transform.forward * velociteFactor * boatAccelaration;
-
+        if (boatSpeed == speedMaxFoward)
+        {
+            //Debug.Log("Boat speed a max speed" + rb.velocity.magnitude);
+        }
 
         //lastVelocity = rb.velocity.magnitude;
     }
@@ -175,5 +178,5 @@ public class Navigation : MonoBehaviour
         lastVelocity = rb.velocity.magnitude;
     }
     */
-    
+
 }
