@@ -20,7 +20,7 @@ public class BoundingLimitBottom: MonoBehaviour {
             NavMeshAgent nma = other.gameObject.GetComponent<NavMeshAgent>();
             nma.Warp(new Vector3(other.transform.position.x, other.transform.position.y, zPosition));
         }
-        else
+        else if(other.gameObject.tag.Equals("Player"))
         {
             other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, zPosition);
         }

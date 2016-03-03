@@ -5,8 +5,6 @@ public class OilBarrel : MonoBehaviour
     public GameObject m_ExplosionEffect;
     public GameObject m_OilEffect;
 
-    public float m_Speed = 1f;
-
     private Transform m_ToDestroy;
     private Transform m_Target;
     private Vector3 m_DepartPos;
@@ -23,6 +21,7 @@ public class OilBarrel : MonoBehaviour
 
     private void OnTriggerEnter(Collider objectColliding)
     {
+        Debug.Log(objectColliding.name);
         if(objectColliding.gameObject.tag.Contains("Enemy") || objectColliding.gameObject.tag.Contains("Water") || objectColliding.gameObject.tag.Contains("Isles"))
         {
             Vector3 OilSpawnPosition;
@@ -36,6 +35,11 @@ public class OilBarrel : MonoBehaviour
             oilEffectClone.transform.parent = m_ToDestroy;
 
             Destroy(gameObject);
+        }
+        if(objectColliding.name.Contains("Bounding"))
+        {
+            m_MyRigidBody.velocity = new Vector3(0,-9,0);
+            return;
         }
     }
 

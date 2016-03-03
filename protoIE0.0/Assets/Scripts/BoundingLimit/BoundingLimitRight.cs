@@ -19,7 +19,7 @@ public class BoundingLimitRight : MonoBehaviour {
             NavMeshAgent nma = other.gameObject.GetComponent<NavMeshAgent>();
             nma.Warp(new Vector3(xPosition, other.transform.position.y, other.transform.position.z));
         }
-        else
+        else if (other.gameObject.tag.Equals("Player"))
         {
             other.transform.position = new Vector3(xPosition, other.transform.position.y, other.transform.position.z);
         }
