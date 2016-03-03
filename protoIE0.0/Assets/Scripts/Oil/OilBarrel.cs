@@ -7,6 +7,7 @@ public class OilBarrel : MonoBehaviour
 
     public float m_Speed = 1f;
 
+    private Transform m_ToDestroy;
     private Transform m_Target;
     private Vector3 m_DepartPos;
     private Rigidbody m_MyRigidBody;
@@ -16,6 +17,8 @@ public class OilBarrel : MonoBehaviour
     {
         m_DepartPos = transform.position;
         m_MyRigidBody = gameObject.GetComponent<Rigidbody>();
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("MapGenerator");
+        m_ToDestroy = objects[0].GetComponent<MapGenerator>().ToDestroy;
     }
 
     private void OnTriggerEnter(Collider objectColliding)
@@ -28,7 +31,10 @@ public class OilBarrel : MonoBehaviour
             OilSpawnPosition.y += 0.05f;
 
             Instantiate(m_ExplosionEffect, gameObject.transform.position, gameObject.transform.rotation);
-            Instantiate(m_OilEffect, OilSpawnPosition, m_OilEffect.transform.rotation);
+
+            GameObject oilEffectClone = (GameObject) Instantiate(m_OilEffect, OilSpawnPosition, m_OilEffect.transform.rotation);
+            oilEffectClone.transform.parent = m_ToDestroy;
+
             Destroy(gameObject);
         }
     }

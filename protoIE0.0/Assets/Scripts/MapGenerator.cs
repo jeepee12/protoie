@@ -104,6 +104,7 @@ public class MapGenerator : MonoBehaviour
     }
 
     public GameObject player;
+    public Transform ToDestroy;
     public MapComponent[] MapList;
     private int enemiesAlive;
 
@@ -135,6 +136,12 @@ public class MapGenerator : MonoBehaviour
             {
                 NextMapReady = false;
                 MapList[currentMap].DestroyStage();
+
+                for(int i = 0; i < ToDestroy.childCount; ++i)
+                {
+                    Destroy(ToDestroy.GetChild(i).gameObject);
+                }
+
                 if (currentMap < MapList.Length)
                 {
                     ++currentMap;
