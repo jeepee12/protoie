@@ -85,68 +85,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: 39d8fcd4db8381346b5a69390cabf1a7, type: 2}
---- !u!1001 &72074428
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -75.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11498790, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: weapons.Array.data[3].cannonHole.Array.data[1]
-      value: 
-      objectReference: {fileID: 949476889}
-    - target: {fileID: 11498790, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: weaponList.Array.data[3]
-      value: 
-      objectReference: {fileID: 622458445}
-    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: directionBateau
-      value: 
-      objectReference: {fileID: 847305417}
-    - target: {fileID: 11436588, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: Ocean
-      value: 
-      objectReference: {fileID: 634577961}
-    - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-      propertyPath: Direction
-      value: 
-      objectReference: {fileID: 870944978}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &77145212
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +504,7 @@ Transform:
   - {fileID: 721337542}
   - {fileID: 1642853457}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &949476889 stripped
 Transform:
   m_PrefabParentObject: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
@@ -705,6 +643,68 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1103913543}
+--- !u!1001 &1109946315
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -75.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: Direction
+      value: 
+      objectReference: {fileID: 870944978}
+    - target: {fileID: 11436588, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: Ocean
+      value: 
+      objectReference: {fileID: 634577961}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: directionBateau
+      value: 
+      objectReference: {fileID: 847305417}
+    - target: {fileID: 11498790, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: weapons.Array.data[3].cannonHole.Array.data[1]
+      value: 
+      objectReference: {fileID: 949476889}
+    - target: {fileID: 11498790, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: weaponList.Array.data[3]
+      value: 
+      objectReference: {fileID: 622458445}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1126801918
 Prefab:
   m_ObjectHideFlags: 0
@@ -750,17 +750,17 @@ Prefab:
 --- !u!1 &1128022131 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 125212, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-  m_PrefabInternal: {fileID: 72074428}
+  m_PrefabInternal: {fileID: 1109946315}
 --- !u!114 &1128022139 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11473796, guid: 09394f8c5e7d56b4c913aae302c2cceb,
     type: 2}
-  m_PrefabInternal: {fileID: 72074428}
+  m_PrefabInternal: {fileID: 1109946315}
   m_Script: {fileID: 11500000, guid: 6ecd02bead0e5f54ca4aa61e3a7081fb, type: 3}
 --- !u!4 &1128022140 stripped
 Transform:
   m_PrefabParentObject: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
-  m_PrefabInternal: {fileID: 72074428}
+  m_PrefabInternal: {fileID: 1109946315}
 --- !u!1 &1134967214
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +881,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1171995434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,24 +1308,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565659967}
---- !u!1 &1578801670 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 150188, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-  m_PrefabInternal: {fileID: 1655081719}
---- !u!114 &1578801676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1578801670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9821247b926c0be429bc3aff5bca5782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CameraPreset1Position: {x: 0, y: 50, z: -30}
-  CameraPreset1Rotation: {x: 25, y: 0, z: 0}
-  Bateau: {fileID: 1128022140}
 --- !u!1 &1641722248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,38 +1530,10 @@ Prefab:
       propertyPath: Bateau
       value: 
       objectReference: {fileID: 1128022131}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: CameraPreset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: CameraPreset2Position.y
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: CameraPreset2Rotation.x
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: CameraPreset2Position.z
-      value: -110
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: CameraPreset2Position.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2008192, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2029334, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 11473698, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+      propertyPath: Bateau
+      value: 
+      objectReference: {fileID: 1128022140}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
   m_IsPrefabParent: 0
@@ -1657,7 +1611,7 @@ Transform:
   m_LocalScale: {x: 150, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1733282366
 GameObject:
   m_ObjectHideFlags: 0
