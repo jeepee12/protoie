@@ -558,7 +558,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -637,6 +637,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8574c4cb7b4ff94a8afe23accdfdd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healCoolDown: 2000
+  healAmount: 1
 --- !u!208 &20803542
 NavMeshObstacle:
   m_ObjectHideFlags: 1
