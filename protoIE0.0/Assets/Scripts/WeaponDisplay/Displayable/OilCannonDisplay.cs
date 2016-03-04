@@ -74,14 +74,20 @@ public class OilCannonDisplay : WeaponDisplay
         transform.position = Bateau.transform.position;
     }
 
-    public void CalcDistance()
+    public bool CalcDistance()
     {
         float Distance = Vector3.Distance(Bateau.transform.position, transform.position);
 
         if (Distance < maxShootDistance && Distance > minShootDistance)
+        { 
             readyToFire();
+            return true;
+        }
         else
+        { 
             onCooldown();
+            return false;
+        }
     }
 
     public override Vector3 ShootVector()
@@ -105,5 +111,10 @@ public class OilCannonDisplay : WeaponDisplay
         }
 
         base.Show();
+    }
+
+    public override bool inRange()
+    {
+        return CalcDistance();
     }
 }

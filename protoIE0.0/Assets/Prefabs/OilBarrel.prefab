@@ -20,6 +20,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &187144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 419788}
+  - 33: {fileID: 3355998}
+  - 23: {fileID: 2332098}
+  m_Layer: 0
+  m_Name: Barril
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &419788
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187144}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 469782}
+  m_RootOrder: 0
 --- !u!4 &469782
 Transform:
   m_ObjectHideFlags: 1
@@ -27,11 +56,38 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.2, z: -61.9}
+  m_LocalPosition: {x: 8.639226, y: 85.53, z: 185.496}
   m_LocalScale: {x: 1, y: 0.7, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 419788}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!23 &2332098
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187144}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8b4aeb7a7487c6c469b7b0664285b0ca, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2378204
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -65,6 +121,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109586}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3355998
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187144}
+  m_Mesh: {fileID: 4300000, guid: 46ec313f595e48248aca8f53a4bafdb9, type: 3}
 --- !u!54 &5432524
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -93,8 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExplosionEffect: {fileID: 141674, guid: 65c37eeeef491e843b42ed0aa466437f, type: 2}
   m_OilEffect: {fileID: 164786, guid: c9b2341bed410ad40aa4f4591794cc5a, type: 2}
-  m_ToDestroy: {fileID: 0}
-  m_Speed: 1
 --- !u!136 &13615426
 CapsuleCollider:
   m_ObjectHideFlags: 1

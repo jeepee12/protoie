@@ -21,6 +21,8 @@ public abstract class WeaponDisplay : MonoBehaviour
 
     private bool weapReady;
 
+    public virtual bool inRange() { return true; }
+
     public virtual void Init()
     {
         CooldownRenderer = CooldownObject.GetComponent<MeshRenderer>();

@@ -47,9 +47,12 @@ public class SelectedWeapon : MonoBehaviour
     {
         if ((Input.GetButton("Fire1") || Input.GetAxis("Fire1") > 0) && weapons[posCurrWeapon].ready)
         {
-            InvokeRepeating("Attack", 0, Random.Range(0.1F,0.5F));
-            weapons[posCurrWeapon].curCooldown = 0;
-            weapons[posCurrWeapon].ready = false;
+            if (currentWeapon.inRange())
+            { 
+                InvokeRepeating("Attack", 0, Random.Range(0.1F,0.5F));
+                weapons[posCurrWeapon].curCooldown = 0;
+                weapons[posCurrWeapon].ready = false;
+            }
         }
 
         //Left 1 Bumper
