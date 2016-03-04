@@ -36,6 +36,9 @@ public class DestroyeOnContact : MonoBehaviour
             Instantiate(Splash, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+
+        if (hit.tag == "Untagged")
+            return;
     }
 
     public void Damage(int newDamage)
