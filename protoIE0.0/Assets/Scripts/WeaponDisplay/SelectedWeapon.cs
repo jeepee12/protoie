@@ -16,6 +16,7 @@ public class SelectedWeapon : MonoBehaviour
         [System.NonSerialized]
         public float curCooldown = 0;
         public bool ready = true;
+        public bool unlock = false;
     }
 
     public Weapons[] weapons;
@@ -38,14 +39,18 @@ public class SelectedWeapon : MonoBehaviour
         for (int i = 0; i < weaponList.Length; i++)
             weaponList[i].Init();
 
-        currentWeapon.Show();
+        if(weapons[posCurrWeapon].unlock)
+        {
+            currentWeapon.Show();
+        }
+       
         cannonTurn = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetButton("Fire1") || Input.GetAxis("Fire1") > 0) && weapons[posCurrWeapon].ready)
+        if ((Input.GetButton("Fire1") || Input.GetAxis("Fire1") > 0) && weapons[posCurrWeapon].ready && weapons[posCurrWeapon].unlock)
         {
             if (currentWeapon.inRange())
             { 
@@ -181,7 +186,10 @@ public class SelectedWeapon : MonoBehaviour
     {
         posCurrWeapon = currentWeaponInt;
         currentWeapon.Hide();
-        currentWeapon = weaponList[posCurrWeapon];
-        currentWeapon.Show();
+        if(weapons[posCurrWeapon].unlock)
+        {
+            currentWeapon = weaponList[posCurrWeapon];
+            currentWeapon.Show();
+        }
     }
 }
