@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8574c4cb7b4ff94a8afe23accdfdd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healCoolDown: 2000
+  healCoolDown: 2
   healAmount: 1
 --- !u!1001 &100100000
 Prefab:
