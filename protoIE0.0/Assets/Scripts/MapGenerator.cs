@@ -57,19 +57,19 @@ public class MapGenerator : MonoBehaviour
 
             if(items.Length > 0)
             {
-                int zPosition = 0;
-                for (int i = 0; i < enemies.Length; ++i)
+                //int zPosition = 0;
+                for (int i = 0; i < items.Length; ++i)
                 {
-                    Instantiate(items[i],
-                        new Vector3((items[i].transform.localScale.x) * (i % (enemies.Length / 2)),
+                    /*Instantiate(items[i],
+                        new Vector3((items[i].transform.localScale.x) * (i % (items.Length / 2)),
                         (items[i].transform.localScale.y / 2),
                         (items[i].transform.localScale.z ) * zPosition),
-                        Quaternion.identity);
-
-                    if ((i % (enemies.Length / 2)) == 0)
+                        Quaternion.identity);*/
+                    Instantiate(items[i], Vector3.zero, Quaternion.identity);
+                    /*if ((i % (items.Length / 2)) == 0)
                     {
                         ++zPosition;
-                    }
+                    }*/
                 }
             }
 
@@ -107,10 +107,12 @@ public class MapGenerator : MonoBehaviour
     public Transform ToDestroy;
     public MapComponent[] MapList;
     private int enemiesAlive;
+    private int itemsDrop;
 
     private bool NextMapReady = false;
     private bool allEnemiesDead = true;
-    
+    private bool noItemLeft;
+
     private int currentMap;
 
     void Awake()
@@ -130,6 +132,8 @@ public class MapGenerator : MonoBehaviour
                     MapList[currentMap].InitStage();
                     enemiesAlive = MapList[currentMap].enemiesNumber();
                     allEnemiesDead = MapList[currentMap].enemiesNumber() <= 0;
+                    itemsDrop = MapList[currentMap].items.Length;
+                    noItemLeft = MapList[currentMap].items.Length <= 0;
                 }
             }
             else if (NextMapReady)
@@ -164,7 +168,7 @@ public class MapGenerator : MonoBehaviour
 
     public void StageIsCompleted()
     {
-        if(allEnemiesDead)
+        if(allEnemiesDead && noItemLeft)
         {
             MapList[currentMap].StageCompleted = true;
         }
@@ -184,5 +188,19 @@ public class MapGenerator : MonoBehaviour
         {
             allEnemiesDead = true;
         }
+    }
+
+    public void ItemTaken()
+    {
+        --itemsDrop;
+        if(itemsDrop<=0)
+        {
+            noItemLeft = true;
+        }
+    }
+
+    public void ItemDropped()
+    {
+        ++itemsDrop;
     }
 }

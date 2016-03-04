@@ -5,7 +5,7 @@ public class LandObjective : MonoBehaviour {
 	private MapGenerator mapGScript;
     private PlayerStats player;
     private float playerEntryTime;
-    public float healCoolDown = 2000.0f;
+    public float healCoolDown = 2;
     public int healAmount = 1;
 	
 	void Start () {
@@ -28,6 +28,7 @@ public class LandObjective : MonoBehaviour {
 
         if (other.gameObject.tag == "Player")
         {
+            player.AffectHP(healAmount);
             playerEntryTime = Time.time;
 
             //Debug.Log("TriggerEnter" + player.getHP());
@@ -38,8 +39,10 @@ public class LandObjective : MonoBehaviour {
     {
         if(playerEntryTime > 0)
         {
-            if(Time.time - playerEntryTime > healCoolDown)
+            //Debug.Log("before healing" + playerEntryTime + "time" + Time.time);
+            if (Time.time - playerEntryTime > healCoolDown)
             {
+                //Debug.Log("Healing time" + playerEntryTime);
                 player.AffectHP(healAmount);
                 playerEntryTime = Time.time;
             }
