@@ -28,6 +28,7 @@ public class LandObjective : MonoBehaviour {
 
         if (other.gameObject.tag == "Player")
         {
+            player.AffectHP(healAmount);
             playerEntryTime = Time.time;
 
             //Debug.Log("TriggerEnter" + player.getHP());
