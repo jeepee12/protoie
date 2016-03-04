@@ -29,7 +29,7 @@ public abstract class WeaponDisplay : MonoBehaviour
 
     public abstract void Hide();
 
-    public abstract void Show();
+    public virtual void Show() { displayCooldown(0); }
 
     public void displayCooldown(float pourc)
     {

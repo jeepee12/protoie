@@ -85,6 +85,8 @@ public class FireCannonDisplay : WeaponDisplay {
         {
             toShow.GetComponent<Renderer>().enabled = true;
         }
+
+        base.Show();
     }
 
 }

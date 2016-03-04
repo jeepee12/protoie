@@ -103,5 +103,7 @@ public class OilCannonDisplay : WeaponDisplay
         {
             child.GetComponent<Renderer>().enabled = true;
         }
+
+        base.Show();
     }
 }

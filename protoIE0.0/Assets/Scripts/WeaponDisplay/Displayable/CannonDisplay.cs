@@ -39,6 +39,8 @@ public class CannonDisplay : WeaponDisplay
         {
             child.GetComponent<Renderer>().enabled = true;
         }
+
+        base.Show();
     }
 
 
