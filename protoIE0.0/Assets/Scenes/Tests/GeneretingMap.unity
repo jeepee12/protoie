@@ -757,6 +757,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 72074428}
   m_Script: {fileID: 11500000, guid: 6ecd02bead0e5f54ca4aa61e3a7081fb, type: 3}
+--- !u!4 &1128022140 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448522, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+  m_PrefabInternal: {fileID: 72074428}
 --- !u!1 &1134967214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,6 +1308,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565659967}
+--- !u!1 &1578801670 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 150188, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+  m_PrefabInternal: {fileID: 1655081719}
+--- !u!114 &1578801676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1578801670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9821247b926c0be429bc3aff5bca5782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraPreset1Position: {x: 0, y: 50, z: -30}
+  CameraPreset1Rotation: {x: 25, y: 0, z: 0}
+  Bateau: {fileID: 1128022140}
 --- !u!1 &1641722248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,11 +1570,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2008192, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: field of view
-      value: 90
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2029334, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
       propertyPath: field of view
-      value: 90
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
