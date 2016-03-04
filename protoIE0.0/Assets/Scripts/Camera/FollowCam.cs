@@ -12,7 +12,6 @@ public class FollowCam : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = mainCam.position;
         transform.rotation = mainCam.rotation;
     }
 }
