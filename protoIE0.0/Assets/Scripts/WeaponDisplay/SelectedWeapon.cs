@@ -13,7 +13,6 @@ public class SelectedWeapon : MonoBehaviour
         public GameObject cannonFireEffect;
         public int damage = 0;
         public float fireRate;
-        public float Cooldown = 0;
         [System.NonSerialized]
         public float curCooldown = 0;
         public bool ready = true;
@@ -87,15 +86,15 @@ public class SelectedWeapon : MonoBehaviour
 
         for (int i = 0; i < weapons.Length; i++)
         {
-            if (weapons[i].curCooldown < weapons[i].Cooldown)
+            if (weapons[i].curCooldown < weapons[i].fireRate)
                 weapons[i].curCooldown += Time.deltaTime;
         }
 
         if (!weapons[posCurrWeapon].ready)
         {
-            currentWeapon.displayCooldown(weapons[posCurrWeapon].curCooldown / weapons[posCurrWeapon].Cooldown);
+            currentWeapon.displayCooldown(weapons[posCurrWeapon].curCooldown / weapons[posCurrWeapon].fireRate);
 
-            if (weapons[posCurrWeapon].curCooldown > weapons[posCurrWeapon].Cooldown)
+            if (weapons[posCurrWeapon].curCooldown > weapons[posCurrWeapon].fireRate)
             {
                 weapons[posCurrWeapon].ready = true;
                 currentWeapon.displayCooldown(0);
