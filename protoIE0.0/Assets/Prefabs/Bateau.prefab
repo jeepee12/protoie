@@ -289,6 +289,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 409506}
   - 95: {fileID: 9560578}
+  - 54: {fileID: 5408740}
   m_Layer: 0
   m_Name: Bateau_Mat (1)
   m_TagString: Untagged
@@ -400,6 +401,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 497982}
   - 95: {fileID: 9519804}
+  - 54: {fileID: 5447604}
   m_Layer: 0
   m_Name: Bateau_Mat
   m_TagString: Untagged
@@ -433,6 +435,7 @@ GameObject:
   - 95: {fileID: 9530554}
   - 137: {fileID: 13791258}
   - 183: {fileID: 18300612}
+  - 64: {fileID: 6494320}
   m_Layer: 0
   m_Name: Bateau_Voile
   m_TagString: Untagged
@@ -2215,6 +2218,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154702}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5408740
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133534}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &5447604
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145214}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &5481030
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -2266,6 +2299,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6494320
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 0}
 --- !u!65 &6506646
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2577,10 +2622,10 @@ MonoBehaviour:
   turnSpeed: 125
   angleAvance: 45
   speed: 10
-  speedSlowing: 35
-  speedMaxFoward: 30
-  speedMaxBackward: 25
-  speedMinToRotate: 10
+  speedSlowing: 5
+  speedMaxFoward: 10
+  speedMaxBackward: 5
+  speedMinToRotate: 2
   slowDuringTurning: 1
   velociteFactor: 5000
 --- !u!114 &11473796
@@ -2743,16 +2788,16 @@ Cloth:
   m_BendingStiffness: 0
   m_UseTethers: 1
   m_UseGravity: 1
-  m_Damping: 0
+  m_Damping: 0.4
   m_ExternalAcceleration: {x: 0, y: 0, z: 0}
   m_RandomAcceleration: {x: 0, y: 0, z: 0}
-  m_WorldVelocityScale: 0.5
-  m_WorldAccelerationScale: 1
-  m_Friction: 0.5
+  m_WorldVelocityScale: -0.2
+  m_WorldAccelerationScale: 0.1
+  m_Friction: 0
   m_CollisionMassScale: 0
   m_UseContinuousCollision: 1
   m_UseVirtualParticles: 1
-  m_SolverFrequency: 120
+  m_SolverFrequency: 240
   m_SleepThreshold: 0.1
   m_Coefficients:
   - maxDistance: 0
@@ -3346,16 +3391,16 @@ Cloth:
   m_BendingStiffness: 0
   m_UseTethers: 1
   m_UseGravity: 1
-  m_Damping: 0
+  m_Damping: 0.4
   m_ExternalAcceleration: {x: 0, y: 0, z: 0}
   m_RandomAcceleration: {x: 0, y: 0, z: 0}
-  m_WorldVelocityScale: 0.5
-  m_WorldAccelerationScale: 1
-  m_Friction: 0.5
+  m_WorldVelocityScale: -0.2
+  m_WorldAccelerationScale: 0.1
+  m_Friction: 1
   m_CollisionMassScale: 0
   m_UseContinuousCollision: 1
   m_UseVirtualParticles: 1
-  m_SolverFrequency: 120
+  m_SolverFrequency: 240
   m_SleepThreshold: 0.1
   m_Coefficients:
   - maxDistance: 0
