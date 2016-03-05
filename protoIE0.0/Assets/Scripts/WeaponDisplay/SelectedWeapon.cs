@@ -16,7 +16,7 @@ public class SelectedWeapon : MonoBehaviour
         [System.NonSerialized]
         public float curCooldown = 0;
         public bool ready = true;
-        public bool unlock = false;
+        public bool unlock = false;        
     }
 
     public Weapons[] weapons;
@@ -24,7 +24,9 @@ public class SelectedWeapon : MonoBehaviour
     private WeaponDisplay currentWeapon;
 
     public WeaponDisplay[] weaponList;
-    
+
+    public GameObject Boat; 
+
     private int posCurrWeapon;
     private int cannonTurn;
 
@@ -57,6 +59,9 @@ public class SelectedWeapon : MonoBehaviour
                 InvokeRepeating("Attack", 0, Random.Range(0.1F,0.5F));
                 weapons[posCurrWeapon].curCooldown = 0;
                 weapons[posCurrWeapon].ready = false;
+
+                Boat.GetComponent<Rigidbody>().AddForce(new Vector3 (0,0,1) * 200);
+                
             }
         }
 
@@ -156,6 +161,7 @@ public class SelectedWeapon : MonoBehaviour
                                 weapons[posCurrWeapon].cannonHole[cannonTurn].rotation);
         DestroyeOnContact doc = projectile.gameObject.GetComponent<DestroyeOnContact>();
 
+
         if(doc)
         {
             doc.Damage(weapons[posCurrWeapon].damage);
@@ -180,6 +186,8 @@ public class SelectedWeapon : MonoBehaviour
         }
 
         ++cannonTurn;
+
+        
     }
 
     private void ShowCurrentWeapon(int currentWeaponInt)
