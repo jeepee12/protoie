@@ -39,7 +39,8 @@ public class Offensive: AITemplate
         
         if (melee)
         { // The enemy is a melee type
-            // Do something melee
+          // Do something melee
+            playerStats.AffectHP(enemyStats.GetDamage() * -1);
         } else
         { // The enemy is a range type
             // Do something at range, like generating bullet and throwing it

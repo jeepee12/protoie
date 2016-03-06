@@ -43,7 +43,7 @@ public class MapGenerator : MonoBehaviour
                         {
                             if (listOfSpawns[i]) //If we have a SpawnLocations
                             {
-                                Instantiate(enemies[i],
+                                GameObject enemyClone = (GameObject) Instantiate(enemies[i],
                                     new Vector3(listOfSpawns[i+1].position.x,
                                     (enemies[i].transform.localScale.y / 2),
                                     listOfSpawns[i+1].position.z),
@@ -207,5 +207,32 @@ public class MapGenerator : MonoBehaviour
     public void RestartStage()
     {
         MapList[currentMap].StageInit = false;
+    }
+
+    public void EraseStage()
+    {
+        //Kill all enemies
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+
+        GameObject[] items = GameObject.FindGameObjectsWithTag("Item");
+        foreach (GameObject item in items)
+        {
+            Destroy(item);
+        }
+
+        GameObject[] isles = GameObject.FindGameObjectsWithTag("Isle");
+        foreach (GameObject isle in isles)
+        {
+            Destroy(isle);
+        }
+
+        for (int i = 0; i < ToDestroy.childCount; ++i)
+        {
+            Destroy(ToDestroy.GetChild(i).gameObject);
+        }
     }
 }

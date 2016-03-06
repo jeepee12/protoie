@@ -6,12 +6,13 @@ public class DefensiveTank : AITemplate
     // Defensive, melee (suit le joueur, quand faible fuit)
     // Defensive, range (reste à porter maximum de ses attaques, quand faible, fuit, si player rapproche enemy s'enfuit)
 
-    public DefensiveTank(Transform enemyTransformHead, Transform playerTransform, NavMeshAgent navAgent, EnemyStats enemyStats)
+    public DefensiveTank(Transform enemyTransformHead, Transform playerTransform, NavMeshAgent navAgent, EnemyStats enemyStats, PlayerStats playerStats)
     {
         this.enemyTransformHead = enemyTransformHead;
         this.playerTransform = playerTransform;
         this.navAgent = navAgent;
         this.enemyStats = enemyStats;
+        this.playerStats = playerStats;
 
         this.navAgent.Stop();
     }
@@ -56,7 +57,8 @@ public class DefensiveTank : AITemplate
 
         if (melee)
         { // The enemy is a melee type
-            // Do something melee
+          // Do something melee
+            playerStats.AffectHP(enemyStats.GetDamage() * -1);
         }
         else
         { // The enemy is a range type

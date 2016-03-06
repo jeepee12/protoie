@@ -45,6 +45,7 @@ public class AITemplate
     protected Transform enemyTransformLeg;
 
     protected EnemyStats enemyStats;
+    protected PlayerStats playerStats;
 
     protected NavMeshAgent navAgent;
 

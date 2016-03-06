@@ -39,7 +39,7 @@ public class PlayerStats : MonoBehaviour
         {
             //on ne veut pas que les hp du joueurs soient en bas de 0
             HP = 0;
-            Die();
+            DyingAnimation();
         }
     }
 
@@ -68,6 +68,7 @@ public class PlayerStats : MonoBehaviour
         }
         else if(isRaisingCompleted && Time.time > startRaising + 3)
         {
+            GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<MapGenerator>().RestartStage();
             isRaisingCompleted = false;
             deathCam.enabled = false;
             mainCamera.enabled = true;
@@ -81,7 +82,7 @@ public class PlayerStats : MonoBehaviour
         HP = maxHP;
         RaisingAnimation();
 
-        GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<MapGenerator>().RestartStage();
+        GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<MapGenerator>().EraseStage();
     }
 
     void ResetPosition()

@@ -46,21 +46,24 @@ public class EnemyAI : MonoBehaviour
     {
 
         Transform enemyTransformHead = this.gameObject.transform.GetChild(0);
-        Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Transform playerTransform = player.transform;
         NavMeshAgent navAgent = GetComponentInChildren<NavMeshAgent>();
         EnemyStats enemyStats = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyStats>();
 
+        PlayerStats playerStatsScript = player.GetComponent<PlayerStats>();
+
         if (enemySelection == EnemySelection.OffensiveTank)
         { // Offensive Tank behavior
-            enemyAI = new OffensiveTank(enemyTransformHead, playerTransform, navAgent, enemyStats);
+            enemyAI = new OffensiveTank(enemyTransformHead, playerTransform, navAgent, enemyStats, playerStatsScript);
         }
         else if (enemySelection == EnemySelection.DefensiveTank)
         { // Defensive Tank behavior
-            enemyAI = new DefensiveTank(enemyTransformHead, playerTransform, navAgent, enemyStats);
+            enemyAI = new DefensiveTank(enemyTransformHead, playerTransform, navAgent, enemyStats, playerStatsScript);
         }
         else
         { // Default AI, Offensive Tank
-            enemyAI = new OffensiveTank(enemyTransformHead, playerTransform, navAgent, enemyStats);
+            enemyAI = new OffensiveTank(enemyTransformHead, playerTransform, navAgent, enemyStats, playerStatsScript);
         }
 
         enemyAI.melee = melee;

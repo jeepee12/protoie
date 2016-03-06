@@ -6,12 +6,13 @@ public class OffensiveTank : AITemplate
     // Offensive, melee (suit toujours le joueur)
     // Offensive, range (suit toujours le joueur, mais garde une distance)
 
-    public OffensiveTank(Transform enemyTransformHead, Transform playerTransform, NavMeshAgent navAgent, EnemyStats enemyStats)
+    public OffensiveTank(Transform enemyTransformHead, Transform playerTransform, NavMeshAgent navAgent, EnemyStats enemyStats, PlayerStats playerStats)
     {
         this.enemyTransformHead = enemyTransformHead;
         this.playerTransform = playerTransform;
         this.navAgent = navAgent;
         this.enemyStats = enemyStats;
+        this.playerStats = playerStats;
 
         this.navAgent.Stop();
     }
@@ -43,6 +44,7 @@ public class OffensiveTank : AITemplate
         if (melee)
         { // The enemy is a melee type
             // Do something melee
+            playerStats.AffectHP(enemyStats.GetDamage() * -1);
         } else
         { // The enemy is a range type
             // Do something at range, like generating bullet and throwing it

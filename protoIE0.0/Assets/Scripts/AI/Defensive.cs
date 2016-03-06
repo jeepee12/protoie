@@ -56,7 +56,9 @@ public class Defensive : AITemplate
 
         if (melee)
         { // The enemy is a melee type
-            // Do something melee
+          // Do something melee
+          //Melee animation
+            playerStats.AffectHP(enemyStats.GetDamage() * -1);
         }
         else
         { // The enemy is a range type

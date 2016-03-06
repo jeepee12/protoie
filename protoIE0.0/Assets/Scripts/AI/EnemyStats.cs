@@ -6,6 +6,7 @@ public class EnemyStats : MonoBehaviour {
     public float currentHealth = 100f;
     public float maximumHealth = 100f;
     public float m_FireResistance = 0;
+    public int damage = 1;
 
     private MapGenerator mapGScript;
 
@@ -43,5 +44,10 @@ public class EnemyStats : MonoBehaviour {
     {
         //Animation
         Destroy(gameObject);
+    }
+
+    public int GetDamage()
+    {
+        return damage;
     }
 }

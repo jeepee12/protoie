@@ -13,6 +13,8 @@ TagManager:
   - Flock_sound
   - MapGenerator
   - Isle
+  - PlayerSpawn
+  - Item
   layers:
   - Default
   - TransparentFX
