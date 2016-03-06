@@ -19,6 +19,7 @@ public class SelectedWeapon : MonoBehaviour
         public bool unlock = false;        
     }
 
+    bool right = true;
     public Weapons[] weapons;
 
     private WeaponDisplay currentWeapon;
@@ -51,17 +52,15 @@ public class SelectedWeapon : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {     
+
         if ((Input.GetButton("Fire1") || Input.GetAxis("Fire1") > 0) && weapons[posCurrWeapon].ready && weapons[posCurrWeapon].unlock)
         {
             if (currentWeapon.inRange())
             { 
-                InvokeRepeating("Attack", 0, Random.Range(0.1F,0.5F));
+                InvokeRepeating("Attack", 0, Random.Range(0.0F,0.5F));                
                 weapons[posCurrWeapon].curCooldown = 0;
-                weapons[posCurrWeapon].ready = false;
-
-                Boat.GetComponent<Rigidbody>().AddForce(new Vector3 (0,0,1) * 200);
-                
+                weapons[posCurrWeapon].ready = false;                
             }
         }
 
@@ -113,6 +112,21 @@ public class SelectedWeapon : MonoBehaviour
                 currentWeapon.displayCooldown(0);
             }
         }
+
+        if (IsInvoking("Attack"))
+        {
+            float direction = 0.0F;
+
+            if (right)
+                direction = 1.0F;
+
+            if (!right)
+                direction = -1.0F;
+            
+            Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, 0, direction) * Time.deltaTime);
+            Boat.GetComponent<Rigidbody>().MoveRotation(Boat.transform.rotation * deltaRotation);
+        }
+
 
     }
 
@@ -198,6 +212,11 @@ public class SelectedWeapon : MonoBehaviour
         {
             currentWeapon = weaponList[posCurrWeapon];
             currentWeapon.Show();
+
+            if (right)
+                right = false;
+            else
+                right = true;
         }
     }
 }
