@@ -203,4 +203,9 @@ public class MapGenerator : MonoBehaviour
     {
         ++itemsDrop;
     }
+
+    public void RestartStage()
+    {
+        MapList[currentMap].StageInit = false;
+    }
 }
