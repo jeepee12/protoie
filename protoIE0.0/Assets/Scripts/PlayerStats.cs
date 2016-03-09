@@ -130,6 +130,7 @@ public class PlayerStats : MonoBehaviour
         { 
             gameObject.GetComponent<Floating>().enabled = false;
             gameObject.transform.position = new Vector3(spawnLocation.x, spawnLocation.y - 20f, spawnLocation.z);
+            gameObject.transform.localEulerAngles = Vector3.zero;
         }
 
         isRaising = true;
