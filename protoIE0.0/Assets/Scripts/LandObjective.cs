@@ -7,31 +7,26 @@ public class LandObjective : MonoBehaviour {
     private float playerEntryTime;
     public float healCoolDown = 2;
     public int healAmount = 1;
+    public bool port;
 	
 	void Start () {
 		mapGScript = GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<MapGenerator>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
     }
 
-	private void OnTriggerExit(Collider other)
-	{
-		if (other.gameObject.tag == "Player")
-		{
-            playerEntryTime = 0;
-            mapGScript.StageIsCompleted();
-        }
-
-	}
-
     private void OnTriggerEnter(Collider other)
     {
 
         if (other.gameObject.tag == "Player")
         {
-            player.AffectHP(healAmount);
-            playerEntryTime = Time.time;
+            if(port)
+            {
+                player.AffectHP(healAmount);
+                playerEntryTime = Time.time;
+            }
 
-            //Debug.Log("TriggerEnter" + player.getHP());
+            playerEntryTime = 0;
+            mapGScript.StageIsCompleted();
         }
     }
 

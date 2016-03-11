@@ -1315,7 +1315,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0.1, z: -75.6}
+  m_LocalPosition: {x: 4, y: 8.9, z: -75.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 440190}
@@ -2444,7 +2444,7 @@ Rigidbody:
   m_GameObject: {fileID: 125212}
   serializedVersion: 2
   m_Mass: 800
-  m_Drag: 0.1
+  m_Drag: 0.5
   m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -2858,14 +2858,14 @@ MonoBehaviour:
   deadZone: 0.5
   testAngle: {fileID: 149966}
   directionBateau: {fileID: 0}
-  turnSpeed: 125
+  turnSpeed: 10
   angleAvance: 45
   speed: 10
   speedSlowing: 5
-  speedMaxFoward: 10
-  speedMaxBackward: 5
-  speedMinToRotate: 2
-  slowDuringTurning: 1
+  speedMaxFoward: 3
+  speedMaxBackward: 1
+  speedMinToRotate: 1
+  slowDuringTurning: 0
   velociteFactor: 5000
 --- !u!114 &11446708
 MonoBehaviour:
@@ -3009,8 +3009,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.003116101, y: -0.0016327836, z: 0.00037076045}
-    m_Extent: {x: 0.005438082, y: 0.022313867, z: 0.024953522}
+    m_Center: {x: -0.003116101, y: -0.0016327798, z: 0.00037076045}
+    m_Extent: {x: 0.005438082, y: 0.02231387, z: 0.024953522}
   m_DirtyAABB: 0
 --- !u!137 &13791258
 SkinnedMeshRenderer:
@@ -3046,8 +3046,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.003116101, y: -0.0016327836, z: 0.00037076045}
-    m_Extent: {x: 0.005438082, y: 0.022313867, z: 0.024953522}
+    m_Center: {x: -0.003116101, y: -0.0016327798, z: 0.00037076045}
+    m_Extent: {x: 0.005438082, y: 0.02231387, z: 0.024953522}
   m_DirtyAABB: 0
 --- !u!183 &18300612
 Cloth:

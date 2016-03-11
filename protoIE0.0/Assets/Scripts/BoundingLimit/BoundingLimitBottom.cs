@@ -14,7 +14,6 @@ public class BoundingLimitBottom: MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        mapGScript.Collision();
         if (other.tag.Contains("Enemy"))
         {
             NavMeshAgent nma = other.gameObject.GetComponent<NavMeshAgent>();
@@ -22,6 +21,7 @@ public class BoundingLimitBottom: MonoBehaviour {
         }
         else if(other.gameObject.tag.Equals("Player"))
         {
+            mapGScript.Collision();
             other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, zPosition);
         }
     }

@@ -86,24 +86,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &138642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 429334}
-  - 65: {fileID: 6502780}
-  - 82: {fileID: 8204916}
-  - 114: {fileID: 11433270}
-  m_Layer: 8
-  m_Name: Seagull_Flock
-  m_TagString: Flock_sound
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &155522
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +209,6 @@ Transform:
   - {fileID: 417456}
   - {fileID: 485464}
   - {fileID: 407284}
-  - {fileID: 429334}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &428580
@@ -242,18 +223,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 421308}
   m_RootOrder: 2
---- !u!4 &429334
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138642}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.46, y: 12.7, z: -20.52}
-  m_LocalScale: {x: 250, y: 25, z: 250}
-  m_Children: []
-  m_Father: {fileID: 421308}
-  m_RootOrder: 6
 --- !u!4 &450820
 Transform:
   m_ObjectHideFlags: 1
@@ -468,18 +437,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195238}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6502780
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138642}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6519364
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -540,92 +497,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!82 &8204916
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138642}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24352066, guid: d3fbe39b8eb5ebb4c9eed274a7416de9,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8337077736b677f449c251f3e6ed0581, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 0
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 2
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0.002
-      value: 1
-      inSlope: 0
-      outSlope: -1.002004
-      tangentMode: 0
-    - time: 0.3532338
-      value: 0
-      inSlope: -1.002004
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!114 &11433270
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0447bacbe03a9ad41b98b8abd252cf21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11471962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -637,8 +508,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8574c4cb7b4ff94a8afe23accdfdd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healCoolDown: 2000
+  healCoolDown: 2
   healAmount: 1
+  port: 0
 --- !u!208 &20803542
 NavMeshObstacle:
   m_ObjectHideFlags: 1

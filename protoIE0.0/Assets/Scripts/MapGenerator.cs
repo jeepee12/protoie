@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -9,13 +10,14 @@ public class MapGenerator : MonoBehaviour
         public GameObject[] enemies;
         public GameObject weather;
         public GameObject[] items;
+        public string tutorialText;
 
         [System.NonSerialized]
         public bool StageCompleted = false;
         [System.NonSerialized]
         public bool StageInit = false;
 
-        private bool haveLand = false;
+        private bool m_hasLand = false;
         private GameObject landClone;
         private GameObject weatherClone;
 
@@ -23,7 +25,7 @@ public class MapGenerator : MonoBehaviour
         {
             if (land)
             {
-                haveLand = true;
+                m_hasLand = true;
                 landClone = (GameObject)Instantiate(land, Vector3.zero, Quaternion.identity);
             }
 
@@ -101,7 +103,20 @@ public class MapGenerator : MonoBehaviour
         {
             return enemies.Length;
         }
+
+        public bool hasLand()
+        {
+            return m_hasLand;
+        }
     }
+
+    //UI
+    public Text m_ObjectiveText;
+    public Text m_TutorialText;
+    public float m_TutorialTimer = 5;
+    private float m_TutorialTimerStart;
+    private string[] m_ObjectiveStr = new string[4];
+    private bool m_UpdateObjectives = false;
 
     public GameObject player;
     public Transform ToDestroy;
@@ -130,10 +145,45 @@ public class MapGenerator : MonoBehaviour
                 {
                     MapList[currentMap].StageInit = true;
                     MapList[currentMap].InitStage();
+                    m_ObjectiveStr[0] = "Objective:\n";
                     enemiesAlive = MapList[currentMap].enemiesNumber();
                     allEnemiesDead = MapList[currentMap].enemiesNumber() <= 0;
+
+                    if(MapList[currentMap].hasLand())
+                    {
+                        m_ObjectiveStr[1] = "\nExplore the nearby islands.";
+                    }
+                    else
+                    {
+                        m_ObjectiveStr[1] = null;
+                    }
+
+                    if(!allEnemiesDead)
+                    {
+                        m_ObjectiveStr[2] = "\nKill all enemies.";
+                    }
+
                     itemsDrop = MapList[currentMap].items.Length;
                     noItemLeft = MapList[currentMap].items.Length <= 0;
+
+                    if (!noItemLeft)
+                    {
+                        m_ObjectiveStr[3] = "\nPick up items.";
+                    }
+
+                    if(MapList[currentMap].tutorialText != null)
+                    {
+                        m_TutorialText.text = MapList[currentMap].tutorialText;
+                        m_TutorialText.CrossFadeAlpha(1f, 0.2f, true);
+                        m_TutorialTimerStart = Time.time;
+                    }
+                    else
+                    {
+                        m_TutorialText.text = null;
+                        m_TutorialText.CrossFadeAlpha(0f, 0f, true);
+                    }
+
+                    m_UpdateObjectives = true;
                 }
             }
             else if (NextMapReady)
@@ -156,6 +206,47 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
+
+        if(m_UpdateObjectives)
+        {
+            int count = 0;
+            for(int i = 1; i < m_ObjectiveStr.Length; ++i)
+            {
+                if(m_ObjectiveStr[i] != null)
+                {
+                    ++count;
+                }
+            }
+
+            switch(count)
+            {
+                case 0:
+                    m_ObjectiveStr[0] = "Objective:\n";
+                    m_ObjectiveStr[1] = "\nExplore the sea.";
+                    MapList[currentMap].StageCompleted = true;
+                    break;
+                case 1:
+                    m_ObjectiveStr[0] = "Objective:\n";
+                    break;
+                default:
+                    m_ObjectiveStr[0] = "Objectives:\n";
+                    break;
+            }
+
+            m_ObjectiveText.text = m_ObjectiveStr[0];
+            for (int i = 1; i < m_ObjectiveStr.Length; ++i)
+            {
+                if (m_ObjectiveStr[i] != null)
+                {
+                    m_ObjectiveText.text += m_ObjectiveStr[i];
+                }
+            }
+        }
+
+        if(Time.time > m_TutorialTimerStart + m_TutorialTimer)
+        {
+            m_TutorialText.CrossFadeAlpha(0f, 0.5f, true);
+        }
     }
 
     public void Collision()
@@ -171,6 +262,8 @@ public class MapGenerator : MonoBehaviour
         if(allEnemiesDead && noItemLeft)
         {
             MapList[currentMap].StageCompleted = true;
+            m_ObjectiveStr[1] = "\nExplore the sea.";
+            m_UpdateObjectives = true;
         }
     }
 
@@ -182,11 +275,15 @@ public class MapGenerator : MonoBehaviour
             if(enemiesAlive <= 0)
             {
                 allEnemiesDead = true;
+                m_ObjectiveStr[2] = null;
+                m_UpdateObjectives = true;
             }
         }
         else
         {
             allEnemiesDead = true;
+            m_ObjectiveStr[2] = null;
+            m_UpdateObjectives = true;
         }
     }
 
@@ -196,6 +293,8 @@ public class MapGenerator : MonoBehaviour
         if(itemsDrop<=0)
         {
             noItemLeft = true;
+            m_ObjectiveStr[3] = null;
+            m_UpdateObjectives = true;
         }
     }
 

@@ -13,7 +13,6 @@ public class BoundingLimitRight : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        mapGScript.Collision();
         if (other.tag.Contains("Enemy"))
         {
             NavMeshAgent nma = other.gameObject.GetComponent<NavMeshAgent>();
@@ -21,6 +20,7 @@ public class BoundingLimitRight : MonoBehaviour {
         }
         else if (other.gameObject.tag.Equals("Player"))
         {
+            mapGScript.Collision();
             other.transform.position = new Vector3(xPosition, other.transform.position.y, other.transform.position.z);
         }
     }
