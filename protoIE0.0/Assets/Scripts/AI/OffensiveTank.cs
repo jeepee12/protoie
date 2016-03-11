@@ -5,6 +5,7 @@ public class OffensiveTank : AITemplate
 {
     // Offensive, melee (suit toujours le joueur)
     // Offensive, range (suit toujours le joueur, mais garde une distance)
+    private float attackStart;
 
     public OffensiveTank(Transform enemyTransformHead, Transform playerTransform, NavMeshAgent navAgent, EnemyStats enemyStats, PlayerStats playerStats)
     {
@@ -41,10 +42,11 @@ public class OffensiveTank : AITemplate
     public override void Attack()
     { // Attack something
         
-        if (melee)
+        if (melee && Time.time > attackStart + enemyStats.attackSpeed)
         { // The enemy is a melee type
             // Do something melee
             playerStats.AffectHP(enemyStats.GetDamage() * -1);
+            attackStart = Time.time;
         } else
         { // The enemy is a range type
             // Do something at range, like generating bullet and throwing it
@@ -57,6 +59,7 @@ public class OffensiveTank : AITemplate
         { // The player is within attack range
             navAgent.Stop();
             Attack();
+            
         }
         else if (playerDistance <= chaseRange)
         { // The player is within chasing range

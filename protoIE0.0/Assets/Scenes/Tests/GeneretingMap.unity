@@ -1068,7 +1068,7 @@ MonoBehaviour:
     enemies: []
     weather: {fileID: 109064, guid: dd4ab3b4e4fb97c4db6b59bc352b521d, type: 2}
     items: []
-    tutorialText: The rain is never a good alied in the sea.
+    tutorialText: The rain is never a good allied in the sea.
   - land: {fileID: 0}
     enemies: []
     weather: {fileID: 0}
@@ -1080,7 +1080,7 @@ MonoBehaviour:
     - {fileID: 156964, guid: 05d3b77d9f645f646b6f9269fee40f0f, type: 2}
     weather: {fileID: 0}
     items: []
-    tutorialText: This shark don't seems frendly, use your cannons with right trigger.
+    tutorialText: This shark don't seems friendly, use your cannons with right trigger.
 --- !u!4 &1171824006
 Transform:
   m_ObjectHideFlags: 0

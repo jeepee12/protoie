@@ -7,6 +7,7 @@ public class EnemyStats : MonoBehaviour {
     public float maximumHealth = 100f;
     public float m_FireResistance = 0;
     public int damage = 1;
+    public float attackSpeed = 2;
 
     private MapGenerator mapGScript;
 
