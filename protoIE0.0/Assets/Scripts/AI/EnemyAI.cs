@@ -49,7 +49,7 @@ public class EnemyAI : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Transform playerTransform = player.transform;
         NavMeshAgent navAgent = GetComponentInChildren<NavMeshAgent>();
-        EnemyStats enemyStats = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyStats>();
+        EnemyStats enemyStats = this.gameObject.GetComponent<EnemyStats>();
 
         PlayerStats playerStatsScript = player.GetComponent<PlayerStats>();
 
