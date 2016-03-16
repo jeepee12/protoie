@@ -9,6 +9,14 @@ public class Camera3rd : MonoBehaviour {
 
     private Vector3 startPos =  Vector3.zero;
 
+    public GameObject CamDir;
+    public GameObject CamDir2;
+    public int SideViewAngleMax;
+    public int SideCamSpeed;
+
+    private float curCamSlide;
+    private float JoystickDeadZone = 0.5f;
+
     // Use this for initialization
     void Start ()
     {
@@ -20,17 +28,93 @@ public class Camera3rd : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate()
     {
-        // Calcul de la position de la camera
-        Vector3 pos = Bateau.transform.position;
+        // Calcul des différente position de la caméra
+        Vector3 posBehind = Bateau.transform.position;
+        Vector3 posRight;
+        Vector3 posLeft;
 
-        pos += Bateau.forward * CameraPreset1Position.z;
-        pos += Bateau.up * CameraPreset1Position.y;
-        pos += Bateau.right * CameraPreset1Position.x;
+        posBehind += Bateau.forward * CameraPreset1Position.z;
+        posBehind += Bateau.up * CameraPreset1Position.y;
+        posBehind += Bateau.right * CameraPreset1Position.x;
+
+        float pourc = SideViewAngleMax / 90.0f;
+
+        posRight = -Bateau.transform.forward * pourc;
+        posRight += Bateau.transform.right * (1- pourc);
+
+        posRight.Normalize();
+
+
+        posLeft = -Bateau.transform.forward * pourc;
+        posLeft += -Bateau.transform.right * (1 - pourc);
+
+        posLeft.Normalize();
+
+
+        posRight *= Vector3.Distance(posBehind, Bateau.position);
+        posLeft *= Vector3.Distance(posBehind, Bateau.position);
+
+        posRight += Bateau.transform.position;
+        posLeft += Bateau.transform.position;
+
+        posRight.y = startPos.y;
+        posLeft.y  = startPos.y;
+
+        CamDir.transform.position = posRight;
+        CamDir2.transform.position = posLeft;
 
         if (startPos != Vector3.zero)
-            pos.y = startPos.y;
+            posBehind.y = startPos.y;
 
-        transform.position = pos;
+
+        Vector3 posUltime;
+        float valueH = Input.GetAxis("RightJoystickH");
+
+        Debug.Log("Value H : " + Mathf.Round(valueH));
+        // Calcule de la position de la caméra
+        if (valueH < -JoystickDeadZone && curCamSlide <= 0)
+        {
+            Debug.Log("if1");
+            curCamSlide -= Time.deltaTime * SideCamSpeed;
+            if (curCamSlide < -1)
+                curCamSlide = -1;
+            posUltime = Vector3.Slerp(posBehind, posLeft, Mathf.Abs(curCamSlide));
+        }
+        else
+        if (valueH > JoystickDeadZone && curCamSlide >= 0)
+        {
+            Debug.Log("if2");
+            curCamSlide += Time.deltaTime * SideCamSpeed;
+            if (curCamSlide > 1)
+                curCamSlide = 1;
+
+            posUltime = Vector3.Slerp(posBehind, posRight, curCamSlide);
+        }
+        else
+        if (curCamSlide < 0)
+        {
+            Debug.Log("if3");
+            curCamSlide += Time.deltaTime * SideCamSpeed;
+
+            if (Mathf.Abs(curCamSlide) < 0.02)
+                curCamSlide = 0;
+
+            posUltime = Vector3.Slerp(posBehind, posLeft, Mathf.Abs(curCamSlide));
+        }
+        else
+        {
+            Debug.Log("if4");
+            curCamSlide -= Time.deltaTime * SideCamSpeed;
+
+            if (Mathf.Abs(curCamSlide) < 0.02)
+                curCamSlide = 0;
+
+            posUltime = Vector3.Slerp(posBehind, posRight, curCamSlide);
+        }
+
+        Debug.Log("Slide : " + curCamSlide);
+
+        transform.position = posUltime;
 
         transform.LookAt(Bateau);
     }
