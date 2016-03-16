@@ -661,6 +661,10 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 419522, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
   m_PrefabInternal: {fileID: 1655081719}
+--- !u!1 &966303889 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 150188, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
+  m_PrefabInternal: {fileID: 1655081719}
 --- !u!1 &1045269081
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +893,10 @@ Prefab:
       propertyPath: deathCam
       value: 
       objectReference: {fileID: 2095471786}
+    - target: {fileID: 11442770, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 966303889}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
   m_IsPrefabParent: 0

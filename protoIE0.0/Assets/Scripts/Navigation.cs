@@ -25,6 +25,9 @@ public class Navigation : MonoBehaviour
     [Tooltip("Vitesse minimum pour tourner")]
     public float speedMinToRotate = 0.25f;
 
+    [Tooltip("Vitesse minimum pour tourner")]
+    public GameObject mainCam;
+
     [Tooltip("Ranlentit pendant qu'il tourne")]
     public bool slowDuringTurning = true;
 
@@ -49,9 +52,9 @@ public class Navigation : MonoBehaviour
         bool backward = Input.GetButton("GoingBackward");
         float backwardFactor = 1;//va être mis à -1 si on appuie sur la touche de reculons
         Vector3 myVector;
-        //Debug.Log("H:" + valueH + "V:" + valueV);
-        myVector = new Vector3(1, 0, 0) * valueH;
-        myVector += new Vector3(0, 0, 1) * valueV;
+
+        myVector = mainCam.transform.forward * valueV;
+        myVector += mainCam.transform.right * valueH;
 
         myVector.Normalize();
 
@@ -61,8 +64,7 @@ public class Navigation : MonoBehaviour
         {
             backwardFactor = -1;
             myVector *= -1;
-
-            //Debug.Log("On recule" + boatSpeed);
+            
         }
 
         if (rb.velocity.magnitude < 0.1)//si le bateau c'est fait arrêter par une source externe, ça vitesse doit retomber à zéro
