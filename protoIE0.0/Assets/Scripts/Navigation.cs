@@ -25,9 +25,6 @@ public class Navigation : MonoBehaviour
     [Tooltip("Vitesse minimum pour tourner")]
     public float speedMinToRotate = 0.25f;
 
-    [Tooltip("Vitesse minimum pour tourner")]
-    public GameObject mainCam;
-
     [Tooltip("Ranlentit pendant qu'il tourne")]
     public bool slowDuringTurning = true;
 
@@ -53,8 +50,8 @@ public class Navigation : MonoBehaviour
         float backwardFactor = 1;//va être mis à -1 si on appuie sur la touche de reculons
         Vector3 myVector;
 
-        myVector = mainCam.transform.forward * valueV;
-        myVector += mainCam.transform.right * valueH;
+        myVector = transform.forward * valueV;
+        myVector += transform.right * valueH;
 
         myVector.Normalize();
 
