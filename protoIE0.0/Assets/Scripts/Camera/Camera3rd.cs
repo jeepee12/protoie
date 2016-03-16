@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Camera3rd : MonoBehaviour {
 
+    public bool PS4Controller = false;
+
     public Vector3 CameraPreset1Position = new Vector3(0.0f, 28.0f, -110.0f);
 
     public Transform Bateau;
@@ -66,9 +68,13 @@ public class Camera3rd : MonoBehaviour {
         if (startPos != Vector3.zero)
             posBehind.y = startPos.y;
 
+        float valueH;
 
         Vector3 posUltime;
-        float valueH = Input.GetAxis("RightJoystickH");
+        if (PS4Controller)
+            valueH = Input.GetAxis("RightJoystickHPS4");
+        else
+            valueH = Input.GetAxis("RightJoystickH");
 
         Debug.Log("Value H : " + Mathf.Round(valueH));
         // Calcule de la position de la caméra
