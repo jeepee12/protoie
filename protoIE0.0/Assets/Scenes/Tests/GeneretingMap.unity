@@ -2363,7 +2363,8 @@ Prefab:
       propertyPath: ReverseSideLookJoystick
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11410110, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a1a03f5486c6c374a9699395941c322f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1715831559
@@ -2922,7 +2923,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1448549719}
         m_MethodName: Toggle_Changed
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

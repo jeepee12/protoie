@@ -8,8 +8,7 @@ public class GameMenu : MonoBehaviour {
    
 	// Use this for initialization
 	public void Toggle_Changed(bool newVal) {
-        myCam.ReverseSideLookJoystick = newVal;
-
+        myCam.setReversedSideLook(newVal);
     }
 
     public void OnClickExitToMain(){;

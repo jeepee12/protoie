@@ -19,6 +19,8 @@ public class Camera3rd : MonoBehaviour {
     private float curCamSlide;
     private float JoystickDeadZone = 0.5f;
 
+    public void setReversedSideLook(bool val){ ReverseSideLookJoystick = val; }
+
     // Use this for initialization
     void Start ()
     {
@@ -75,6 +77,7 @@ public class Camera3rd : MonoBehaviour {
             valueH = Input.GetAxis("RightJoystickH");
 
         // Calcule de la position de la caméra
+        
         if (valueH < -JoystickDeadZone && curCamSlide <= 0)
         {
             curCamSlide -= Time.deltaTime * SideCamSpeed;
