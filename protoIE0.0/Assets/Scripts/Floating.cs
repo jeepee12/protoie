@@ -305,6 +305,8 @@ public class Floating : MonoBehaviour
             float ry = rot.y;
             float rz = rot.z;
 
+            // Add necessary logic for Z-rotation lock
+
             /* 
             if (rx > 345)
                 rx = 350f;
@@ -319,7 +321,7 @@ public class Floating : MonoBehaviour
 
             //rx = Mathf.Clamp(rx, -5, 5);
 
-            transform.rotation = Quaternion.Euler(rx, ry, Mathf.Clamp(rz, -5, 5));
+            transform.rotation = Quaternion.Euler(rx, ry, rz);
         }
     }
 
