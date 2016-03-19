@@ -329,8 +329,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9821247b926c0be429bc3aff5bca5782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PS4Controller: 0
   CameraPreset1Position: {x: 0, y: 25, z: -60}
   Bateau: {fileID: 0}
+  SideViewAngleMax: 45
+  SideCamSpeed: 1
+  ReverseSideLookJoystick: 0
 --- !u!114 &11488484
 MonoBehaviour:
   m_ObjectHideFlags: 1

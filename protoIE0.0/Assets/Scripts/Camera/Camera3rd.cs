@@ -10,11 +10,11 @@ public class Camera3rd : MonoBehaviour {
     public Transform Bateau;
 
     private Vector3 startPos =  Vector3.zero;
-
-    public GameObject CamDir;
-    public GameObject CamDir2;
+   
     public int SideViewAngleMax;
     public int SideCamSpeed;
+
+    public bool ReverseSideLookJoystick = false;
 
     private float curCamSlide;
     private float JoystickDeadZone = 0.5f;
@@ -62,9 +62,6 @@ public class Camera3rd : MonoBehaviour {
         posRight.y = startPos.y;
         posLeft.y  = startPos.y;
 
-        CamDir.transform.position = posRight;
-        CamDir2.transform.position = posLeft;
-
         if (startPos != Vector3.zero)
             posBehind.y = startPos.y;
 
@@ -76,49 +73,58 @@ public class Camera3rd : MonoBehaviour {
         else
             valueH = Input.GetAxis("RightJoystickH");
 
-        Debug.Log("Value H : " + Mathf.Round(valueH));
         // Calcule de la position de la caméra
         if (valueH < -JoystickDeadZone && curCamSlide <= 0)
         {
-            Debug.Log("if1");
             curCamSlide -= Time.deltaTime * SideCamSpeed;
             if (curCamSlide < -1)
                 curCamSlide = -1;
-            posUltime = Vector3.Slerp(posBehind, posLeft, Mathf.Abs(curCamSlide));
+
+            if (ReverseSideLookJoystick)
+                posUltime = Vector3.Slerp(posBehind, posLeft, Mathf.Abs(curCamSlide));
+            else
+                posUltime = Vector3.Slerp(posBehind, posRight, Mathf.Abs(curCamSlide));
         }
         else
         if (valueH > JoystickDeadZone && curCamSlide >= 0)
         {
-            Debug.Log("if2");
             curCamSlide += Time.deltaTime * SideCamSpeed;
             if (curCamSlide > 1)
                 curCamSlide = 1;
 
-            posUltime = Vector3.Slerp(posBehind, posRight, curCamSlide);
+            if (ReverseSideLookJoystick)
+                posUltime = Vector3.Slerp(posBehind, posRight, Mathf.Abs(curCamSlide));
+            else
+                posUltime = Vector3.Slerp(posBehind, posLeft, Mathf.Abs(curCamSlide));
         }
         else
         if (curCamSlide < 0)
         {
-            Debug.Log("if3");
             curCamSlide += Time.deltaTime * SideCamSpeed;
 
-            if (Mathf.Abs(curCamSlide) < 0.02)
+            if (Mathf.Abs(curCamSlide) < 0.1)
                 curCamSlide = 0;
 
-            posUltime = Vector3.Slerp(posBehind, posLeft, Mathf.Abs(curCamSlide));
+            if (ReverseSideLookJoystick)
+                posUltime = Vector3.Slerp(posBehind, posLeft, Mathf.Abs(curCamSlide));
+            else
+                posUltime = Vector3.Slerp(posBehind, posRight, Mathf.Abs(curCamSlide));
         }
         else
+        if (curCamSlide > 0)
         {
-            Debug.Log("if4");
             curCamSlide -= Time.deltaTime * SideCamSpeed;
 
-            if (Mathf.Abs(curCamSlide) < 0.02)
+            if (Mathf.Abs(curCamSlide) < 0.1)
                 curCamSlide = 0;
 
-            posUltime = Vector3.Slerp(posBehind, posRight, curCamSlide);
+            if (ReverseSideLookJoystick)
+                posUltime = Vector3.Slerp(posBehind, posRight, Mathf.Abs(curCamSlide));
+            else
+                posUltime = Vector3.Slerp(posBehind, posLeft, Mathf.Abs(curCamSlide));
         }
-
-        Debug.Log("Slide : " + curCamSlide);
+        else
+            posUltime = posBehind;
 
         transform.position = posUltime;
 
