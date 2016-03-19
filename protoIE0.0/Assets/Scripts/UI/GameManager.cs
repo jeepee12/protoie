@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour {
         if (Input.GetButtonDown("Pause"))
         {
             SendMessage("Pauses");
-            Debug.Log("Allo");
         }
 
 }
