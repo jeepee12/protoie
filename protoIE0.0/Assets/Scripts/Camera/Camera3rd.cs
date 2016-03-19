@@ -76,11 +76,11 @@ public class Camera3rd : MonoBehaviour {
         else
             valueH = Input.GetAxis("RightJoystickH");
 
-        Debug.Log("Value H : " + Mathf.Round(valueH));
+        //Debug.Log("Value H : " + Mathf.Round(valueH));
         // Calcule de la position de la caméra
         if (valueH < -JoystickDeadZone && curCamSlide <= 0)
         {
-            Debug.Log("if1");
+            //Debug.Log("if1");
             curCamSlide -= Time.deltaTime * SideCamSpeed;
             if (curCamSlide < -1)
                 curCamSlide = -1;
@@ -89,7 +89,7 @@ public class Camera3rd : MonoBehaviour {
         else
         if (valueH > JoystickDeadZone && curCamSlide >= 0)
         {
-            Debug.Log("if2");
+            //Debug.Log("if2");
             curCamSlide += Time.deltaTime * SideCamSpeed;
             if (curCamSlide > 1)
                 curCamSlide = 1;
@@ -99,7 +99,7 @@ public class Camera3rd : MonoBehaviour {
         else
         if (curCamSlide < 0)
         {
-            Debug.Log("if3");
+            //Debug.Log("if3");
             curCamSlide += Time.deltaTime * SideCamSpeed;
 
             if (Mathf.Abs(curCamSlide) < 0.02)
@@ -109,7 +109,7 @@ public class Camera3rd : MonoBehaviour {
         }
         else
         {
-            Debug.Log("if4");
+            //Debug.Log("if4");
             curCamSlide -= Time.deltaTime * SideCamSpeed;
 
             if (Mathf.Abs(curCamSlide) < 0.02)
@@ -118,7 +118,7 @@ public class Camera3rd : MonoBehaviour {
             posUltime = Vector3.Slerp(posBehind, posRight, curCamSlide);
         }
 
-        Debug.Log("Slide : " + curCamSlide);
+        //Debug.Log("Slide : " + curCamSlide);
 
         transform.position = posUltime;
 
