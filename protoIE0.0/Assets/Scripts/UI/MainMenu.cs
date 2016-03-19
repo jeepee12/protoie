@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
 
     public void EndlessMode()
     {
+        CurrentMode.setEndlessMode(true);
         SceneManager.LoadScene(1);
     }
 

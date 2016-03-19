@@ -22,24 +22,25 @@ public class LandObjective : MonoBehaviour {
             if(port)
             {
                 player.AffectHP(healAmount);
-                playerEntryTime = Time.time;
+                playerEntryTime = Time.time - healCoolDown;
             }
 
-            playerEntryTime = 0;
             mapGScript.StageIsCompleted();
         }
     }
 
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        if(playerEntryTime > 0)
+        if (other.gameObject.tag == "Player")
         {
-            //Debug.Log("before healing" + playerEntryTime + "time" + Time.time);
-            if (Time.time - playerEntryTime > healCoolDown)
+            if (port)
             {
-                //Debug.Log("Healing time" + playerEntryTime);
-                player.AffectHP(healAmount);
-                playerEntryTime = Time.time;
+                if (Time.time > playerEntryTime + healCoolDown)
+                {
+                    //Debug.Log("Healing time" + playerEntryTime);
+                    player.AffectHP(healAmount);
+                    playerEntryTime = Time.time;
+                }
             }
         }
     }

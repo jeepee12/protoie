@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -77,7 +78,7 @@ public class MapGenerator : MonoBehaviour
                     }*/
                 }
             }
-            else
+            else if(items.Length > 0)
             {
                 Transform[] listOfTransforms = landClone.GetComponentsInChildren<Transform>();
 
@@ -156,6 +157,20 @@ public class MapGenerator : MonoBehaviour
     {
         if(currentMap < MapList.Length)
         {
+            if (CurrentMode.isEndlessMode())
+            {
+                CurrentMode.setEndlessMode(false);
+                currentMap = 7;
+
+                GameObject m_Player;
+                SelectedWeapon m_SelectedWeaponScript;
+
+                m_Player = GameObject.FindGameObjectWithTag("Player");
+                m_SelectedWeaponScript = m_Player.GetComponent<SelectedWeapon>();
+
+                m_SelectedWeaponScript.weapons[0].unlock = true;
+            }
+
             if (!MapList[currentMap].StageCompleted)
             {
                 if (!MapList[currentMap].StageInit)
@@ -229,6 +244,10 @@ public class MapGenerator : MonoBehaviour
                     currentMap = MapList.Length - 1;
                 }
             }
+        }
+        else
+        {
+            currentMap = 7;
         }
 
         if(m_UpdateObjectives)
