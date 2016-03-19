@@ -10,12 +10,15 @@ public class MapGenerator : MonoBehaviour
         public GameObject[] enemies;
         public GameObject weather;
         public GameObject[] items;
+        public bool itemDropFromEnemy = false;
         public string tutorialText;
 
         [System.NonSerialized]
         public bool StageCompleted = false;
         [System.NonSerialized]
         public bool StageInit = false;
+        [System.NonSerialized]
+        public Transform[] itemSpawns;
 
         private bool m_hasLand = false;
         private GameObject landClone;
@@ -57,7 +60,7 @@ public class MapGenerator : MonoBehaviour
                 }
             }
 
-            if(items.Length > 0)
+            if(items.Length > 0 && !itemDropFromEnemy)
             {
                 //int zPosition = 0;
                 for (int i = 0; i < items.Length; ++i)
@@ -72,6 +75,20 @@ public class MapGenerator : MonoBehaviour
                     {
                         ++zPosition;
                     }*/
+                }
+            }
+            else
+            {
+                Transform[] listOfTransforms = landClone.GetComponentsInChildren<Transform>();
+
+                foreach (Transform spawnLocation in listOfTransforms)
+                {
+                    if (spawnLocation.name.Contains("SpawnItems"))
+                    {
+                        itemSpawns = spawnLocation.GetComponentsInChildren<Transform>();
+
+                        break;
+                    }
                 }
             }
 
@@ -164,11 +181,18 @@ public class MapGenerator : MonoBehaviour
                     }
 
                     itemsDrop = MapList[currentMap].items.Length;
-                    noItemLeft = MapList[currentMap].items.Length <= 0;
+                    noItemLeft = itemsDrop <= 0;
 
-                    if (!noItemLeft)
+                    if (!noItemLeft && !MapList[currentMap].itemDropFromEnemy)
                     {
-                        m_ObjectiveStr[3] = "\nPick up items.";
+                        if (itemsDrop > 1)
+                        {
+                            m_ObjectiveStr[3] = "\nPick up the items.";
+                        }
+                        else
+                        {
+                            m_ObjectiveStr[3] = "\nPick up the item.";
+                        }
                     }
 
                     if(MapList[currentMap].tutorialText != null)
@@ -276,6 +300,31 @@ public class MapGenerator : MonoBehaviour
             {
                 allEnemiesDead = true;
                 m_ObjectiveStr[2] = null;
+
+                if(MapList[currentMap].itemDropFromEnemy && MapList[currentMap].items.Length > 0)
+                {
+                    if(MapList[currentMap].items.Length > 1)
+                    {
+                        m_ObjectiveStr[3] = "\nPick up the items.";
+                    }
+                    else
+                    {
+                        m_ObjectiveStr[3] = "\nPick up the item.";
+                    }
+                    
+                    for (int i = 0; i < MapList[currentMap].items.Length; ++i)
+                    {
+                        if (MapList[currentMap].itemSpawns[i]) //If we have a SpawnLocations
+                        {
+                            GameObject enemyClone = (GameObject)Instantiate(MapList[currentMap].items[i],
+                                new Vector3(MapList[currentMap].itemSpawns[i + 1].position.x,
+                                (MapList[currentMap].itemSpawns[i].transform.localScale.y / 2),
+                                MapList[currentMap].itemSpawns[i + 1].position.z),
+                                MapList[currentMap].itemSpawns[i + 1].rotation);
+                        }
+                    }
+                }
+
                 m_UpdateObjectives = true;
             }
         }

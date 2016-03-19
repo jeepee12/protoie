@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnlockWeapon : MonoBehaviour {
-    public string m_WeaponName;
-
+public class UnlockWeapon : MonoBehaviour
+{
     private GameObject m_Player;
     private SelectedWeapon m_SelectedWeaponScript;
     void Start()
@@ -18,13 +17,14 @@ public class UnlockWeapon : MonoBehaviour {
         {
             for(int i = 0; i < m_SelectedWeaponScript.weaponList.Length; ++i)
             {
-                if (m_SelectedWeaponScript.weapons[i].name.Contains(m_WeaponName))
+                if(!m_SelectedWeaponScript.weapons[i].unlock)
                 {
                     m_SelectedWeaponScript.weapons[i].unlock = true;
                     GameObject mg = GameObject.FindGameObjectWithTag("MapGenerator");
                     mg.GetComponent<MapGenerator>().ItemTaken();
                     Destroy(gameObject);
-                }
+                    break;
+                }                
             }
         }
     }
