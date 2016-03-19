@@ -13,6 +13,9 @@ public class Floating : MonoBehaviour
 {
     public GameObject Ocean;
 
+    //Object in charge of waves
+    private WaveBehavior waveScript;
+
     public float density = 500;
     public int slicesPerAxis = 2;
     public bool isConcave = false;
@@ -33,6 +36,10 @@ public class Floating : MonoBehaviour
     private void Start()
     {
         forces = new List<Vector3[]>(); // For drawing force gizmos
+
+        //Get the waveControllerScript
+        GameObject gameController = GameObject.FindGameObjectWithTag("WaveManager");
+        waveScript = gameController.GetComponent<WaveBehavior>();
 
         // Store original rotation and position
         var originalRotation = transform.rotation;
@@ -239,9 +246,19 @@ public class Floating : MonoBehaviour
     /// <param name="x">x-coordinate</param>
     /// <param name="z">z-coordinate</param>
     /// <returns>Water level</returns>
-    private float GetWaterLevel(float x, float z)
+    float? WaterLevelAt(Vector3 position)
     {
-        return Ocean == null ? 0.0f : Ocean.transform.position.y;
+        //Calculate the coordinate of the vertice in global space
+        Vector3 globalVerticePosition = transform.TransformPoint(position);
+
+        //float? y_pos = 0f;
+
+        return waveScript.GetWaveYPos(globalVerticePosition.x, globalVerticePosition.z);
+
+        /*
+        float OceanHeight = (Ocean == null ? 0.0f : Ocean.transform.position.y);
+        return globalVerticePosition.y - y_pos + OceanHeight;
+        */
     }
 
     /// <summary>
@@ -253,8 +270,15 @@ public class Floating : MonoBehaviour
 
         foreach (var point in voxels)
         {
+
+            /*
+            var wp = transform.position;
+            float waterLevel = (float)DistanceToWater(wp);
+            */
+
+
             var wp = transform.TransformPoint(point);
-            float waterLevel = GetWaterLevel(wp.x, wp.z);
+            float waterLevel = (float)WaterLevelAt(wp);
 
             if (wp.y - voxelHalfHeight < waterLevel)
             {
@@ -275,6 +299,27 @@ public class Floating : MonoBehaviour
 
                 forces.Add(new[] { wp, force }); // For drawing force gizmos
             }
+
+            var rot = transform.localEulerAngles;
+            float rx = rot.x;
+            float ry = rot.y;
+            float rz = rot.z;
+
+            /* 
+            if (rx > 345)
+                rx = 350f;
+            else if (rx > 15)
+                rx = 10f;
+            
+            if (rz < -15)
+                rz = -15;
+            if (rz > 15)
+                rz = 15;
+            */
+
+            //rx = Mathf.Clamp(rx, -5, 5);
+
+            transform.rotation = Quaternion.Euler(rx, ry, Mathf.Clamp(rz, -5, 5));
         }
     }
 

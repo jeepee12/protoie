@@ -15,6 +15,9 @@ TagManager:
   - Isle
   - PlayerSpawn
   - Item
+  - WaveManager
+  - Model
+  - Model
   layers:
   - Default
   - TransparentFX
