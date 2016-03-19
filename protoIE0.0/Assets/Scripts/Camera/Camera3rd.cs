@@ -73,17 +73,9 @@ public class Camera3rd : MonoBehaviour {
         else
             valueH = Input.GetAxis("RightJoystickH");
 
-<<<<<<< HEAD
         // Calcule de la position de la caméra
         if (valueH < -JoystickDeadZone && curCamSlide <= 0)
         {
-=======
-        //Debug.Log("Value H : " + Mathf.Round(valueH));
-        // Calcule de la position de la caméra
-        if (valueH < -JoystickDeadZone && curCamSlide <= 0)
-        {
-            //Debug.Log("if1");
->>>>>>> 6a60040d22eba3238a07249958afa946a850fb5e
             curCamSlide -= Time.deltaTime * SideCamSpeed;
             if (curCamSlide < -1)
                 curCamSlide = -1;
@@ -96,10 +88,6 @@ public class Camera3rd : MonoBehaviour {
         else
         if (valueH > JoystickDeadZone && curCamSlide >= 0)
         {
-<<<<<<< HEAD
-=======
-            //Debug.Log("if2");
->>>>>>> 6a60040d22eba3238a07249958afa946a850fb5e
             curCamSlide += Time.deltaTime * SideCamSpeed;
             if (curCamSlide > 1)
                 curCamSlide = 1;
@@ -112,10 +100,6 @@ public class Camera3rd : MonoBehaviour {
         else
         if (curCamSlide < 0)
         {
-<<<<<<< HEAD
-=======
-            //Debug.Log("if3");
->>>>>>> 6a60040d22eba3238a07249958afa946a850fb5e
             curCamSlide += Time.deltaTime * SideCamSpeed;
 
             if (Mathf.Abs(curCamSlide) < 0.1)
@@ -129,10 +113,6 @@ public class Camera3rd : MonoBehaviour {
         else
         if (curCamSlide > 0)
         {
-<<<<<<< HEAD
-=======
-            //Debug.Log("if4");
->>>>>>> 6a60040d22eba3238a07249958afa946a850fb5e
             curCamSlide -= Time.deltaTime * SideCamSpeed;
 
             if (Mathf.Abs(curCamSlide) < 0.1)
@@ -143,16 +123,12 @@ public class Camera3rd : MonoBehaviour {
             else
                 posUltime = Vector3.Slerp(posBehind, posLeft, Mathf.Abs(curCamSlide));
         }
-<<<<<<< HEAD
         else
             posUltime = posBehind;
-=======
-
-        //Debug.Log("Slide : " + curCamSlide);
->>>>>>> 6a60040d22eba3238a07249958afa946a850fb5e
 
         transform.position = posUltime;
 
         transform.LookAt(Bateau);
     }
 }
+   
