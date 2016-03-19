@@ -30,6 +30,7 @@ public class Camera3rd : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate()
     {
+
         // Calcul des différente position de la caméra
         Vector3 posBehind = Bateau.transform.position;
         Vector3 posRight;
