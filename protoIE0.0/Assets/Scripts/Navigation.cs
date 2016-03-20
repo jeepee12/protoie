@@ -70,35 +70,27 @@ public class Navigation : MonoBehaviour
             {
                 boatSpeed = 0;
             }
-            //test
-            /*else if (lastVelocity != 0)
-            {
-                velocityProportion = rb.velocity.magnitude / lastVelocity;
-                //if (velocityProportion < 0.8f || velocityProportion > 1.2f)
-                if (velocityProportion < 0.8f)
-                {
-                    boatSpeed = (velocityProportion) * boatSpeed;
-                }
-                //si la velocité a changer par un facteur externe, l'acceleration du bateau va etre changer proportionnelement
-            }*/
 
 
 
-
+            //Debug.Log("H:" + valueH + "V:" + valueV);
             directionBateau.transform.position = transform.position;
             directionBateau.transform.position += myVector;
 
             //on est en train de faire un input sur le controller
             if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
             {
+                
                 m_ProgressivePosition = Vector3.Lerp(m_ProgressivePosition, directionBateau.transform.position, turnSpeed * Time.deltaTime);
 
                 testAngle.transform.LookAt(m_ProgressivePosition);
                 float monAngleAvantRotation = Quaternion.Angle(transform.rotation, testAngle.transform.rotation);
+                Debug.Log("Angle"+monAngleAvantRotation);
+                if (Mathf.Abs(boatSpeed) > speedMinToRotate && Mathf.Abs(valueH) > 0.2)//si on ne peut pas trouner sur soi-même, on on vérifie qu'on va assez vite
+                {//on tourne seulement si l'angle donner par le joueur est significatif
 
-                if (Mathf.Abs(boatSpeed) > speedMinToRotate)//si on ne peut pas trouner sur soi-même, on on vérifie qu'on va assez vite
-                {
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, testAngle.transform.rotation, turnSpeed * Time.deltaTime);
+                        //Debug.Log("On va assez vite pour tourner" + rb.velocity.magnitude);
+                        transform.rotation = Quaternion.RotateTowards(transform.rotation, testAngle.transform.rotation, turnSpeed * Time.deltaTime);
                 }
                 else if (monAngleAvantRotation > angleAvance) //le joueur ne va pas assez vite pour tourner et il veut touner donc on l'accélère. 
                 {
@@ -154,31 +146,9 @@ public class Navigation : MonoBehaviour
             //transform.position += transform.forward * boatAccelaration;
             rb.AddForce(transform.forward * boatSpeed * velociteFactor);
             //rb.velocity = transform.forward * velociteFactor * boatAccelaration;
-            if (boatSpeed == speedMaxFoward)
-            {
-                //Debug.Log("Boat speed a max speed" + rb.velocity.magnitude);
-            }
 
-            //lastVelocity = rb.velocity.magnitude;
+            
         }
     }
-
-
-    //à tester plus ne profondeur, permet de faire ne sorte que la variable boatspeed est toujours proportionnel à la vrai vitesse du bateau
-    //le pour moment, ça rend la navigation un peu moins fluide, donc on va pas le mettre en place tout suite
-    /*
-    void FixedUpdate()
-    {
-        if (lastVelocity != 0)
-        {
-            velocityProportion = rb.velocity.magnitude / lastVelocity;
-            if (velocityProportion < 0.8f || velocityProportion > 1.2f)
-            boatSpeed = (velocityProportion) * boatSpeed;
-            //si la velocité a changer par un facteur externe, l'acceleration du bateau va etre changer proportionnelement
-        }
-
-        lastVelocity = rb.velocity.magnitude;
-    }
-    */
 
 }
