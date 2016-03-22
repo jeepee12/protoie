@@ -487,10 +487,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1655081719}
   m_Script: {fileID: 11500000, guid: 90b32c4e42e189c408b3079a4f3f89dc, type: 3}
---- !u!1 &634577961 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
-  m_PrefabInternal: {fileID: 1126801918}
 --- !u!1 &721337541
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +872,7 @@ Prefab:
     - target: {fileID: 11436588, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: Ocean
       value: 
-      objectReference: {fileID: 634577961}
+      objectReference: {fileID: 1495011178}
     - target: {fileID: 11414510, guid: 09394f8c5e7d56b4c913aae302c2cceb, type: 2}
       propertyPath: Direction
       value: 
@@ -938,6 +934,10 @@ Prefab:
     - target: {fileID: 463970, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 136898, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc535a632115f4a4e80b7048ecffa098, type: 2}
@@ -1056,28 +1056,33 @@ MonoBehaviour:
     enemies: []
     weather: {fileID: 0}
     items: []
+    itemDropFromEnemy: 0
     tutorialText: Explore the sea! Use the left joystick to navigate your boat.
   - land: {fileID: 187058, guid: 0b3048a05f2e90343b03536e30caa34b, type: 2}
     enemies: []
     weather: {fileID: 0}
     items: []
+    itemDropFromEnemy: 0
     tutorialText: Explore islands to heal.
   - land: {fileID: 0}
     enemies: []
     weather: {fileID: 109064, guid: dd4ab3b4e4fb97c4db6b59bc352b521d, type: 2}
     items: []
+    itemDropFromEnemy: 0
     tutorialText: The rain is never a good allied in the sea.
   - land: {fileID: 0}
     enemies: []
     weather: {fileID: 0}
     items:
     - {fileID: 186634, guid: 4be1ea118a8cc36419a61e8fccb4a5d4, type: 2}
+    itemDropFromEnemy: 0
     tutorialText: Grab any green box they will help you in your journey.
   - land: {fileID: 165414, guid: 9ab1b8bb989efea41b0c7a324df4a068, type: 2}
     enemies:
     - {fileID: 156964, guid: 05d3b77d9f645f646b6f9269fee40f0f, type: 2}
     weather: {fileID: 0}
     items: []
+    itemDropFromEnemy: 0
     tutorialText: This shark don't seems friendly, use your cannons with right trigger.
 --- !u!4 &1171824006
 Transform:
@@ -1452,6 +1457,52 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1482337588}
+--- !u!1 &1495011178 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 113896, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+  m_PrefabInternal: {fileID: 2096801729}
+--- !u!1001 &1520691375
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 491378, guid: 98b1acb4a374b6f4e9b171f60662dd60, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.633962
+      objectReference: {fileID: 0}
+    - target: {fileID: 491378, guid: 98b1acb4a374b6f4e9b171f60662dd60, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.77587986
+      objectReference: {fileID: 0}
+    - target: {fileID: 491378, guid: 98b1acb4a374b6f4e9b171f60662dd60, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.3881378
+      objectReference: {fileID: 0}
+    - target: {fileID: 491378, guid: 98b1acb4a374b6f4e9b171f60662dd60, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491378, guid: 98b1acb4a374b6f4e9b171f60662dd60, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491378, guid: 98b1acb4a374b6f4e9b171f60662dd60, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491378, guid: 98b1acb4a374b6f4e9b171f60662dd60, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 491378, guid: 98b1acb4a374b6f4e9b171f60662dd60, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 98b1acb4a374b6f4e9b171f60662dd60, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1565659967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,3 +2383,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!1001 &2096801729
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 415300, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415300, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 415300, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415300, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 415300, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415300, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415300, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 415300, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 582bc8fe859f6574f8d11cce4084ae24, type: 2}
+  m_IsPrefabParent: 0
