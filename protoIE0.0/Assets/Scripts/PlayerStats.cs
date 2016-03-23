@@ -56,7 +56,13 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HP <= 0)
+        
+        if (Input.GetButtonDown("Respawn"))
+        {
+            HP = 0;
+        }
+
+        if (HP <= 0)
         {
             HP = 0;
             DyingAnimation();
