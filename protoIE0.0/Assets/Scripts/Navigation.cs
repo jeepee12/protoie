@@ -85,7 +85,7 @@ public class Navigation : MonoBehaviour
 
                 testAngle.transform.LookAt(m_ProgressivePosition);
                 float monAngleAvantRotation = Quaternion.Angle(transform.rotation, testAngle.transform.rotation);
-                Debug.Log("Angle"+monAngleAvantRotation);
+                //Debug.Log("Angle"+monAngleAvantRotation);
                 if (Mathf.Abs(boatSpeed) > speedMinToRotate && Mathf.Abs(valueH) > 0.2)//si on ne peut pas trouner sur soi-même, on on vérifie qu'on va assez vite
                 {//on tourne seulement si l'angle donner par le joueur est significatif
 
