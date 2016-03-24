@@ -19,6 +19,8 @@ public class SelectedWeapon : MonoBehaviour
         public bool unlock = false;        
     }
 
+    private Rigidbody rb;
+
     bool right = true;
     public Weapons[] weapons;
 
@@ -48,6 +50,8 @@ public class SelectedWeapon : MonoBehaviour
         }
        
         cannonTurn = 0;
+
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -167,6 +171,19 @@ public class SelectedWeapon : MonoBehaviour
             cannonTurn = 0;
             CancelInvoke();
             return;
+        }
+        
+        //Cannon Feedback
+        switch(posCurrWeapon)
+        {
+            case 0:
+                rb.AddForce(transform.right * -1000, ForceMode.Impulse);
+                break;
+            case 1:
+                rb.AddForce(transform.right * 1000, ForceMode.Impulse);
+                break;
+            default:
+                break;
         }
 
         GameObject projectile =

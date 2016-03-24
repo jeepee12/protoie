@@ -1421,7 +1421,8 @@ MonoBehaviour:
     weather: {fileID: 0}
     items: []
     itemDropFromEnemy: 0
-    tutorialText: Explore the sea! Use the left joystick to navigate your boat.
+    tutorialText: Explore the sea! Use the <color=red>left joystick </color> to navigate
+      your boat.
   - land: {fileID: 187058, guid: 0b3048a05f2e90343b03536e30caa34b, type: 2}
     enemies: []
     weather: {fileID: 0}
@@ -1447,7 +1448,8 @@ MonoBehaviour:
     weather: {fileID: 0}
     items: []
     itemDropFromEnemy: 0
-    tutorialText: This shark don't seems friendly, use your cannons with right trigger.
+    tutorialText: This shark don't seems friendly, use your cannons with <color=red>right
+      trigger</color>.
   - land: {fileID: 187058, guid: 0b3048a05f2e90343b03536e30caa34b, type: 2}
     enemies: []
     weather: {fileID: 0}
@@ -2945,7 +2947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1885844599
 MonoBehaviour:
   m_ObjectHideFlags: 0
