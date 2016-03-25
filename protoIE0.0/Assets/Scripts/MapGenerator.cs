@@ -99,8 +99,8 @@ public class MapGenerator : MonoBehaviour
                 if(weatherClone.name.Contains("Rain"))
                 {
                     weatherClone.transform.parent = Camera.main.transform;
-                    weatherClone.transform.localEulerAngles = new Vector3(35, 0, 0);
-                    weatherClone.transform.localPosition = new Vector3(0, 72, 50);
+                    weatherClone.transform.localEulerAngles = new Vector3(65, 0, 0);
+                    weatherClone.transform.localPosition = new Vector3(0, 100, 50);
                 }
             }
         }
