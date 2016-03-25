@@ -5,6 +5,7 @@ public class WaveBehavior : MonoBehaviour {
 
     //Wave parameters
 
+    public GameObject Ocean;
     //Wave height and speed
     public float scale = 0.1f;
     public float speed = 1.0f;
@@ -17,7 +18,8 @@ public class WaveBehavior : MonoBehaviour {
     //Basic idea from http://answers.unity3d.com/questions/443031/sinus-for-rolling-waves.html
     public float GetWaveYPos(float x_coord, float z_coord)
     {
-        float y_coord = 0f;
+
+        float y_coord = 0f + Ocean.transform.position.y;
 
         //Using only x_coord or z_coord will produce straight waves
         //Using only vertex.y will produce an up/down movement
