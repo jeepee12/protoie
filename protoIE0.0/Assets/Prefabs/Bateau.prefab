@@ -290,6 +290,7 @@ GameObject:
   - 4: {fileID: 409506}
   - 95: {fileID: 9560578}
   - 54: {fileID: 5489012}
+  - 136: {fileID: 13696892}
   m_Layer: 0
   m_Name: Bateau_Mat (1)
   m_TagString: Untagged
@@ -417,6 +418,7 @@ GameObject:
   - 4: {fileID: 497982}
   - 95: {fileID: 9519804}
   - 54: {fileID: 5445402}
+  - 136: {fileID: 13676374}
   m_Layer: 0
   m_Name: Bateau_Mat
   m_TagString: Untagged
@@ -450,8 +452,6 @@ GameObject:
   - 95: {fileID: 9530554}
   - 137: {fileID: 13791258}
   - 183: {fileID: 18300612}
-  - 64: {fileID: 6494320}
-  - 64: {fileID: 6496676}
   m_Layer: 0
   m_Name: Bateau_Voile
   m_TagString: Untagged
@@ -2533,30 +2533,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6494320
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146620}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 0}
---- !u!64 &6496676
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146620}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 0}
 --- !u!65 &6506646
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2577,7 +2553,7 @@ BoxCollider:
   m_GameObject: {fileID: 172688}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2589,7 +2565,7 @@ BoxCollider:
   m_GameObject: {fileID: 182108}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2901,14 +2877,14 @@ MonoBehaviour:
   deadZone: 0.5
   testAngle: {fileID: 149966}
   directionBateau: {fileID: 0}
-  turnSpeed: 10
+  turnSpeed: 25
   angleAvance: 45
-  speed: 10
+  speed: 2
   speedSlowing: 5
-  speedMaxFoward: 3
-  speedMaxBackward: 1
+  speedMaxFoward: 4
+  speedMaxBackward: 2
   speedMinToRotate: 1
-  slowDuringTurning: 0
+  slowDuringTurning: 1
   velociteFactor: 5000
 --- !u!114 &11446708
 MonoBehaviour:
@@ -3018,6 +2994,32 @@ MonoBehaviour:
   - {fileID: 11414510}
   - {fileID: 0}
   Boat: {fileID: 125212}
+--- !u!136 &13676374
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0033932566
+  m_Height: 0.075329594
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.035, z: 0}
+--- !u!136 &13696892
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.003393257
+  m_Height: 0.06581698
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.035, z: 0}
 --- !u!137 &13716636
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -3103,9 +3105,9 @@ Cloth:
   m_BendingStiffness: 0
   m_UseTethers: 1
   m_UseGravity: 1
-  m_Damping: 0.4
+  m_Damping: 0.1
   m_ExternalAcceleration: {x: 0, y: 0, z: 0}
-  m_RandomAcceleration: {x: 0, y: 0, z: 0}
+  m_RandomAcceleration: {x: 10, y: 2, z: 10}
   m_WorldVelocityScale: -0.2
   m_WorldAccelerationScale: 0.1
   m_Friction: 0
@@ -3693,7 +3695,8 @@ Cloth:
     collisionSphereDistance: 3.4028235e+38
   - maxDistance: 0
     collisionSphereDistance: 3.4028235e+38
-  m_CapsuleColliders: []
+  m_CapsuleColliders:
+  - {fileID: 13676374}
   m_SphereColliders: []
 --- !u!183 &18392664
 Cloth:
@@ -3706,9 +3709,9 @@ Cloth:
   m_BendingStiffness: 0
   m_UseTethers: 1
   m_UseGravity: 1
-  m_Damping: 0.4
+  m_Damping: 0.1
   m_ExternalAcceleration: {x: 0, y: 0, z: 0}
-  m_RandomAcceleration: {x: 0, y: 0, z: 0}
+  m_RandomAcceleration: {x: 10, y: 2, z: 10}
   m_WorldVelocityScale: -0.2
   m_WorldAccelerationScale: 0.1
   m_Friction: 1
@@ -4296,7 +4299,8 @@ Cloth:
     collisionSphereDistance: 3.4028235e+38
   - maxDistance: 0
     collisionSphereDistance: 3.4028235e+38
-  m_CapsuleColliders: []
+  m_CapsuleColliders:
+  - {fileID: 13696892}
   m_SphereColliders: []
 --- !u!198 &19822396
 ParticleSystem:

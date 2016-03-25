@@ -138,6 +138,7 @@ public class MapGenerator : MonoBehaviour
 
     public GameObject player;
     public Transform ToDestroy;
+    public Transform[] mapsetup;
     public MapComponent[] MapList;
     private int enemiesAlive;
     private int itemsDrop;
@@ -176,6 +177,7 @@ public class MapGenerator : MonoBehaviour
                 if (!MapList[currentMap].StageInit)
                 {
                     MapList[currentMap].StageInit = true;
+
                     MapList[currentMap].InitStage();
                     m_ObjectiveStr[0] = "Objective:\n";
                     enemiesAlive = MapList[currentMap].enemiesNumber();
@@ -183,10 +185,20 @@ public class MapGenerator : MonoBehaviour
 
                     if(MapList[currentMap].hasLand())
                     {
+                        mapsetup[0].localPosition = new Vector3(-400f, 0.5f, 0f);
+                        mapsetup[1].localPosition = new Vector3(400f, 0.5f, 0f);
+                        mapsetup[2].localPosition = new Vector3(0f, 0.5f, 300f);
+                        mapsetup[3].localPosition = new Vector3(0f, 0.5f, -300f);
+                        mapsetup[4].localPosition = new Vector3(0f, 0.5f, -164f);
                         m_ObjectiveStr[1] = "\nExplore the nearby islands.";
                     }
                     else
                     {
+                        mapsetup[0].localPosition = new Vector3(-200f, 0.5f, 0f);
+                        mapsetup[1].localPosition = new Vector3(200f, 0.5f, 0f);
+                        mapsetup[2].localPosition = new Vector3(0f, 0.5f, 150f);
+                        mapsetup[3].localPosition = new Vector3(0f, 0.5f, -150f);
+                        mapsetup[4].localPosition = new Vector3(0f, 0.5f, -82f);
                         m_ObjectiveStr[1] = null;
                     }
 

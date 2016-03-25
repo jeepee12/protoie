@@ -20,7 +20,7 @@ public class PlayerStats : MonoBehaviour
 
     public Camera deathCam;
 
-    private Vector3 spawnLocation;
+    private Transform spawnLocation;
 
     private float startRaising;
 
@@ -46,7 +46,7 @@ public class PlayerStats : MonoBehaviour
     // Use this for initialization
     void Start()
     { 
-        spawnLocation = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+        spawnLocation = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
         ResetPosition();
         HP = StartHP;
         myRigidBody = gameObject.GetComponent<Rigidbody>();
@@ -93,7 +93,7 @@ public class PlayerStats : MonoBehaviour
 
     void ResetPosition()
     {
-        gameObject.transform.position = spawnLocation;
+        gameObject.transform.position = spawnLocation.position;
     }
 
     void DyingAnimation()
@@ -125,7 +125,7 @@ public class PlayerStats : MonoBehaviour
         if(transform.position.y <= -13f)
         {
             isDying = false;
-            deathCam.transform.position = new Vector3(spawnLocation.x - 2, spawnLocation.y + 14.5f, spawnLocation.z - 31);
+            deathCam.transform.position = new Vector3(spawnLocation.position.x - 2, spawnLocation.position.y + 14.5f, spawnLocation.position.z - 31);
             Die();
         }
     }
@@ -135,7 +135,7 @@ public class PlayerStats : MonoBehaviour
         if (!isRaising)
         { 
             gameObject.GetComponent<Floating>().enabled = false;
-            gameObject.transform.position = new Vector3(spawnLocation.x, spawnLocation.y - 20f, spawnLocation.z);
+            gameObject.transform.position = new Vector3(spawnLocation.position.x, spawnLocation.position.y - 20f, spawnLocation.position.z);
             gameObject.transform.localEulerAngles = Vector3.zero;
         }
 
@@ -143,7 +143,7 @@ public class PlayerStats : MonoBehaviour
 
         Vector3 D = new Vector3(transform.position.x, 10f, transform.position.z) - transform.position;
         myRigidBody.isKinematic = true;
-        transform.position = Vector3.MoveTowards(transform.position, spawnLocation, 0.2f);
+        transform.position = Vector3.MoveTowards(transform.position, spawnLocation.position, 0.2f);
 
         Quaternion targetRotation = Quaternion.LookRotation(D);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime);
