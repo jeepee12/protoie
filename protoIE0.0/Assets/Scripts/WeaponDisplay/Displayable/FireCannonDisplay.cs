@@ -3,19 +3,31 @@ using System.Collections;
 
 public class FireCannonDisplay : WeaponDisplay {
 
+    public bool PS4Controller = false;
     public GameObject VisualPlane;
     public GameObject Direction;
-    public GameObject Direction2;
     public GameObject Bateau;
 
     public float RotateSpeed;
+
+    public GameObject[] HideList;
 
     private float deadZone = 0.5f;
 
     public override void move()
     {
-        float valueH = Input.GetAxis("RightJoystickH");
-        float valueV = Input.GetAxis("RightJoystickV");
+        float valueH;
+        float valueV;
+        if (PS4Controller)
+        {
+            valueH = Input.GetAxis("RightJoystickHPS4");
+            valueV = Input.GetAxis("RightJoystickVPS4");
+        }
+        else
+        {
+            valueH = Input.GetAxis("RightJoystickH");
+            valueV = Input.GetAxis("RightJoystickV");
+        }
 
         if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
         {
@@ -36,8 +48,6 @@ public class FireCannonDisplay : WeaponDisplay {
             float step = RotateSpeed * Time.deltaTime;
 
             Quaternion Quat = Quaternion.RotateTowards(VisualPlane.transform.rotation, Direction.transform.rotation, step);
-            
-            Direction2.transform.position = VectorDirection;
 
             Quaternion temp = VisualPlane.transform.rotation;
 
@@ -59,6 +69,24 @@ public class FireCannonDisplay : WeaponDisplay {
     public override Vector3 ShootVector()
     {
         return VisualPlane.transform.forward;
+    }
+
+    public override void Hide()
+    {
+        foreach (GameObject toHide in HideList)
+        {
+            toHide.GetComponent<Renderer>().enabled = false;
+        }
+    }
+
+    public override void Show()
+    {
+        foreach (GameObject toShow in HideList)
+        {
+            toShow.GetComponent<Renderer>().enabled = true;
+        }
+
+        base.Show();
     }
 
 }

@@ -10,35 +10,39 @@ public class DestroyeOnContact : MonoBehaviour
     public GameObject Destructable;
     public GameObject FireExplosion;
     public GameObject Fire;
+    public GameObject Splash;
+
+    EnemyStats m_EnemyStatsScript;
+
+    private int m_Damage;
 
     void OnTriggerEnter(Collider hit)
     {
         if (hit.tag == "Enemy")
         {
-            Destroy(hit.gameObject);
+            // add HP remover here instead of Destroyer.
+            m_EnemyStatsScript = hit.gameObject.transform.parent.GetComponent<EnemyStats>();
+            m_EnemyStatsScript.TakeDamage(m_Damage);
         }
 
-        else if (hit.tag == "flammable")
+        if (hit.tag == "Isle")
         {
-            if (Destructable.tag == "FireBall")
-                Instantiate(Fire, transform.position, transform.rotation);
-
-            else
-            {
-                Instantiate(FireExplosion, transform.position, transform.rotation);
-                Destroy(hit.gameObject);
-            }
-
+            Instantiate(FireExplosion, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
-        else if (hit.tag == "canonBall")
+        if (hit.tag == "Water")
         {
+            Instantiate(Splash, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+
+        if (hit.tag == "Untagged")
             return;
-        }
+    }
 
-        Instantiate(FireExplosion, transform.position, transform.rotation);
-        Destroy(gameObject);
-
-       
+    public void Damage(int newDamage)
+    {
+        m_Damage = newDamage;
     }
 }

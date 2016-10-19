@@ -25,4 +25,23 @@ public class CannonDisplay : WeaponDisplay
         return transform.forward;
     }
 
+    public override void Hide()
+    {
+        foreach (Transform child in gameObject.transform)
+        {
+            child.GetComponent<Renderer>().enabled = false;
+        }
+    }
+
+    public override void Show()
+    {
+        foreach (Transform child in gameObject.transform)
+        {
+            child.GetComponent<Renderer>().enabled = true;
+        }
+
+        base.Show();
+    }
+
+
 }

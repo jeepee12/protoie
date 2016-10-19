@@ -9,6 +9,14 @@ TagManager:
   - flammable
   - Enemy
   - FireBall
+  - Water
+  - Flock_sound
+  - MapGenerator
+  - Isle
+  - PlayerSpawn
+  - Item
+  - WaveManager
+  - Model
   layers:
   - Default
   - TransparentFX
@@ -18,9 +26,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - IgnoreReflection
+  - InGame UI
+  - Player
   - 
   - 
   - 

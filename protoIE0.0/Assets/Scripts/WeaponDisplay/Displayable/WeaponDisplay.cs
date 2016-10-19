@@ -3,7 +3,7 @@ using System.Collections;
 
 public abstract class WeaponDisplay : MonoBehaviour
 {
-    private MeshRenderer CooldownRenderer;
+    protected MeshRenderer CooldownRenderer;
 
     // Cooldowns
     public Color CouleurCooldown = new Color(1, 0, 0, 0);
@@ -15,56 +15,56 @@ public abstract class WeaponDisplay : MonoBehaviour
 
     // Display
     public MeshRenderer displayPlane;
-
-    // Area
-    public MeshRenderer area;
-
+    
     public abstract Vector3 ShootVector();
     public abstract void move();
 
-    public void Init()
+    private bool weapReady;
+
+    public virtual bool inRange() { return true; }
+
+    public virtual void Init()
     {
         CooldownRenderer = CooldownObject.GetComponent<MeshRenderer>();
+        Hide();
     }
 
-    public void stopDisplay()
-    {
-        displayPlane.enabled = false;
-        CooldownRenderer.enabled = false;
+    public abstract void Hide();
 
-        if (area != null)
-            area.enabled = false;
-    }
-
-    public void startDisplay()
-    {
-        displayPlane.enabled = true;
-        CooldownRenderer.enabled = true;
-
-        if (area != null)
-            area.enabled = true;
-    }
+    public virtual void Show() { displayCooldown(0); }
 
     public void displayCooldown(float pourc)
     {
-        Mesh CooldownMesh = CooldownObject.GetComponent<MeshFilter>().mesh;
-        Vector3[] vertices = CooldownMesh.vertices;
-        Color[] colors = new Color[vertices.Length];
-        
-        float nbr = CooldownMesh.vertices.Length * pourc;
-        
-        for (int i = 0; i < Mathf.Min(nbr, CooldownMesh.vertices.Length); i++)
-        {
-            colors[i] = CouleurCooldown;
+
+            Mesh CooldownMesh = CooldownObject.GetComponent<MeshFilter>().mesh;
+            Vector3[] vertices = CooldownMesh.vertices;
+            Color[] colors = new Color[vertices.Length];
+
+            float nbr = CooldownMesh.vertices.Length * pourc;
+
+            for (int i = 0; i < Mathf.Min(nbr, CooldownMesh.vertices.Length); i++)
+            {
+                colors[i] = CouleurCooldown;
+            }
+
+            CooldownMesh.colors = colors;
+
+        if (pourc != 0)
+        { 
+            weapReady = false;
+            onCooldown();
         }
-
-        CooldownMesh.colors = colors;
-
+        else
+        {
+            weapReady = true;
+            readyToFire();
+        }
     }
 
     public void readyToFire()
     {
-        displayPlane.material = cannonReady;
+        if (weapReady)
+            displayPlane.material = cannonReady;
     }
 
     public void onCooldown()

@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7778535, y: 0.75, z: -9.974467}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,6 +95,7 @@ MonoBehaviour:
   Destructable: {fileID: 170846}
   FireExplosion: {fileID: 180222, guid: f8b8d6f8b8648204980e91a8f1d81d18, type: 2}
   Fire: {fileID: 183324, guid: c7e357a0db688224bbcd1ca19637dbda, type: 2}
+  Splash: {fileID: 118254, guid: 3bd5392c1a3f38244a29e3cc9569f2fc, type: 2}
 --- !u!114 &11488714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canonBall: {fileID: 5434258}
-  speed: 50
+  speed: 100
 --- !u!135 &13540460
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -224,6 +225,34 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_CastShadows
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

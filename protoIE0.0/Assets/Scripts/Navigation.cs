@@ -5,7 +5,7 @@ public class Navigation : MonoBehaviour
 {
 
     private Vector3 m_ProgressivePosition;
-    public float velocite;
+    public float boatSpeed;
     public float deadZone = 0.5f;
 
     public GameObject testAngle;
@@ -28,91 +28,127 @@ public class Navigation : MonoBehaviour
     [Tooltip("Ranlentit pendant qu'il tourne")]
     public bool slowDuringTurning = true;
 
+    private Rigidbody rb;
+    public int velociteFactor = 1000;
+
+    //variable for the affecting the boatspeed by the current velocity of the boat
+    private float lastVelocity = 0;
+    private float velocityProportion = 0;
+
     // Use this for initialization
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float valueH = Input.GetAxis("Horizontal");
-        float valueV = Input.GetAxis("Vertical");
-        bool backward = Input.GetButton("GoingBackward");
-        float backwardFactor = 1;//va être mis à -1 si on appuie sur la touche de reculons
-        Vector3 myVector;
-        //Debug.Log("H:" + valueH + "V:" + valueV);
-        myVector = new Vector3(1, 0, 0) * valueH;
-        myVector += new Vector3(0, 0, 1) * valueV;
+        if (Time.timeScale != 0.0f)
+        { 
+            float valueH = Input.GetAxis("Horizontal");
+            float valueV = Input.GetAxis("Vertical");
+            bool backward = Input.GetButton("GoingBackward");
+            float backwardFactor = 1;//va être mis à -1 si on appuie sur la touche de reculons
+            Vector3 myVector;
 
-        myVector.Normalize();
+            myVector = transform.forward * valueV;
+            myVector += transform.right * valueH;
 
-        myVector *= 20;
+            myVector.Normalize();
 
-        directionBateau.transform.position = transform.position;
-        directionBateau.transform.position += myVector;
+            myVector *= 20;
 
-        if(backward)
-        {
-            backwardFactor = -1;
-        }
-
-        //on est en train de faire un input sur le controller
-        if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
-        {
-            m_ProgressivePosition = Vector3.Lerp(m_ProgressivePosition, directionBateau.transform.position, turnSpeed * Time.deltaTime);
-
-            testAngle.transform.LookAt(m_ProgressivePosition);
-            float monAngleAvantRotation = Quaternion.Angle(transform.rotation, testAngle.transform.rotation);
-
-            if (Mathf.Abs(velocite) > speedMinToRotate)//si on ne peut pas trouner sur soi-même, on on vérifie qu'on va assez vite
+            if (backward)
             {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, testAngle.transform.rotation, turnSpeed * Time.deltaTime);
-            }
-            else if (monAngleAvantRotation > angleAvance) //le joueur ne va pas assez vite pour tourner et il veut touner donc on l'accélère. 
-            {
-                velocite += speed * Time.deltaTime * backwardFactor;
+                backwardFactor = -1;
+                myVector *= -1;
+            
             }
 
-            float monAngleApresRotation = Quaternion.Angle(transform.rotation, testAngle.transform.rotation);
-
-            if (monAngleApresRotation < angleAvance)//si on pointe vers le devant du bateau 
-                velocite += speed * Time.deltaTime * backwardFactor;
-            else if (slowDuringTurning)//si on est dans le cas
+            if (rb.velocity.magnitude < 0.1)//si le bateau c'est fait arrêter par une source externe, ça vitesse doit retomber à zéro
             {
-                velocite -= (0.75f * speedSlowing) * Time.deltaTime * backwardFactor;
-                if (Mathf.Abs(velocite) < speedMinToRotate)
-                //si on ne peut pas tourner sur sois-meme et qu'on est rendu plus lent que la vitesse minimal on va annuler le ralentissement
+                boatSpeed = 0;
+            }
+
+
+
+            //Debug.Log("H:" + valueH + "V:" + valueV);
+            directionBateau.transform.position = transform.position;
+            directionBateau.transform.position += myVector;
+
+            //on est en train de faire un input sur le controller
+            if ((valueH > deadZone || valueH < -deadZone) || (valueV > deadZone || valueV < -deadZone))
+            {
+                
+                m_ProgressivePosition = Vector3.Lerp(m_ProgressivePosition, directionBateau.transform.position, turnSpeed * Time.deltaTime);
+
+                testAngle.transform.LookAt(m_ProgressivePosition);
+                float monAngleAvantRotation = Quaternion.Angle(transform.rotation, testAngle.transform.rotation);
+                //Debug.Log("Angle"+monAngleAvantRotation);
+                if (Mathf.Abs(boatSpeed) > speedMinToRotate && Mathf.Abs(valueH) > 0.2)//si on ne peut pas trouner sur soi-même, on on vérifie qu'on va assez vite
+                {//on tourne seulement si l'angle donner par le joueur est significatif
+
+                        //Debug.Log("On va assez vite pour tourner" + rb.velocity.magnitude);
+                        transform.rotation = Quaternion.RotateTowards(transform.rotation, testAngle.transform.rotation, turnSpeed * Time.deltaTime);
+                }
+                else if (monAngleAvantRotation > angleAvance) //le joueur ne va pas assez vite pour tourner et il veut touner donc on l'accélère. 
                 {
-                    velocite += (0.75f * speedSlowing) * Time.deltaTime * backwardFactor;
+                    boatSpeed += speed * Time.deltaTime * backwardFactor;
+                }
+
+                float monAngleApresRotation = Quaternion.Angle(transform.rotation, testAngle.transform.rotation);
+
+                if (monAngleApresRotation < angleAvance)//si on pointe vers le devant du bateau 
+                    boatSpeed += speed * Time.deltaTime * backwardFactor;
+                else if (slowDuringTurning)//si on est dans le cas
+                {
+                    boatSpeed -= (0.75f * speedSlowing) * Time.deltaTime * backwardFactor;
+                    if (Mathf.Abs(boatSpeed) < speedMinToRotate)
+                    //si on ne peut pas tourner sur sois-meme et qu'on est rendu plus lent que la vitesse minimal on va annuler le ralentissement
+                    {
+                        boatSpeed += (0.75f * speedSlowing) * Time.deltaTime * backwardFactor;
+                    }
+                }
+
+            }
+            else//on fait pas d'input donc on ralentit
+            {
+                if (backward)//dès que le personne appuie sur le boutton pour reculer, le bateau recule même si elle ne touche pas au joystick
+                {
+                    boatSpeed += speed * Time.deltaTime * backwardFactor;
+                }
+                else
+                {
+                    //Vu qu'on additionne ou soustrait tout le temps je suis conscient qu'on va jamais totalement arrêter
+                    //Mais un bateau serrait jamais totalement immobile. 
+                    if (boatSpeed > 0)//si on est à 0 on ne va pas changer la vitesse
+                    {
+                        boatSpeed -= speedSlowing * Time.deltaTime;
+                    }
+                    else if (boatSpeed < 0)//on ralentit dans l'autre sens
+                    {
+                        boatSpeed += speedSlowing * Time.deltaTime;
+                    }
                 }
             }
 
-        }
-        else//on fait pas d'input donc on ralentit
-        {
-            //Vu qu'on additionne ou soustrait tout le temps je suis conscient qu'on va jamais totalement arrêter
-            //Mais un bateau serrait jamais totalement immobile. 
-            if (velocite > 0)//si on est à 0 on ne va pas changer la vitesse
+            if (boatSpeed > speedMaxFoward)//on limite la vitesse
             {
-                velocite -= speedSlowing * Time.deltaTime;
+                boatSpeed = speedMaxFoward;
             }
-            else if(velocite < 0)//on ralentit dans l'autre sens
+            else if (boatSpeed < -speedMaxBackward)
             {
-                velocite += speedSlowing * Time.deltaTime;
+                boatSpeed = -speedMaxBackward;
             }
-        }
-
-        if (velocite > speedMaxFoward)//on limite la vitesse
-        {
-            velocite = speedMaxFoward;
-        }
-        else if (velocite < -speedMaxBackward)
-        {
-            velocite = -speedMaxBackward;
-        }
 
 
-        transform.position += transform.forward * velocite;
+            //transform.position += transform.forward * boatAccelaration;
+            rb.AddForce(transform.forward * boatSpeed * velociteFactor);
+            //rb.velocity = transform.forward * velociteFactor * boatAccelaration;
+
+            
+        }
     }
+
 }
